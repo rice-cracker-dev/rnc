@@ -1,6 +1,7 @@
 {
   imports = [
     ./discord
+    ./localsend
     ./transmission
   ];
 }

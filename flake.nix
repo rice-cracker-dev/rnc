@@ -19,6 +19,13 @@
     # swww
     swww.url = "github:LGFae/swww";
 
+    # catppuccin-btop
+    catppuccin-btop = {
+      url = "github:catppuccin/btop";
+      flake = false;
+    };
+
+    # home-manager
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -2,5 +2,6 @@
   imports = [
     ./desktop
     ./dev
+    ./os
   ];
 }
