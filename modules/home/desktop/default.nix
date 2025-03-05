@@ -7,6 +7,7 @@
     ./clipboard
     ./filemanager
     ./fonts
+    ./game
     ./gtk
     ./launcher
     ./screenshot

@@ -14,6 +14,8 @@ in {
     package32 = hyprlandNixpkgs.pkgsi686Linux.mesa.drivers;
   };
 
+  services.xserver.desktopManager.runXdgAutostartIfNone = true;
+
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }
 

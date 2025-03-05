@@ -2,6 +2,7 @@
   wayland.windowManager.hyprland.settings = {
     windowrulev2 = [
       "fullscreen, class:^(Waydroid)$"
+      "nodim, class:^(Waydroid)$"
     ];
 
     layerrule = [

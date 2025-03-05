@@ -10,6 +10,9 @@
     # my neovim-flake config
     nvf-config.url = "github:rice-cracker-dev/nvf-config";
 
+    # ags
+    ags.url = "github:aylur/ags"; 
+
     # quickshell
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";

@@ -3,7 +3,6 @@
     inputs.hyprland.homeManagerModules.default
     ./animation.nix
     ./bind.nix
-    ./exec-once.nix
     ./input.nix
     ./windowrule.nix
   ];

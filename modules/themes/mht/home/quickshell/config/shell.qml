@@ -1,6 +1,7 @@
 import QtQuick 6.8
 import QtQuick.Layouts 6.8
 import Quickshell
+import "./services"
 import "./components"
 import "./widgets"
 
