@@ -7,6 +7,7 @@
     ./i18n
     ./locale
     ./nh
+    ./nix-ld
     ./pipewire
     ./timezone
     ./vpn
