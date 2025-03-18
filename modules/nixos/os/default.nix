@@ -11,6 +11,7 @@
     ./pipewire
     ./timezone
     ./vpn
+    ./wacom
     ./x11
   ];
 }
