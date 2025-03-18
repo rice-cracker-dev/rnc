@@ -28,6 +28,7 @@ in {
 
         "super, p, pin, active"
         "super, v, togglefloating" 
+        "super, f, fullscreen" 
       ]
       ++ workspaceBinds;
 
