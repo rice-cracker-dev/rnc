@@ -6,6 +6,7 @@ in {
     enable = true;
     package = hyprlandPkgs.hyprland;
     portalPackage = hyprlandPkgs.xdg-desktop-portal-hyprland;
+    withUWSM = true;
   };
 
   hardware.graphics = {
@@ -13,8 +14,6 @@ in {
     package = hyprlandNixpkgs.mesa.drivers;
     package32 = hyprlandNixpkgs.pkgsi686Linux.mesa.drivers;
   };
-
-  services.xserver.desktopManager.runXdgAutostartIfNone = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }

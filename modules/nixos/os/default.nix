@@ -1,5 +1,6 @@
 {
   imports = [
+    ./archive
     ./bluetooth
     ./console
     ./flatpak

@@ -22,6 +22,9 @@
     # swww
     swww.url = "github:LGFae/swww";
 
+    # walker
+    walker.url = "github:abenz1267/walker";
+
     # catppuccin-btop
     catppuccin-btop = {
       url = "github:catppuccin/btop";

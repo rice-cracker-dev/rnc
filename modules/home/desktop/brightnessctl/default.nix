@@ -2,7 +2,7 @@
   home.packages = [pkgs.brightnessctl];
 
   wayland.windowManager.hyprland.settings.binde = [
-    ", XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl s 5%+"
-    ", XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl s 5%-"
+    ", XF86MonBrightnessUp, exec, brightnessctl s 5%+"
+    ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
   ];
 }

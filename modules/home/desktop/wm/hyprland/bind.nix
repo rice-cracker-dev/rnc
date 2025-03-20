@@ -1,6 +1,5 @@
 {
   lib,
-  pkgs,
   ...
 }: let
   workspaceBinds = builtins.concatMap (w: let
@@ -13,7 +12,7 @@ in {
   wayland.windowManager.hyprland.settings = {
     bind =
       [
-        "super, m, exit"
+        "super, m, exec, uwsm stop"
         "alt, f4, killactive"
 
         "super, left, movefocus, l"
@@ -38,9 +37,9 @@ in {
     ];
 
     binde = [
-      ", XF86AudioRaiseVolume, exec, ${pkgs.wireplumber}/bin/wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
-      ", XF86AudioLowerVolume, exec, ${pkgs.wireplumber}/bin/wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-"
-      ", XF86AudioMute, exec, ${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+      ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-"
+      ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     ];
   };
 }

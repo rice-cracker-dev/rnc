@@ -1,4 +1,6 @@
-{inputs, pkgs, config, lib, ...}: {
+{inputs, pkgs, config, lib, ...}: let
+  uwsm = import "${inputs.self}/lib/uwsm.nix";
+in {
   options.quickshell = {
     enable = lib.mkEnableOption "enable quickshell";
 
@@ -18,20 +20,8 @@
       recursive = true;
     };
 
-    systemd.user.services.quickshell = {
-      # shamelessly taken from https://github.com/nix-community/home-manager/blob/release-24.05/modules/services/hyprpaper.nix
-      Install = { WantedBy = [ "graphical-session.target" ]; };
-
-      Unit = {
-        ConditionEnvironment = "WAYLAND_DISPLAY";
-        Description = "quickshell";
-        After = [ "graphical-session-pre.target" ];
-        PartOf = [ "graphical-session.target" ];
-      };
-
-      Service = {
-        ExecStart = "${quickshellPkg}/bin/quickshell";
-      };
-    };
+    wayland.windowManager.hyprland.settings.exec-once = [
+      (uwsm.useUWSM "quickshell")
+    ];
   };
 }

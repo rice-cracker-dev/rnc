@@ -1,2 +1,3 @@
 {
+  uwsm = import ./uwsm.nix;
 }

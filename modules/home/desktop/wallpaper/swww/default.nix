@@ -1,4 +1,6 @@
-{pkgs, config, lib, ...}: {
+{pkgs, config, lib, inputs, ...}: let
+  uwsm = import "${inputs.self}/lib/uwsm.nix";
+in {
   options.swww = {
     enable = lib.mkEnableOption "enable swww";
     
@@ -13,22 +15,9 @@
   in lib.mkIf config.swww.enable {
     home.packages = [swwwPkg];
 
-    systemd.user.services.swww = {
-      # shamelessly taken from https://github.com/nix-community/home-manager/blob/release-24.05/modules/services/hyprpaper.nix
-      Install = { WantedBy = [ "graphical-session.target" ]; };
-
-      Unit = {
-        ConditionEnvironment = "WAYLAND_DISPLAY";
-        Description = "swww";
-        After = [ "graphical-session-pre.target" ];
-        PartOf = [ "graphical-session.target" ];
-      };
-
-      Service = {
-        ExecStart = "${swwwPkg}/bin/swww-daemon --no-cache";
-        ExecStartPost = "${swwwPkg}/bin/swww img ${config.swww.wallpaperPath}";
-      };
-    };
+    wayland.windowManager.hyprland.settings.exec-once = [
+      (uwsm.useUWSM "swww-daemon --no-cache & sleep 1 && swww img ${config.swww.wallpaperPath}")
+    ];
   };
 }
 

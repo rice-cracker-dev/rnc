@@ -460,11 +460,11 @@
     },
     "mnw": {
       "locked": {
-        "lastModified": 1741647548,
-        "narHash": "sha256-UqVAeOylufUGIx7BXSneFHD8eI6n0sVwEY2noFENnSE=",
+        "lastModified": 1742255973,
+        "narHash": "sha256-XfEGVKatTgEMMOVb4SNp1LYLQOSzzrFTDMVDTZFyMVE=",
         "owner": "Gerg-L",
         "repo": "mnw",
-        "rev": "3fb89e600e26b91d1795cf8a1a34e11e084b4a04",
+        "rev": "b982dbd5e6d55d4438832b3567c09bc2a129649d",
         "type": "github"
       },
       "original": {
@@ -566,11 +566,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1742069588,
-        "narHash": "sha256-C7jVfohcGzdZRF6DO+ybyG/sqpo1h6bZi9T56sxLy+k=",
+        "lastModified": 1742288794,
+        "narHash": "sha256-Txwa5uO+qpQXrNG4eumPSD+hHzzYi/CdaM80M9XRLCo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c80f6a7e10b39afcc1894e02ef785b1ad0b0d7e5",
+        "rev": "b6eaf97c6960d97350c584de1b6dcff03c9daf42",
         "type": "github"
       },
       "original": {
@@ -612,6 +612,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_7": {
+      "locked": {
+        "lastModified": 1738142207,
+        "narHash": "sha256-NGqpVVxNAHwIicXpgaVqJEJWeyqzoQJ9oc8lnK9+WC4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "9d3ae807ebd2981d593cddd0080856873139aa40",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nmd": {
       "flake": false,
       "locked": {
@@ -639,17 +655,17 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1742157427,
-        "narHash": "sha256-ongHu4JHnZ0vbu9cXoCYshfmgFWrduN3bqnTzooLJII=",
+        "lastModified": 1742330074,
+        "narHash": "sha256-wZFnf72PZACOgH4pXbB2noAWoU51o+/8P6IY2tr6e7k=",
         "owner": "NotAShelf",
         "repo": "nvf",
-        "rev": "1d7c27abd97f4532acd9710dd2d7db439ddfe69a",
+        "rev": "a5dee946a9eb749649d17a9d4cd78271600247d0",
         "type": "github"
       },
       "original": {
         "owner": "NotAShelf",
         "repo": "nvf",
-        "rev": "1d7c27abd97f4532acd9710dd2d7db439ddfe69a",
+        "rev": "a5dee946a9eb749649d17a9d4cd78271600247d0",
         "type": "github"
       }
     },
@@ -659,11 +675,11 @@
         "nvf": "nvf"
       },
       "locked": {
-        "lastModified": 1742237557,
-        "narHash": "sha256-0ICQeA7m1jAMclziWklPJmc7dIVBMVfxUCT5vw6fVzU=",
+        "lastModified": 1742392809,
+        "narHash": "sha256-qewr/RSaRlI2jYUs1GY7mZvDUnhgg53v0CAUCsKxaLo=",
         "owner": "rice-cracker-dev",
         "repo": "nvf-config",
-        "rev": "b67cdd65a4d7d3797c17aa1f8f541d70514f6619",
+        "rev": "f4efdb94f3d6aff6eafdf42c4d67c0170c5ac226",
         "type": "github"
       },
       "original": {
@@ -724,7 +740,8 @@
         "nixpkgs": "nixpkgs_3",
         "nvf-config": "nvf-config",
         "quickshell": "quickshell",
-        "swww": "swww"
+        "swww": "swww",
+        "walker": "walker"
       }
     },
     "rust-overlay": {
@@ -830,6 +847,21 @@
         "type": "github"
       }
     },
+    "systems_5": {
+      "locked": {
+        "lastModified": 1689347949,
+        "narHash": "sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80=",
+        "owner": "nix-systems",
+        "repo": "default-linux",
+        "rev": "31732fcf5e8fea42e59c2488ad31a0e651500f68",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default-linux",
+        "type": "github"
+      }
+    },
     "utils": {
       "inputs": {
         "systems": "systems_4"
@@ -845,6 +877,25 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "walker": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_7",
+        "systems": "systems_5"
+      },
+      "locked": {
+        "lastModified": 1740745001,
+        "narHash": "sha256-XZEIwnwOYgb1wECvT83HB314bd/JBYwSaTaj2EeqWrc=",
+        "owner": "abenz1267",
+        "repo": "walker",
+        "rev": "350d5e078b997b5ca07eda39e207048ee26bbb9d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "abenz1267",
+        "repo": "walker",
         "type": "github"
       }
     },

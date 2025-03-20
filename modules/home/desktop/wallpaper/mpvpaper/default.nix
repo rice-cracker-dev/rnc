@@ -1,4 +1,6 @@
-{pkgs, config, lib, ...}: {
+{inputs, pkgs, config, lib, ...}: let
+  uwsm = "${inputs.self}/lib/uwsm.nix";
+in {
   options.mpvpaper = {
     enable = lib.mkEnableOption "enable mpvpaper";
     
@@ -18,7 +20,7 @@
     home.packages = [pkgs.mpvpaper];
 
     wayland.windowManager.hyprland.settings.exec-once = [
-      "${pkgs.mpvpaper}/bin/mpvpaper ${config.mpvpaper.monitor} ${config.mpvpaper.wallpaperPath}"
+      (uwsm.useUWSM "mpvpaper ${config.mpvpaper.monitor} ${config.mpvpaper.wallpaperPath}")
     ];
   };
 }

@@ -1,8 +1,9 @@
 {
   imports = [
-    ./login
+    ./dm
     ./qt
     ./steam
+    ./uwsm
     ./wm
     ./x11
   ];
