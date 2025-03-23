@@ -1,5 +1,5 @@
 {inputs, pkgs, config, lib, ...}: let
-  uwsm = "${inputs.self}/lib/uwsm.nix";
+  uwsm = import "${inputs.self}/lib/uwsm.nix";
 in {
   options.mpvpaper = {
     enable = lib.mkEnableOption "enable mpvpaper";
