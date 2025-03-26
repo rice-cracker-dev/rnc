@@ -1,3 +1,6 @@
 {
-  imports = [./btop];
+  imports = [
+    ./btop
+    ./fastfetch
+  ];
 }
