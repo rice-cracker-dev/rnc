@@ -11,7 +11,6 @@
     ./gtk
     ./launcher
     ./screenshot
-    ./shell
     ./term
     ./wallpaper
     ./wm
