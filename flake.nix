@@ -4,9 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    # hyprland my love
-    hyprland.url = "github:hyprwm/Hyprland";
-
     # my neovim-flake config
     nvf-config.url = "github:rice-cracker-dev/nvf-config";
 
@@ -15,9 +12,6 @@
 
     # swww
     swww.url = "github:LGFae/swww";
-
-    # walker
-    walker.url = "github:abenz1267/walker";
 
     # catppuccin-btop
     catppuccin-btop = {

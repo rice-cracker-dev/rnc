@@ -1,5 +1,5 @@
 {inputs, pkgs, ...}: let
-  uwsm = import "${inputs.self}/lib/uwsm";
+  uwsm = import "${inputs.self}/lib/uwsm.nix";
   shellPkg = inputs.mht-shell.packages.${pkgs.system}.default;
 in {
   wayland.windowManager.hyprland.settings.exec-once = [

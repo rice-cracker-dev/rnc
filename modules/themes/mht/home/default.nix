@@ -5,6 +5,7 @@
     ./gtk
     ./hyprland
     ./kitty
+    ./launcher
     ./qt
     ./wallpaper
   ];  

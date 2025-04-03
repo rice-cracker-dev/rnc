@@ -1,5 +1,6 @@
 {
   imports = [
-    ./walker
+    ./fuzzel
+    ./rofi
   ];
 }

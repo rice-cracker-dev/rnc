@@ -1,0 +1,3 @@
+{
+  fuzzel.enable = true;
+}

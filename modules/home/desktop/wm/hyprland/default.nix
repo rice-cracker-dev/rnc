@@ -1,6 +1,5 @@
-{inputs, pkgs, ...}: {
+{pkgs, ...}: {
   imports = [
-    inputs.hyprland.homeManagerModules.default
     ./animation.nix
     ./bind.nix
     ./input.nix

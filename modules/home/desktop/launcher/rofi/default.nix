@@ -1,10 +1,21 @@
-{pkgs, ...}: {
-  programs.rofi = {
-    enable = true;
-    package = pkgs.rofi-wayland;
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}: {
+  options.rofi = {
+    enable = lib.mkEnableOption "enable rofi";
   };
 
-  wayland.windowManager.hyprland.settings.bind = [
-    "super, d, exec, rofi -show drun -run-command \"uwsm app -- {cmd}\""
-  ];
+  config = lib.mkIf config.rofi.enable {
+    programs.rofi = {
+      enable = true;
+      package = pkgs.rofi-wayland;
+    };
+
+    wayland.windowManager.hyprland.settings.bind = [
+      "super, d, exec, rofi -show drun -run-command \"uwsm app -- {cmd}\""
+    ];
+  };
 }
