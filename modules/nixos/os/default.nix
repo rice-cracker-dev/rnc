@@ -10,6 +10,7 @@
     ./nh
     ./nix-ld
     ./pipewire
+    ./ssh
     ./timezone
     ./vpn
     ./wacom

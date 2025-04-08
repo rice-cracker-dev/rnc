@@ -1,5 +1,6 @@
 {
   imports = [
+    ./app
     ./dm
     ./qt
     ./steam
