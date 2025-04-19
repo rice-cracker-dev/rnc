@@ -7,6 +7,7 @@
     ./gvfs
     ./i18n
     ./locale
+    ./networking
     ./nh
     ./nix-ld
     ./pipewire
