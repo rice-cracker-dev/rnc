@@ -1,6 +1,6 @@
 {
   imports = [
-    ./docker
+    ./podman
     ./virt-manager
     ./waydroid
   ];
