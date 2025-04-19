@@ -4,6 +4,7 @@
     ./editor
     ./game
     ./git
+    ./hurl
     ./shell
   ];
 }
