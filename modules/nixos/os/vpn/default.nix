@@ -2,5 +2,6 @@
   imports = [
     ./mullvad
     ./warp
+    ./windscribe
   ];
 }
