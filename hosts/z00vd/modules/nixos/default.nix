@@ -1,6 +1,7 @@
 {
   imports = [
     ./boot
+    ./hjem
     ./networking
   ];
 }

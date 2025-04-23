@@ -112,6 +112,46 @@
         "type": "github"
       }
     },
+    "hjem": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1743956496,
+        "narHash": "sha256-LguszqsDBTtdBxblQTtN7vOAYmfoe43aHkB8aK1dChE=",
+        "owner": "feel-co",
+        "repo": "hjem",
+        "rev": "e3b63f300f23f2ffeb6efac046cf71b94352fed2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "feel-co",
+        "repo": "hjem",
+        "type": "github"
+      }
+    },
+    "hjem-rum": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1745357226,
+        "narHash": "sha256-A2heHPJ+e4LX0g+fEQaYvgdVuRzpBLE5amm+Z8wIhlA=",
+        "owner": "snugnug",
+        "repo": "hjem-rum",
+        "rev": "9189385df3b5cd62633dca9f4cf2f51d69ff8064",
+        "type": "github"
+      },
+      "original": {
+        "owner": "snugnug",
+        "repo": "hjem-rum",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -334,6 +374,8 @@
     "root": {
       "inputs": {
         "catppuccin-btop": "catppuccin-btop",
+        "hjem": "hjem",
+        "hjem-rum": "hjem-rum",
         "home-manager": "home-manager",
         "mht-shell": "mht-shell",
         "nixpkgs": "nixpkgs_2",

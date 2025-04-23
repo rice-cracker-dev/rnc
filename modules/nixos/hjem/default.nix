@@ -13,8 +13,9 @@ in {
   ];
 
   options.rum = mkOption {
+    type = attrsOf anything;
+    default = {};
     description = "shorthand for hjem.users.${username}.rum";
-    types = attrsOf anything;
   };
 
   config.hjem = {
