@@ -19,13 +19,6 @@
       flake = false;
     };
 
-    # home-manager
-    # TODO: remove this garbage
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     hjem = {
       url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";

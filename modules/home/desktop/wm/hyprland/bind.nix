@@ -1,4 +1,8 @@
-{lib, ...}: let
+{
+  lib,
+  username,
+  ...
+}: let
   workspaceBinds = builtins.concatMap (w: let
     ws = toString w;
   in [
@@ -6,7 +10,7 @@
     "super shift, ${ws}, movetoworkspace, ${ws}"
   ]) (lib.range 1 9);
 in {
-  config.rum.programs.hyprland.settings = {
+  hjem.users.${username}.rum.programs.hyprland.settings = {
     bind =
       [
         "super, m, exec, uwsm stop"

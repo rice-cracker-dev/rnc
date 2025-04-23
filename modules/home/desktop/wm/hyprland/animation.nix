@@ -1,5 +1,5 @@
-{
-  config.rum.programs.hyprland.settings = {
+{username, ...}: {
+  hjem.users.${username}.rum.programs.hyprland.settings = {
     bezier = [
       "woosh, 0.3, 1, 0.75, 1"
     ];

@@ -4,11 +4,11 @@
   ...
 }: {
   imports = [
-    ./hardware-configuration.nix
-    ./modules/nixos
     "${inputs.self}/modules/nix"
-    "${inputs.self}/modules/nixos"
+    "${inputs.self}/modules"
     "${inputs.self}/modules/themes/mht/nixos"
+    ./modules/nixos
+    ./hardware-configuration.nix
   ];
 
   users.users.${username} = {
