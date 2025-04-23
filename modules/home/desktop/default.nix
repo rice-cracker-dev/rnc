@@ -13,6 +13,5 @@
     ./screenshot
     ./term
     ./wallpaper
-    ./wm
   ];
 }

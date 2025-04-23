@@ -1,7 +1,4 @@
-{
-  lib,
-  ...
-}: let
+{lib, ...}: let
   workspaceBinds = builtins.concatMap (w: let
     ws = toString w;
   in [
@@ -9,7 +6,7 @@
     "super shift, ${ws}, movetoworkspace, ${ws}"
   ]) (lib.range 1 9);
 in {
-  wayland.windowManager.hyprland.settings = {
+  config.rum.programs.hyprland.settings = {
     bind =
       [
         "super, m, exec, uwsm stop"
@@ -26,8 +23,8 @@ in {
         "super ctrl, right, movewindow, r"
 
         "super, p, pin, active"
-        "super, v, togglefloating" 
-        "super, f, fullscreen" 
+        "super, v, togglefloating"
+        "super, f, fullscreen"
       ]
       ++ workspaceBinds;
 

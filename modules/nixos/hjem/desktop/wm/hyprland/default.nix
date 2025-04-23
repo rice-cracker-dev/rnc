@@ -6,10 +6,9 @@
     ./windowrule.nix
   ];
 
-  home.packages = [pkgs.brightnessctl];
+  environment.systemPackages = [pkgs.brightnessctl];
 
-  wayland.windowManager.hyprland = {
+  config.rum.programs.hyprland = {
     enable = true;
-    systemd.enable = false;
   };
 }

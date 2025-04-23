@@ -20,9 +20,23 @@
     };
 
     # home-manager
+    # TODO: remove this garbage
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # hjem
+    hjem = {
+      url = "github:feel-co/hjem";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # hjem-rum (alcoholic)
+    hjem-rum = {
+      url = "github:snugnug/hjem-rum";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hjem.follows = "hjem";
     };
   };
 

@@ -1,5 +1,5 @@
 {
-  wayland.windowManager.hyprland.settings = {
+  config.rum.programs.hyprland.settings = {
     windowrulev2 = [
       "fullscreen, class:^(Waydroid)$"
       "nodim, class:^(Waydroid)$"
