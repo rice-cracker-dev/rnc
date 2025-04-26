@@ -4,8 +4,7 @@
   ...
 }: {
   imports = [
-    "${inputs.self}/modules/nix"
-    "${inputs.self}/modules"
+    "${inputs.self}/modules/nixos"
     "${inputs.self}/modules/themes/mht/nixos"
     ./modules/nixos
     ./hardware-configuration.nix
@@ -24,8 +23,6 @@
       "adbusers"
     ];
   };
-
-  home-manager.users.${username} = import ./home.nix;
 
   system.stateVersion = "24.11";
 }
