@@ -4,6 +4,11 @@
     wl-clipboard
     brightnessctl
     brave
+    transmission
+    mpv
+    (discord.override {
+      withVencord = true;
+    })
 
     # fonts
     noto-fonts
