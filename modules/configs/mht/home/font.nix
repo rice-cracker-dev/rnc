@@ -1,5 +1,10 @@
-{pkgs, ...}: {
-  config.home.font = {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
+  config.home.font = lib.mkIf (config.configs == "mht") {
     packages = with pkgs; [
       jetbrains-mono
       noto-fonts

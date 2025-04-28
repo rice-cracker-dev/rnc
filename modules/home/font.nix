@@ -6,7 +6,7 @@
   inherit (lib) mkEnableOption mkIf mkOption map concatStringSep;
   inherit (lib.types) str package listOf;
 
-  cfg = config.home.fonts;
+  cfg = config.home.font;
 
   mkFont = {
     family,
@@ -62,7 +62,7 @@ in {
     emoji = mkFontOption "set font for emoji";
   };
 
-  config.home = mkIf cfg.enable {
+  config.me = mkIf cfg.enable {
     files.".config/fontconfig/conf.d".text = ''
       <?xml version="1.0"?>
       <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">

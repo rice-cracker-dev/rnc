@@ -3,5 +3,5 @@
   pkgs,
   ...
 }: {
-  config.home.packages = [inputs.nvf-config.packages.${pkgs.system}.default];
+  config.me.packages = [inputs.nvf-config.packages.${pkgs.system}.default];
 }

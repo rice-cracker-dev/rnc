@@ -1,13 +1,5 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
-  cfg = config.home;
-in {
-  config.home.files.".bashrc".text = ''
-    source ${cfg.environment.loadEnv}
-
+{pkgs, ...}: {
+  config.me.files.".bashrc".text = ''
     if uwsm check may-start && uwsm select; then
       exec uwsm start default
     fi

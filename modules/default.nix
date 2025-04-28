@@ -1,5 +1,6 @@
 {
   imports = [
+    ./configs
     ./desktop
     ./dev
     ./home

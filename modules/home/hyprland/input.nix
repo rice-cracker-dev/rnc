@@ -1,5 +1,5 @@
 {
-  config.home.rum.programs.hyprland.settings.input = {
+  config.me.rum.programs.hyprland.settings.input = {
     accel_profile = "flat";
   };
 }

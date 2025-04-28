@@ -25,7 +25,7 @@ in {
     };
   };
 
-  config.home = mkIf cfg.enable {
+  config.me = mkIf cfg.enable {
     packages = [pkgs.kitty];
 
     rum.programs.hyprland.settings.bind = [

@@ -1,6 +1,6 @@
 {pkgs, ...}: {
-  config.home.packages = with pkgs; [
-    kdePackages.dolphin
+  config.me.packages = with pkgs; [
+    # others
     wl-clipboard
     brightnessctl
     brave

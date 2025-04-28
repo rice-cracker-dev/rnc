@@ -1,7 +1,12 @@
-{inputs, ...}: let
+{
+  inputs,
+  lib,
+  config,
+  ...
+}: let
   themeConf = "${inputs.catppuccin-kitty}/themes/macchiato.conf";
 in {
-  config.home.kitty = {
+  config.home.kitty = lib.mkIf (config.configs == "mht") {
     enable = true;
 
     includes = [themeConf];

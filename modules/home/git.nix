@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  config.home = {
+  config.me = {
     packages = with pkgs; [gh lazygit];
 
     rum.programs.git = {

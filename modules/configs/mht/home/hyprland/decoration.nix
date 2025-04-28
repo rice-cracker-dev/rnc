@@ -1,5 +1,9 @@
 {
-  config.home.rum.programs.hyprland.settings.decoration = {
+  lib,
+  config,
+  ...
+}: {
+  config.me.rum.programs.hyprland.settings.decoration = lib.mkIf (config.configs == "mht") {
     rounding = 8;
 
     dim_inactive = false;

@@ -1,7 +1,7 @@
 {riceLib, ...}: let
   inherit (riceLib.uwsm) useUWSM;
 in {
-  config.home.rum.programs = {
+  config.me.rum.programs = {
     fuzzel = {
       enable = true;
       settings = {

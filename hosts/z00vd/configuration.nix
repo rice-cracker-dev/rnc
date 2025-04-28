@@ -9,8 +9,6 @@
     ./hardware-configuration.nix
   ];
 
-  configs = "mht";
-
   users.users.${username} = {
     isNormalUser = true;
     extraGroups = [

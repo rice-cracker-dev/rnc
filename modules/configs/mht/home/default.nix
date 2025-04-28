@@ -4,7 +4,7 @@
     ./astal.nix
     ./font.nix
     ./kitty.nix
-    ./swwww.nix
+    ./swww.nix
     ./theme.nix
   ];
 }

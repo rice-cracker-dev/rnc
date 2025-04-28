@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  config.home = {
+  config.me = {
     packages = [
       (pkgs.flameshot.override {
         enableWlrSupport = true;

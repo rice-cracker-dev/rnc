@@ -8,7 +8,7 @@
 in {
   imports = [
     inputs.hjem.nixosModules.default
-    (mkAliasOptionModule ["home"] ["hjem" "users" username])
+    (mkAliasOptionModule ["me"] ["hjem" "users" username])
   ];
 
   config.hjem = {

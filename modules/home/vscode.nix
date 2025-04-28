@@ -1,3 +1,3 @@
 {
-  config.home.rum.programs.vscode.enable = true;
+  config.me.rum.programs.vscode.enable = true;
 }

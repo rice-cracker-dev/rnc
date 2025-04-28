@@ -4,19 +4,21 @@
   ...
 }: let
   inherit (lib) mkOption mkIf;
-  inherit (lib.type) package str nullOr submodule;
+  inherit (lib.types) package str nullOr submodule;
 
   cfg = config.home.theme;
 
   iconThemeType = submodule {
-    name = mkOption {
-      type = str;
-      description = "the name of the icon theme";
-    };
+    options = {
+      name = mkOption {
+        type = str;
+        description = "the name of the icon theme";
+      };
 
-    package = mkOption {
-      type = package;
-      description = "the icon theme package";
+      package = mkOption {
+        type = package;
+        description = "the icon theme package";
+      };
     };
   };
 in {
@@ -25,13 +27,10 @@ in {
     default = null;
   };
 
-  config.home =
-    mkIf cfg.enable
-    && cfg.iconTheme
-    != null {
-      rum.gtk = {
-        package = [cfg.iconTheme.package];
-        settings.icon-theme-name = cfg.iconTheme.name;
-      };
+  config.me = mkIf (cfg.enable && cfg.iconTheme != null) {
+    rum.gtk = {
+      packages = [cfg.iconTheme.package];
+      settings.icon-theme-name = cfg.iconTheme.name;
     };
+  };
 }

@@ -7,23 +7,35 @@
 }: let
   inherit (lib) mkOption mkEnableOption mkIf;
   inherit (lib.types) attrsOf nullOr anything submodule str package;
-  inherit (lib.attrsets) recursiveUpdate;
+  inherit (lib.attrsets) recursiveUpdate optionalAttrs;
   inherit (riceLib.kvantum) toKvantumConf;
 
   cfg = config.home.theme;
 
   themeType = submodule {
-    name = mkOption {
-      type = str;
-      description = "kvantum theme name";
-    };
-    package = mkOption {
-      type = package;
-      description = "kvantum theme package";
+    options = {
+      name = mkOption {
+        type = str;
+        description = "kvantum theme name";
+      };
+      package = mkOption {
+        type = package;
+        description = "kvantum theme package";
+      };
     };
   };
 
   themePath = theme: "${theme.package}/share/Kvantum/${theme.name}";
+
+  conf =
+    recursiveUpdate (
+      optionalAttrs (cfg.kvantum.theme != null) {
+        General = {
+          theme = cfg.kvantum.theme.name;
+        };
+      }
+    )
+    cfg.kvantum.extraSettings;
 in {
   options.home.theme.kvantum = {
     enable = mkEnableOption "enable home kvantum theme configuration";
@@ -40,28 +52,22 @@ in {
     };
   };
 
-  config.home = mkIf (cfg.enable && cfg.kvantum.enable) {
-    packages = with pkgs; [
-      kdePackages.qqc2-desktop-style
-      qt6.qtwayland
-      qt6.qtsvg
-      libsForQt5.qtstyleplugin-kvantum
-      qt6Packages.qtstyleplugin-kvantum
-    ];
+  config = mkIf (cfg.enable && cfg.kvantum.enable) {
+    me = {
+      packages = with pkgs; [
+        kdePackages.qqc2-desktop-style
+        qt6.qtwayland
+        qt6.qtsvg
+        libsForQt5.qtstyleplugin-kvantum
+        qt6Packages.qtstyleplugin-kvantum
+      ];
 
-    theme.kvantum.settings =
-      recursiveUpdate {
-        General = {
-          theme = mkIf cfg.kvantum.theme != null cfg.kvantum.theme.name;
-        };
-      }
-      cfg.kvantum.extraSettings;
-
-    files = {
-      ".config/Kvantum/kvantum.kvconfig".text = toKvantumConf cfg.kvantum.settings;
-      ".config/Kvantum/${cfg.kvantum.theme.name}".source = mkIf cfg.kvantum.theme != null (themePath cfg.kvantum.theme);
+      files = {
+        ".config/Kvantum/kvantum.kvconfig".text = "${toKvantumConf conf}";
+        ".config/Kvantum/${cfg.kvantum.theme.name}".source = mkIf (cfg.kvantum.theme != null) (themePath cfg.kvantum.theme);
+      };
     };
 
-    uwsm.env.QT_STYLE_OVERRIDE = "kvantum";
+    home.uwsm.env.QT_STYLE_OVERRIDE = "kvantum";
   };
 }

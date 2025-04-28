@@ -1,5 +1,10 @@
-{pkgs, ...}: {
-  config.home.theme = {
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
+  config.home.theme = lib.mkIf (config.configs == "mht") {
     enable = true;
 
     gtk = {

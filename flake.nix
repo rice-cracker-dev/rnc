@@ -32,7 +32,7 @@
     username = "khoa";
     riceLib = import ./lib nixpkgs.lib;
   in {
-    lib = riceLib;
+    lib = nixpkgs.lib // riceLib;
 
     nixosConfigurations = {
       z00vd = nixpkgs.lib.nixosSystem {

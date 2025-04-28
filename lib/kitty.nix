@@ -5,7 +5,7 @@ lib: let
 
   toKittyConf = attrs:
     concatStringsSep "\n" (
-      mapAttrsToList (name: value: "${name} ${value}") attrs
+      mapAttrsToList (name: value: "${name} ${builtins.toString value}") attrs
     );
 
   toKittyIncludes = includes:

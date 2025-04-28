@@ -1,11 +1,12 @@
 {
   imports = [
     ./hyprland
+    ./kde
     ./shell
     ./theme
     ./common.nix
     ./flameshot.nix
-    ./fontconfig.nix
+    ./font.nix
     ./fuzzel.nix
     ./git.nix
     ./home.nix

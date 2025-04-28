@@ -11,18 +11,20 @@
   cfg = config.home.theme;
 
   themeType = submodule {
-    name = mkOption {
-      type = str;
-      description = "gtk theme name";
-    };
+    options = {
+      name = mkOption {
+        type = str;
+        description = "gtk theme name";
+      };
 
-    package = mkOption {
-      type = package;
-      description = "gtk theme package";
+      package = mkOption {
+        type = package;
+        description = "gtk theme package";
+      };
     };
   };
 in {
-  options.theme.gtk = {
+  options.home.theme.gtk = {
     enable = mkEnableOption "enable home gtk theme configuration";
 
     theme = mkOption {
@@ -37,14 +39,14 @@ in {
     };
   };
 
-  config.home.rum.gtk = mkIf (cfg.enable && cfg.gtk.enable) {
+  config.me.rum.gtk = mkIf (cfg.enable && cfg.gtk.enable) {
     enable = true;
 
-    packages = mkIf cfg.gtk.theme != null [cfg.gtk.theme.package];
+    packages = mkIf (cfg.gtk.theme != null) [cfg.gtk.theme.package];
 
     settings =
       {
-        theme-name = mkIf cfg.gtk.theme != null cfg.gtk.theme.name;
+        theme-name = mkIf (cfg.gtk.theme != null) cfg.gtk.theme.name;
       }
       // cfg.gtk.extraSettings;
   };
