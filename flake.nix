@@ -3,19 +3,17 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    # my neovim-flake config
     nvf-config.url = "github:rice-cracker-dev/nvf-config";
-
-    # shells
     mht-shell.url = "github:rice-cracker-dev/mht-shell";
-
-    # swww
     swww.url = "github:LGFae/swww";
 
-    # catppuccin-btop
     catppuccin-btop = {
       url = "github:catppuccin/btop";
+      flake = false;
+    };
+
+    catppuccin-kitty = {
+      url = "github:catppuccin/kitty";
       flake = false;
     };
 
@@ -32,10 +30,13 @@
 
   outputs = {nixpkgs, ...} @ inputs: let
     username = "khoa";
+    riceLib = import ./lib nixpkgs.lib;
   in {
+    lib = riceLib;
+
     nixosConfigurations = {
       z00vd = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs username;};
+        specialArgs = {inherit inputs username riceLib;};
         modules = [
           ./hosts/z00vd/configuration.nix
         ];
