@@ -60,6 +60,22 @@
         "type": "github"
       }
     },
+    "catppuccin-kitty": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1731214416,
+        "narHash": "sha256-59ON7CzVgfZUo7F81qQZQ1r6kpcjR3OPvTl99gzDP8E=",
+        "owner": "catppuccin",
+        "repo": "kitty",
+        "rev": "b14e8385c827f2d41660b71c7fec1e92bdcf2676",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "kitty",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -112,23 +128,43 @@
         "type": "github"
       }
     },
-    "home-manager": {
+    "hjem": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1745703610,
-        "narHash": "sha256-KgaGPlmjJItZ+Xf8mSoRmrsso+sf3K54n9oIP9Q17LY=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "2f5819a962489e037a57835f63ed6ff8dbc2d5fb",
+        "lastModified": 1743956496,
+        "narHash": "sha256-LguszqsDBTtdBxblQTtN7vOAYmfoe43aHkB8aK1dChE=",
+        "owner": "feel-co",
+        "repo": "hjem",
+        "rev": "e3b63f300f23f2ffeb6efac046cf71b94352fed2",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
-        "repo": "home-manager",
+        "owner": "feel-co",
+        "repo": "hjem",
+        "type": "github"
+      }
+    },
+    "hjem-rum": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1745357226,
+        "narHash": "sha256-A2heHPJ+e4LX0g+fEQaYvgdVuRzpBLE5amm+Z8wIhlA=",
+        "owner": "snugnug",
+        "repo": "hjem-rum",
+        "rev": "9189385df3b5cd62633dca9f4cf2f51d69ff8064",
+        "type": "github"
+      },
+      "original": {
+        "owner": "snugnug",
+        "repo": "hjem-rum",
         "type": "github"
       }
     },
@@ -334,7 +370,9 @@
     "root": {
       "inputs": {
         "catppuccin-btop": "catppuccin-btop",
-        "home-manager": "home-manager",
+        "catppuccin-kitty": "catppuccin-kitty",
+        "hjem": "hjem",
+        "hjem-rum": "hjem-rum",
         "mht-shell": "mht-shell",
         "nixpkgs": "nixpkgs_2",
         "nvf-config": "nvf-config",

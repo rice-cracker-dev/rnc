@@ -1,0 +1,21 @@
+{
+  imports = [
+    ./archive
+    ./bluetooth
+    ./console
+    ./flatpak
+    ./gvfs
+    ./i18n
+    ./locale
+    ./networking
+    ./nh
+    ./nix
+    ./nix-ld
+    ./pipewire
+    ./ssh
+    ./timezone
+    ./vpn
+    ./wacom
+    ./x11
+  ];
+}

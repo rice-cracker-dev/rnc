@@ -1,7 +1,19 @@
 {
   imports = [
-    ./desktop
-    ./dev
-    ./os
+    ./hyprland
+    ./kde
+    ./shell
+    ./theme
+    ./common.nix
+    ./flameshot.nix
+    ./font.nix
+    ./fuzzel.nix
+    ./git.nix
+    ./home.nix
+    ./kitty.nix
+    ./neovim.nix
+    ./swww.nix
+    ./uwsm.nix
+    ./vscode.nix
   ];
 }

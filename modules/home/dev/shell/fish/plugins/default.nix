@@ -1,5 +1,0 @@
-{
-  imports = [
-    ./fzf-fish.nix
-  ];
-}

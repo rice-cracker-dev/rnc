@@ -1,6 +1,0 @@
-{
-  imports = [
-    ./geforce-now
-    ./minecraft
-  ];
-}
