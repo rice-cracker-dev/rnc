@@ -1,20 +1,18 @@
 {
   imports = [
     ./hyprland
-    ./bash.nix
+    ./shell
+    ./theme
     ./common.nix
-    ./cursor.nix
-    ./fish.nix
     ./flameshot.nix
     ./fontconfig.nix
     ./fuzzel.nix
     ./git.nix
-    ./gtk.nix
     ./home.nix
     ./kitty.nix
     ./neovim.nix
-    ./shell.nix
     ./swww.nix
+    ./uwsm.nix
     ./vscode.nix
   ];
 }

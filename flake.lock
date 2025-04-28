@@ -60,6 +60,22 @@
         "type": "github"
       }
     },
+    "catppuccin-kitty": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1731214416,
+        "narHash": "sha256-59ON7CzVgfZUo7F81qQZQ1r6kpcjR3OPvTl99gzDP8E=",
+        "owner": "catppuccin",
+        "repo": "kitty",
+        "rev": "b14e8385c827f2d41660b71c7fec1e92bdcf2676",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "kitty",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -354,6 +370,7 @@
     "root": {
       "inputs": {
         "catppuccin-btop": "catppuccin-btop",
+        "catppuccin-kitty": "catppuccin-kitty",
         "hjem": "hjem",
         "hjem-rum": "hjem-rum",
         "mht-shell": "mht-shell",
