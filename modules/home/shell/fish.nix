@@ -6,7 +6,6 @@
       set fish_greeting
 
       alias cat="${pkgs.bat}/bin/bat"
-      alias ls="${pkgs.fd}/bin/fd"
 
       ${pkgs.zoxide}/bin/zoxide init fish --cmd cd | source
     '';

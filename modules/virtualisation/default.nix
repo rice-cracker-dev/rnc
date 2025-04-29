@@ -1,7 +1,7 @@
 {
   imports = [
-    ./docker
-    ./virt-manager
-    ./waydroid
+    ./docker.nix
+    ./virt-manager.nix
+    ./waydroid.nix
   ];
 }

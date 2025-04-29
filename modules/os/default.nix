@@ -1,21 +1,21 @@
 {
   imports = [
-    ./archive
-    ./bluetooth
-    ./console
-    ./flatpak
-    ./gvfs
-    ./i18n
-    ./locale
-    ./networking
-    ./nh
-    ./nix
-    ./nix-ld
-    ./pipewire
-    ./ssh
-    ./timezone
-    ./vpn
-    ./wacom
-    ./x11
+    ./archive.nix
+    ./bluetooth.nix
+    ./console.nix
+    ./flatpak.nix
+    ./gvfs.nix
+    ./i18n.nix
+    ./locale.nix
+    ./networking.nix
+    ./nh.nix
+    ./nix.nix
+    ./nix-ld.nix
+    ./pipewire.nix
+    ./ssh.nix
+    ./timezone.nix
+    ./vpn.nix
+    ./wacom.nix
+    ./x11.nix
   ];
 }
