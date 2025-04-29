@@ -18,6 +18,6 @@ in {
   };
 
   config.me.files.".config/uwsm/env".text = concatStringsSep "\n" (
-    mapAttrsToList (name: value: "export ${name}=${value}") cfg.env
+    mapAttrsToList (name: value: "export ${name}=${toString value}") cfg.env
   );
 }

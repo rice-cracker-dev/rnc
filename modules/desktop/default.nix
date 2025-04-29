@@ -1,10 +1,10 @@
 {
   imports = [
-    ./app
-    ./qt
-    ./steam
-    ./uwsm
-    ./wm
-    ./x11
+    ./hyprland.nix
+    ./localsend.nix
+    ./qt.nix
+    ./steam.nix
+    ./uwsm.nix
+    ./x11.nix
   ];
 }
