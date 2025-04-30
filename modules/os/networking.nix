@@ -1,6 +1,11 @@
 {
-  imports = [./firewall.nix];
+  networking = {
+    enableIPv6 = false;
+    networkmanager.enable = true;
 
-  networking.enableIPv6 = false;
-  networking.networkmanager.enable = true;
+    firewall = {
+      allowedTCPPorts = [4983];
+      checkReversePath = false;
+    };
+  };
 }

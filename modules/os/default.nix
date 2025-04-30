@@ -6,7 +6,7 @@
     ./flatpak.nix
     ./gvfs.nix
     ./i18n.nix
-    ./locale.nix
+    ./mullvad.nix
     ./networking.nix
     ./nh.nix
     ./nix.nix
@@ -14,7 +14,6 @@
     ./pipewire.nix
     ./ssh.nix
     ./timezone.nix
-    ./vpn.nix
     ./wacom.nix
     ./x11.nix
   ];

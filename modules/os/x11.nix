@@ -1,3 +1,2 @@
 {
-  imports = [./xkd.nix];
 }

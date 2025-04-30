@@ -1,7 +1,7 @@
 {
   imports = [
     ./hyprland
-    ./astal.nix
+    ./quickshell
     ./font.nix
     ./kitty.nix
     ./swww.nix
