@@ -7,7 +7,7 @@
 }: let
   inherit (lib) mkOption mkEnableOption mkIf;
   inherit (lib.types) path nullOr;
-  inherit (riceLib.uwsm) useUWSM;
+  inherit (riceLib.generators) toUWSM;
 
   cfg = config.home.swww;
 in {
@@ -25,7 +25,7 @@ in {
     packages = [pkgs.swww];
 
     rum.programs.hyprland.settings.exec-once = mkIf (cfg.wallpaperPath != null) [
-      (useUWSM "swww-daemon --no-cache & sleep 1 && swww img ${cfg.wallpaperPath}")
+      (toUWSM "swww-daemon --no-cache & sleep 1 && swww img ${cfg.wallpaperPath}")
     ];
   };
 }

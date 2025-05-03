@@ -6,21 +6,17 @@
   ...
 }: let
   inherit (lib) mkEnableOption mkOption mkIf;
-  inherit (lib.types) attrsOf anything path listOf;
-  inherit (riceLib.kitty) toKittyConf toKittyIncludes;
+  inherit (lib.types) attrsOf;
+  inherit (riceLib.types) oneOf listOf confType;
+  inherit (riceLib.generators) toKittyConf;
 
   cfg = config.home.kitty;
 in {
   options.home.kitty = {
     enable = mkEnableOption "home kitty configuration";
 
-    includes = mkOption {
-      type = listOf path;
-      default = [];
-    };
-
     settings = mkOption {
-      type = attrsOf anything;
+      type = attrsOf (oneOf [(listOf confType) confType]);
       default = {};
     };
   };
@@ -32,9 +28,6 @@ in {
       "super, return, exec, kitty"
     ];
 
-    files.".config/kitty/kitty.conf".text = ''
-      ${toKittyIncludes cfg.includes}
-      ${toKittyConf cfg.settings}
-    '';
+    files.".config/kitty/kitty.conf".text = toKittyConf cfg.settings;
   };
 }

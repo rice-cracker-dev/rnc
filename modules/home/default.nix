@@ -2,7 +2,6 @@
   imports = [
     ./hyprland
     ./kde
-    ./shell
     ./theme
     ./common.nix
     ./flameshot.nix

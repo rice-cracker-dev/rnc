@@ -4,7 +4,7 @@
     wl-clipboard
     brightnessctl
     brave
-    transmission
+    transmission_4
     mpv
     (discord.override {
       withVencord = true;

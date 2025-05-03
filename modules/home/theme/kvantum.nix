@@ -6,9 +6,10 @@
   ...
 }: let
   inherit (lib) mkOption mkEnableOption mkIf;
-  inherit (lib.types) attrsOf nullOr anything submodule str package;
+  inherit (lib.types) attrsOf nullOr submodule str package;
   inherit (lib.attrsets) recursiveUpdate optionalAttrs;
-  inherit (riceLib.kvantum) toKvantumConf;
+  inherit (riceLib.generators) toKvantumConf;
+  inherit (riceLib.types) confType;
 
   cfg = config.home.theme;
 
@@ -46,7 +47,7 @@ in {
     };
 
     extraSettings = mkOption {
-      type = attrsOf (attrsOf anything);
+      type = attrsOf (attrsOf confType);
       default = {};
       description = "extra kvantum configuration";
     };

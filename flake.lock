@@ -373,17 +373,37 @@
         "nvf": "nvf"
       },
       "locked": {
-        "lastModified": 1746007738,
-        "narHash": "sha256-/7bQFqhis/B1b3dQvu2CLjIBPz2RZkHKOtLfP38DYNw=",
+        "lastModified": 1746107576,
+        "narHash": "sha256-nPV1gsricZK4cun2MAycqI4+yXLRE7SsHMfjzavPD4s=",
         "owner": "rice-cracker-dev",
         "repo": "nvf-config",
-        "rev": "126bbe15cfc14dd6789628286bb7ef3ea3589971",
+        "rev": "b15a131e32bebcdb6967325b528a695242c74659",
         "type": "github"
       },
       "original": {
         "owner": "rice-cracker-dev",
         "repo": "nvf-config",
         "type": "github"
+      }
+    },
+    "quickshell": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1745709547,
+        "narHash": "sha256-xfP/NVZomh+L2ka0omPkhA9mB+4PJXGPMCv/bh+G4YA=",
+        "ref": "refs/heads/master",
+        "rev": "67524f9d8e4ac5e09ea4427e11f2284e6a6f93fe",
+        "revCount": 506,
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
       }
     },
     "root": {
@@ -395,6 +415,7 @@
         "mht-shell": "mht-shell",
         "nixpkgs": "nixpkgs_2",
         "nvf-config": "nvf-config",
+        "quickshell": "quickshell",
         "swww": "swww"
       }
     },

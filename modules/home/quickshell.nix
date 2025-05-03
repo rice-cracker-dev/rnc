@@ -21,7 +21,7 @@ in {
   };
 
   config.me = mkIf cfg.enable {
-    packages = [quickshellPkg];
+    packages = with pkgs; [quickshellPkg kdePackages.kirigami];
 
     files.".config/quickshell".source = cfg.configDir;
 

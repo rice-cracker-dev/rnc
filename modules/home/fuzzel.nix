@@ -1,5 +1,5 @@
 {riceLib, ...}: let
-  inherit (riceLib.uwsm) useUWSM;
+  inherit (riceLib.generators) toUWSM;
 in {
   config.me.rum.programs = {
     fuzzel = {
@@ -10,7 +10,7 @@ in {
     };
 
     hyprland.settings.bind = [
-      "super, d, exec, ${useUWSM "fuzzel"}"
+      "super, d, exec, ${toUWSM "fuzzel"}"
     ];
   };
 }
