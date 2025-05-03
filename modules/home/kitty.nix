@@ -6,8 +6,8 @@
   ...
 }: let
   inherit (lib) mkEnableOption mkOption mkIf;
-  inherit (lib.types) attrsOf;
-  inherit (riceLib.types) oneOf listOf confType;
+  inherit (lib.types) oneOf listOf attrsOf;
+  inherit (riceLib.types) confType;
   inherit (riceLib.generators) toKittyConf;
 
   cfg = config.home.kitty;
