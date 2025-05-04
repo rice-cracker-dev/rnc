@@ -6,14 +6,24 @@
   ...
 }: let
   inherit (lib) mkEnableOption mkOption mkIf;
-  inherit (lib.types) oneOf listOf attrsOf;
+  inherit (lib.types) oneOf listOf attrsOf nullOr path;
   inherit (riceLib.types) confType;
   inherit (riceLib.generators) toKittyConf;
 
   cfg = config.home.kitty;
+
+  themeFile =
+    if cfg.themeFile != null
+    then "include ${cfg.themeFile}"
+    else "";
 in {
   options.home.kitty = {
     enable = mkEnableOption "home kitty configuration";
+
+    themeFile = mkOption {
+      type = nullOr path;
+      default = null;
+    };
 
     settings = mkOption {
       type = attrsOf (oneOf [(listOf confType) confType]);
@@ -28,6 +38,9 @@ in {
       "super, return, exec, kitty"
     ];
 
-    files.".config/kitty/kitty.conf".text = toKittyConf cfg.settings;
+    files.".config/kitty/kitty.conf".text = mkIf (cfg.settings != {} || cfg.themeFile != null) ''
+      ${themeFile}
+      ${toKittyConf cfg.settings}
+    '';
   };
 }

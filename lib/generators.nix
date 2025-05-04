@@ -1,7 +1,8 @@
 lib: let
+  inherit (lib) isBool;
   inherit (lib.lists) map isList flatten;
   inherit (lib.attrsets) mapAttrsToList;
-  inherit (lib.strings) concatStringsSep;
+  inherit (lib.strings) concatStringsSep isString;
 
   toKittyProperty = name: value: "${name} ${toString value}";
 
@@ -27,6 +28,26 @@ lib: let
     );
 
   toUWSM = exec: "uwsm app -- ${exec}";
+
+  toBtopValue = value:
+    if (isString value)
+    then "\"${value}\""
+    else if isBool
+    then
+      (
+        if value
+        then "True"
+        else "False"
+      )
+    else (toString value);
+
+  toBtopConf = attrs:
+    concatStringsSep "\n" (
+      mapAttrsToList (
+        name: value: "${name} = ${toBtopValue value}"
+      )
+      attrs
+    );
 in {
-  inherit toKittyProperty toKittyConf toKvantumProperty toKvantumConf toUWSM;
+  inherit toKittyProperty toKittyConf toKvantumProperty toKvantumConf toUWSM toBtopValue toBtopConf;
 }

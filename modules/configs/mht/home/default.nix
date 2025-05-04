@@ -2,6 +2,7 @@
   imports = [
     ./hyprland
     ./quickshell
+    ./btop.nix
     ./font.nix
     ./kitty.nix
     ./swww.nix

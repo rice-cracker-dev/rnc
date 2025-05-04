@@ -3,6 +3,7 @@
     ./hyprland
     ./kde
     ./theme
+    ./btop.nix
     ./common.nix
     ./flameshot.nix
     ./font.nix

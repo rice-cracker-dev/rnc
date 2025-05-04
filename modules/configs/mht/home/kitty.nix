@@ -9,9 +9,9 @@ in {
   config.home.kitty = lib.mkIf (config.configs == "mht") {
     enable = true;
 
-    settings = {
-      include = [themeConf];
+    themeFile = themeConf;
 
+    settings = {
       background = "#000000";
       background_opacity = 0.75;
     };

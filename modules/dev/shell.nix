@@ -1,14 +1,10 @@
 {pkgs, ...}: {
+  environment.systemPackages = with pkgs; [fd fzf ripgrep eza diskus libqalculate jq];
+
   programs = {
     command-not-found.enable = false;
 
     bash = {
-      enable = true;
-
-      shellAliases = {
-        cat = "${pkgs.bat}/bin/bat";
-      };
-
       interactiveShellInit = ''
         if uwsm check may-start && uwsm select; then
           exec uwsm start default
@@ -25,6 +21,11 @@
     fish = {
       enable = true;
 
+      shellAliases = {
+        cat = "${pkgs.bat}/bin/bat";
+        ls = "${pkgs.eza}/bin/eza";
+      };
+
       shellInit = ''
         set fish_greeting
       '';
@@ -33,6 +34,7 @@
     zoxide = {
       enable = true;
       enableFishIntegration = true;
+      flags = ["--cmd cd"];
     };
 
     bat = {
