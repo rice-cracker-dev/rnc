@@ -1,4 +1,5 @@
 {
+  pkgs,
   lib,
   riceLib,
   config,
@@ -26,20 +27,21 @@ in {
     };
   };
 
-  config = mkIf cfg.enable {
-    home.files =
+  config.me = mkIf cfg.enable {
+    packages = [pkgs.btop];
+
+    files =
       {
         ".config/btop/btop.conf".text = mkIf (cfg.settings != {}) (toBtopConf cfg.settings);
       }
       // mapAttrs' (name: value: let
         themePath = ".config/btop/themes";
         result =
-          if (isString value)
-          then {source = /. + value;}
-          else if (isPath value)
+          if (isString value) || (isPath value)
           then {source = value;}
           else {text = toBtopConf value;};
       in
-        nameValuePair "${themePath}/${name}.theme" result);
+        nameValuePair "${themePath}/${name}.theme" result)
+      cfg.themes;
   };
 }

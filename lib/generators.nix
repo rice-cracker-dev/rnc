@@ -32,7 +32,7 @@ lib: let
   toBtopValue = value:
     if (isString value)
     then "\"${value}\""
-    else if isBool
+    else if (isBool value)
     then
       (
         if value

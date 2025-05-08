@@ -3,11 +3,14 @@
     # others
     wl-clipboard
     brightnessctl
-    brave
-    transmission_4
+    transmission_4-qt
     mpv
+    telegram-desktop
     (discord.override {
       withVencord = true;
+    })
+    (brave.override {
+      commandLineArgs = "--password-store=gnome-libsecret";
     })
 
     # fonts
@@ -19,6 +22,7 @@
 
     # games
     prismlauncher
+    lunar-client
 
     # tools
     hurl
