@@ -5,12 +5,10 @@
     brightnessctl
     transmission_4-qt
     mpv
-    telegram-desktop
-    (discord.override {
-      withVencord = true;
-    })
+    legcord
+    nheko
     (brave.override {
-      commandLineArgs = "--password-store=gnome-libsecret";
+      commandLineArgs = "--password-store=gnome";
     })
 
     # fonts

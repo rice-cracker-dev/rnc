@@ -33,7 +33,7 @@ in {
   };
 
   config = mkIf (cfg.enable && cfg.cursor != null) {
-    me.rum.gtk = {
+    me.rum.misc.gtk = {
       packages = [cfg.cursor.package];
 
       settings = {

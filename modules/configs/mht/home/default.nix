@@ -7,5 +7,6 @@
     ./kitty.nix
     ./swww.nix
     ./theme.nix
+    ./uwsm.nix
   ];
 }

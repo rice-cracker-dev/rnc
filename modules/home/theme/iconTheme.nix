@@ -28,7 +28,7 @@ in {
   };
 
   config.me = mkIf (cfg.enable && cfg.iconTheme != null) {
-    rum.gtk = {
+    rum.misc.gtk = {
       packages = [cfg.iconTheme.package];
       settings.icon-theme-name = cfg.iconTheme.name;
     };

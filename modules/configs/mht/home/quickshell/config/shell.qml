@@ -1,6 +1,6 @@
 import Quickshell
 import QtQuick
-import "./window"
+import "./windows"
 
 ShellRoot {
   Variants {
@@ -11,9 +11,6 @@ ShellRoot {
       property var modelData
 
       MainBar {
-        screen: scopeRoot.modelData
-      }
-      ActivateLinux {
         screen: scopeRoot.modelData
       }
     }

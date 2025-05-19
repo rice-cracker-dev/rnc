@@ -4,12 +4,12 @@
   config,
   ...
 }: let
-  themeConf = "${inputs.catppuccin-kitty}/themes/macchiato.conf";
+  themeFile = "${inputs.catppuccin-kitty}/themes/macchiato.conf";
 in {
   config.home.kitty = lib.mkIf (config.configs == "mht") {
     enable = true;
 
-    themeFile = themeConf;
+    inherit themeFile;
 
     settings = {
       background = "#000000";

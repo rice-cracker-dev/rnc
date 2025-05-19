@@ -3,7 +3,7 @@
   config,
   ...
 }: let
-  inherit (lib) mkOption concatStringsSep;
+  inherit (lib) mkOption concatStringsSep mkIf;
   inherit (lib.types) anything attrsOf;
   inherit (lib.attrsets) mapAttrsToList;
 
@@ -17,7 +17,7 @@ in {
     };
   };
 
-  config.me.files.".config/uwsm/env".text = concatStringsSep "\n" (
+  config.me.files.".config/uwsm/env".text = mkIf (cfg.env != {}) (concatStringsSep "\n" (
     mapAttrsToList (name: value: "export ${name}=${toString value}") cfg.env
-  );
+  ));
 }
