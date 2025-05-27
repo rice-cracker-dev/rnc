@@ -22,7 +22,6 @@ Item {
   MultiEffect {
     source: icon
     anchors.fill: icon
-    brightness: 1
     colorization: 1
     colorizationColor: main.color
     visible: main.colorEnabled

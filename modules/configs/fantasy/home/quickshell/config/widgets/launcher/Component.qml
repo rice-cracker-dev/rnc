@@ -1,6 +1,5 @@
 pragma ComponentBehavior: Bound
 import QtQuick
-import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import Quickshell
@@ -30,8 +29,11 @@ LazyLoader {
       implicitWidth: 600
 
       background: BorderImage {
-        source: Qt.resolvedUrl("../../assets/tiles/frame_x2.png")
-        borderSize: 12
+        source: Qt.resolvedUrl("../../assets/tiles/frame.png")
+        borderSource: Qt.resolvedUrl("../../assets/tiles/frame_border.png")
+        color: Theme.background
+        borderColor: Theme.outline_variant
+        borderSize: 4
       }
 
       contentItem: ColumnLayout {
@@ -60,6 +62,10 @@ LazyLoader {
               if (itemList.currentItem) {
                 itemList.currentItem.clicked(null);
               }
+            }
+
+            onTextChanged: {
+              CalcService.calculateExpression(text);
             }
           }
         }
@@ -91,12 +97,19 @@ LazyLoader {
           }
 
           highlight: BorderImage {
-            source: Qt.resolvedUrl("../../assets/tiles/container_2x.png")
+            source: Qt.resolvedUrl("../../assets/tiles/select.png")
+            borderSource: Qt.resolvedUrl("../../assets/tiles/select_border.png")
+            color: Theme.surface_container
+            borderColor: Theme.outline_variant
             borderSize: 6
           }
 
           model: ScriptModel {
             values: {
+              if (inputField.text.trim() === "") {
+                return [];
+              }
+
               const apps = Fuzzysort.go(inputField.text, DesktopEntries.applications.values, {
                 key: 'name'
               }).map(app => ({
@@ -126,6 +139,20 @@ LazyLoader {
                 };
               });
 
+              const calc = CalcService.code !== 0 ? null : {
+                group: 'Calculation',
+                title: CalcService.result,
+                description: "Copy to clipboard",
+                icon: {
+                  type: 'icon',
+                  source: Qt.resolvedUrl("../../assets/calculator-symbolic.svg"),
+                  symbolic: true
+                },
+                execute: () => {
+                  Quickshell.clipboardText = CalcService.result;
+                }
+              };
+
               const runCommand = inputField.text.trim() === "" ? null : {
                 group: 'Command',
                 title: inputField.text,
@@ -135,10 +162,10 @@ LazyLoader {
                   source: Qt.resolvedUrl("../../assets/console-symbolic.svg"),
                   symbolic: true
                 },
-                execute: () => LauncherService.runCommand(["kitty", inputField.text])
+                execute: () => LauncherService.runCommand(["kitty", "--", ...inputField.text.split(" ")])
               };
 
-              return [...apps, ...emojis, runCommand].filter(e => e !== null);
+              return [...apps, ...emojis, runCommand, calc].filter(e => e !== null);
             }
             onValuesChanged: {
               itemList.currentIndex = 0;
@@ -148,13 +175,19 @@ LazyLoader {
           delegate: MouseArea {
             id: item
             required property var modelData
+            required property int index
 
             implicitWidth: ListView.view.width
             implicitHeight: childrenRect.height
+            hoverEnabled: true
 
             onClicked: {
               modelData.execute();
               LauncherService.open = false;
+            }
+
+            onEntered: {
+              itemList.currentIndex = index;
             }
 
             WrapperItem {
@@ -172,15 +205,15 @@ LazyLoader {
                   implicitHeight: 20
 
                   Icon {
-                    icon: item.modelData.icon.source ?? ""
+                    icon: item.modelData.icon?.source ?? ""
                     size: parent.height
-                    colorEnabled: item.modelData.icon.symbolic
+                    colorEnabled: !!item.modelData.icon?.symbolic
                     color: itemTitle.color
                     visible: item.modelData.icon.type === 'icon'
                   }
 
                   Text {
-                    text: item.modelData.icon.text ?? ""
+                    text: item.modelData.icon?.text ?? ""
                     font.pixelSize: parent.height
                     color: itemTitle.color
                     visible: item.modelData.icon.type === 'text'

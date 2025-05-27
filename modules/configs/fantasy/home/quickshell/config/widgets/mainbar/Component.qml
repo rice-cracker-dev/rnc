@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Layouts
 import Quickshell
 import "root:"
 import "root:/components"
@@ -28,22 +29,63 @@ Variants {
       color: "transparent"
       implicitWidth: 48
 
-      BorderImage {
+      ColumnLayout {
         anchors.fill: parent
 
-        source: Qt.resolvedUrl("../../assets/tiles/frame_x2.png")
-        borderSize: 6
+        Button {
+          id: menuButton
+          Layout.fillWidth: true
+          Layout.preferredHeight: width
 
-        Column {
-          anchors {
-            horizontalCenter: parent.horizontalCenter
-            bottom: parent.bottom
-            bottomMargin: 16
+          Icon {
+            anchors.centerIn: parent
+            icon: Qt.resolvedUrl("root:/assets/nixos-symbolic.svg")
+            colorEnabled: true
+            color: Theme.on_background
+            size: 28
           }
 
-          spacing: 16
+          states: [
+            State {
+              when: menuButton.pressed
+              PropertyChanges {
+                target: menuButton
+                backgroundColor: Qt.lighter(Theme.surface_variant, 1.5)
+                borderColor: Qt.lighter(Theme.outline_variant, 1.5)
+              }
+            },
+            State {
+              when: menuButton.hovered
+              PropertyChanges {
+                target: menuButton
+                backgroundColor: Qt.lighter(Theme.surface_variant, 1.25)
+                borderColor: Qt.lighter(Theme.outline_variant, 1.25)
+              }
+            }
+          ]
+        }
 
-          ClockWidget {}
+        BorderImage {
+          Layout.fillWidth: true
+          Layout.fillHeight: true
+
+          source: Qt.resolvedUrl("../../assets/tiles/frame.png")
+          borderSource: Qt.resolvedUrl("../../assets/tiles/frame_border.png")
+          color: Theme.background
+          borderColor: Theme.outline_variant
+          borderSize: 6
+
+          Column {
+            anchors {
+              horizontalCenter: parent.horizontalCenter
+              bottom: parent.bottom
+              bottomMargin: 16
+            }
+
+            spacing: 16
+
+            ClockWidget {}
+          }
         }
       }
     }
