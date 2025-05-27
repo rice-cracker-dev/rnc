@@ -31,16 +31,22 @@ in {
     };
   };
 
-  config.me = mkIf cfg.enable {
-    packages = [pkgs.kitty];
+  config = mkIf cfg.enable {
+    me = {
+      packages = [pkgs.kitty];
 
-    rum.programs.hyprland.settings.bind = [
-      "super, return, exec, kitty"
-    ];
+      rum.programs.hyprland.settings.bind = [
+        "super, return, exec, kitty"
+      ];
 
-    files.".config/kitty/kitty.conf".text = mkIf (cfg.settings != {} || cfg.themeFile != null) ''
-      ${themeFile}
-      ${toKittyConf cfg.settings}
-    '';
+      files.".config/kitty/kitty.conf".text = mkIf (cfg.settings != {} || cfg.themeFile != null) ''
+        ${themeFile}
+        ${toKittyConf cfg.settings}
+      '';
+    };
+
+    home.uwsm.env = {
+      TERMINAL = "kitty";
+    };
   };
 }

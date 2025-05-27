@@ -3,7 +3,8 @@
   lib,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf mkOption map concatStringSep;
+  inherit (lib) mkEnableOption mkIf mkOption map;
+  inherit (lib.strings) concatStringsSep;
   inherit (lib.types) str package listOf;
 
   cfg = config.home.font;
@@ -26,7 +27,7 @@
       type = str;
     };
 
-  dirs = concatStringSep "\n" (map (package: "<dir>${package}/share/fonts</dir>") cfg.packages);
+  dirs = concatStringsSep "\n" (map (package: "<dir>${package}/share/fonts</dir>") cfg.packages);
 
   serif = mkFont {
     family = "serif";
@@ -63,7 +64,7 @@ in {
   };
 
   config.me = mkIf cfg.enable {
-    files.".config/fontconfig/conf.d".text = ''
+    files.".config/fontconfig/fonts.conf".text = ''
       <?xml version="1.0"?>
       <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
       <fontconfig>
@@ -71,7 +72,7 @@ in {
 
         <match target="font">
           <edit name="rgba" mode="assign">
-            <const>rgba</const>
+            <const>rgb</const>
           </edit>
         </match>
 

@@ -4,11 +4,11 @@
   config,
   ...
 }: {
-  config.home.font = lib.mkIf (config.configs == "mht") {
+  config.home.font = lib.mkIf (config.configs == "fantasy") {
     enable = true;
 
     packages = with pkgs; [
-      jetbrains-mono
+      monocraft
       noto-fonts
       noto-fonts-color-emoji
       noto-fonts-cjk-serif
@@ -16,7 +16,7 @@
     ];
 
     emoji = "Noto Color Emoji";
-    monospace = "JetBrains Mono";
+    monospace = "Monocraft";
     sansSerif = "Noto Sans";
     serif = "Noto Serif";
   };

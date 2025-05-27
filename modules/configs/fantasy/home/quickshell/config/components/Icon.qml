@@ -6,7 +6,8 @@ Item {
   id: main
   required property url icon
   required property int size
-  property color color: Qt.color("#000000")
+  property bool colorEnabled: true
+  property color color: "#000000"
 
   implicitWidth: childrenRect.width
   implicitHeight: childrenRect.height
@@ -14,7 +15,7 @@ Item {
   IconImage {
     id: icon
     source: main.icon
-    visible: false
+    visible: !main.colorEnabled
     implicitSize: main.size
   }
 
@@ -24,5 +25,6 @@ Item {
     brightness: 1
     colorization: 1
     colorizationColor: main.color
+    visible: main.colorEnabled
   }
 }

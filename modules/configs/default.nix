@@ -2,10 +2,10 @@
   inherit (lib) mkOption;
   inherit (lib.types) nullOr enum;
 in {
-  imports = [./mht];
+  imports = [./mht ./fantasy];
 
   options.configs = mkOption {
-    type = nullOr (enum ["mht"]);
+    type = nullOr (enum ["mht" "fantasy"]);
     default = null;
     description = "The name of the configs to use, leave null to use the base config.";
   };

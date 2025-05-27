@@ -5,8 +5,8 @@
     brightnessctl
     transmission_4-qt
     mpv
+    aseprite
     legcord
-    nheko
     (brave.override {
       commandLineArgs = "--password-store=gnome";
     })

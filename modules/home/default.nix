@@ -7,7 +7,6 @@
     ./common.nix
     ./flameshot.nix
     ./font.nix
-    ./fuzzel.nix
     ./git.nix
     ./home.nix
     ./kitty.nix

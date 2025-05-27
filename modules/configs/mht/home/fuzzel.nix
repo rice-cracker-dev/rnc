@@ -1,7 +1,13 @@
-{riceLib, ...}: let
+{
+  riceLib,
+  config,
+  lib,
+  ...
+}: let
   inherit (riceLib.generators) toUWSM;
+  inherit (lib) mkIf;
 in {
-  config.me.rum.programs = {
+  config.me.rum.programs = mkIf (config.configs == "mht") {
     fuzzel = {
       enable = true;
       settings = {

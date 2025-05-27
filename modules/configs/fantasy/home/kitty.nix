@@ -6,7 +6,7 @@
 }: let
   themeFile = "${inputs.catppuccin-kitty}/themes/macchiato.conf";
 in {
-  config.home.kitty = lib.mkIf (config.configs == "mht") {
+  config.home.kitty = lib.mkIf (config.configs == "fantasy") {
     enable = true;
 
     inherit themeFile;
@@ -15,7 +15,7 @@ in {
       background = "#000000";
       background_opacity = 0.75;
 
-      font_family = "JetBrains Mono";
+      font_family = "Monocraft";
     };
   };
 }
