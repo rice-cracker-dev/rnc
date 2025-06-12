@@ -5,6 +5,7 @@
     ./theme
     ./btop.nix
     ./common.nix
+    ./fastfetch.nix
     ./flameshot.nix
     ./font.nix
     ./git.nix
