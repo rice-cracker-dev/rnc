@@ -5,8 +5,10 @@
     brightnessctl
     transmission_4-qt
     mpv
-    aseprite
-    legcord
+    krita
+    (discord.override {
+      withVencord = true;
+    })
     (brave.override {
       commandLineArgs = "--password-store=gnome";
     })
@@ -24,5 +26,6 @@
 
     # tools
     hurl
+    cava
   ];
 }

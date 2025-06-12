@@ -1,5 +1,5 @@
 {
   imports = [./hyprland];
 
-  config.configs = "fantasy";
+  config.configs = "mht";
 }

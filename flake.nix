@@ -6,6 +6,7 @@
     nvf-config.url = "github:rice-cracker-dev/nvf-config";
     mht-shell.url = "github:rice-cracker-dev/mht-shell";
     swww.url = "github:LGFae/swww";
+    nh.url = "github:nix-community/nh";
 
     catppuccin-btop = {
       url = "github:catppuccin/btop";
@@ -18,7 +19,12 @@
     };
 
     hjem = {
-      url = "github:feel-co/hjem";
+      url = "github:nezia1/hjem/manifest-switching";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    smfh = {
+      url = "github:Gerg-L/smfh";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
