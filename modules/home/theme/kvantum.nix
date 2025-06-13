@@ -54,6 +54,12 @@ in {
   };
 
   config = mkIf (cfg.enable && cfg.kvantum.enable) {
+    home.theme.qtct = {
+      enable = true;
+      qt5.style = "kvantum";
+      qt6.style = "kvantum";
+    };
+
     me = {
       packages = with pkgs; [
         kdePackages.qqc2-desktop-style
@@ -68,7 +74,5 @@ in {
         ".config/Kvantum/${cfg.kvantum.theme.name}".source = mkIf (cfg.kvantum.theme != null) (themePath cfg.kvantum.theme);
       };
     };
-
-    home.uwsm.env.QT_STYLE_OVERRIDE = "kvantum";
   };
 }

@@ -26,6 +26,5 @@
 
     # tools
     hurl
-    cava
   ];
 }

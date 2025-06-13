@@ -8,14 +8,20 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/3906beb4-406b-4a97-abe5-e69bdde75777";
+    { device = "/dev/disk/by-uuid/325bcb00-4b80-48f0-8277-e0c4c6563261";
       fsType = "btrfs";
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/40BD-BAA7";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
     };
 
   fileSystems."/ssd" =
@@ -23,14 +29,8 @@
       fsType = "btrfs";
     };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/9FFC-4FE4";
-      fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
-    };
-
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/9e6bf266-dafc-436d-8750-b788eb5903dd"; }
+    [ { device = "/dev/disk/by-uuid/30530b98-c21d-4f32-aee9-c519d82d5de0"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -38,6 +38,7 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.docker0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

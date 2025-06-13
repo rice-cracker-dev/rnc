@@ -5,6 +5,9 @@
     rum.programs.git = {
       enable = true;
 
+      # for github-cli to be able to override .gitconfig
+      destination = ".config/git/config";
+
       settings = {
         user = {
           name = "rice-cracker-dev";

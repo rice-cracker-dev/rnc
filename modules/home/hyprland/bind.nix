@@ -10,7 +10,7 @@ in {
     bind =
       [
         "super, m, exec, uwsm stop"
-        "alt, f4, killactive"
+        "super, w, killactive"
 
         "super, left, movefocus, l"
         "super, right, movefocus, r"
