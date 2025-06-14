@@ -519,11 +519,11 @@
         "nvf": "nvf"
       },
       "locked": {
-        "lastModified": 1749655369,
-        "narHash": "sha256-GXKQuVZ7s1hRtiz2LeF7THv1MP7SIWyUICfQ58xoix8=",
+        "lastModified": 1749802779,
+        "narHash": "sha256-Q+HBSyKXzvRNmF+JHU+PEZJ58axkM5PyTqX7ea//LHY=",
         "owner": "rice-cracker-dev",
         "repo": "nvf-config",
-        "rev": "e964d2bfd13988743c32c02ef49b97f48190594d",
+        "rev": "08cdff1e563dd598fd0e500a583fd172cdf9ba6f",
         "type": "github"
       },
       "original": {
