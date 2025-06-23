@@ -8,7 +8,7 @@
     layerrule = [
       "blur, quickshell"
       "blurpopups, quickshell"
-      "ignorealpha 0.1, quickshell"
+      "ignorealpha 0.5, quickshell"
     ];
   };
 }

@@ -26,6 +26,6 @@
 
     # tools
     hurl
-    jetbrains.toolbox
+    jetbrains.rider
   ];
 }

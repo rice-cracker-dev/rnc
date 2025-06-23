@@ -179,6 +179,22 @@
         "type": "github"
       }
     },
+    "glfw3-minecraft-fix": {
+      "locked": {
+        "lastModified": 1738415455,
+        "narHash": "sha256-Tf9q2SprvqmIRTHbTivQxjjZgjF8zTljQiEL7eYJLdo=",
+        "owner": "Piecuuu",
+        "repo": "nixpkgs",
+        "rev": "97e374742ecc9ee877a9d558402602677f7314a4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Piecuuu",
+        "ref": "glfw-minecraft-fix",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "hjem": {
       "inputs": {
         "nixpkgs": [
@@ -535,6 +551,7 @@
       "inputs": {
         "catppuccin-btop": "catppuccin-btop",
         "catppuccin-kitty": "catppuccin-kitty",
+        "glfw3-minecraft-fix": "glfw3-minecraft-fix",
         "hjem": "hjem",
         "hjem-rum": "hjem-rum",
         "mht-shell": "mht-shell",

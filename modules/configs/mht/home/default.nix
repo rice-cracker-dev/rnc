@@ -4,7 +4,7 @@
     ./btop.nix
     ./font.nix
     ./kitty.nix
-    ./swww.nix
+    ./quickshell.nix
     ./theme.nix
   ];
 }

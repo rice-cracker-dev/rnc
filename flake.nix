@@ -4,9 +4,10 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nvf-config.url = "github:rice-cracker-dev/nvf-config";
-    mht-shell.url = "github:rice-cracker-dev/mht-shell";
+    rix-shell.url = "github:rice-cracker-dev/rix-shell";
     swww.url = "github:LGFae/swww";
     nh.url = "github:nix-community/nh";
+    glfw3-minecraft-fix.url = "github:Piecuuu/nixpkgs/glfw-minecraft-fix";
 
     catppuccin-btop = {
       url = "github:catppuccin/btop";
