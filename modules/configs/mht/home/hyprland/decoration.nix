@@ -4,7 +4,7 @@
   ...
 }: {
   config.me.rum.programs.hyprland.settings.decoration = lib.mkIf (config.configs == "mht") {
-    rounding = 8;
+    rounding = 0;
 
     dim_inactive = false;
     #dim_strength = 0.25;
