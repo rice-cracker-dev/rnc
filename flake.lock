@@ -545,11 +545,11 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1750705859,
-        "narHash": "sha256-XC1b4+lNGLcpjc0OBnFAZhLO2q4LntA795TAlSLFxdo=",
+        "lastModified": 1750791524,
+        "narHash": "sha256-qYINI/iVlQGbiZV0HZiwzcnacmxZfNnShpt8s/5Z3qc=",
         "owner": "rice-cracker-dev",
         "repo": "rix-shell",
-        "rev": "4f0f5e88d2c83c46d7ffa54100ae6d3d2d4d8b59",
+        "rev": "c216e0cee3fb5618e52fb596369393e7ff5dc72b",
         "type": "github"
       },
       "original": {

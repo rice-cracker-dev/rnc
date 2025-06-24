@@ -1,18 +1,29 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   config.me = {
     packages = with pkgs; [gh lazygit];
 
     rum.programs.git = {
       enable = true;
 
-      # for github-cli to be able to override .gitconfig
-      destination = ".config/git/config";
-
       settings = {
-        user = {
-          name = "rice-cracker-dev";
-          email = "ricecracker2234@proton.me";
-        };
+        # taken from home-manager
+        # https://github.com/nix-community/home-manager/blob/release-25.05/modules/programs/gh.nix
+        credential = builtins.listToAttrs (
+          map (
+            host:
+              lib.nameValuePair host {
+                helper = "${pkgs.gh}/bin/gh auth git-credential";
+              }
+          )
+          [
+            "https://github.com"
+            "https://gist.github.com"
+          ]
+        );
       };
     };
   };

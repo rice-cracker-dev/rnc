@@ -14,7 +14,7 @@ in {
 
     rum.programs.hyprland.settings = {
       exec-once = [(riceLib.generators.toUWSM shellBin)];
-      bind = ["super, d, exec, ${shellBin} ipc call launcher show"];
+      bind = ["super, d, exec, ${shellBin} ipc call launcher toggle"];
     };
   };
 }
