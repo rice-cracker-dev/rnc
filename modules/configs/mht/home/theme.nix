@@ -13,10 +13,6 @@ in {
     me = {
       packages = [pkgs.darkly pkgs.darkly-qt5];
       files."kdeglobals".source = "${catppuccinKde}/share/color-schemes/CatppuccinMacchiatoMauve.colors";
-
-      rum.programs.hyprland.settings.bind = [
-        "super, d, exec, ${pkgs.rofi-wayland}/bin/rofi -show drun"
-      ];
     };
 
     home.theme = {
