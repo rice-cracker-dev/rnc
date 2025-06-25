@@ -5,6 +5,7 @@
     ./console.nix
     ./flatpak.nix
     ./gvfs.nix
+    ./hardware.nix
     ./i18n.nix
     ./mullvad.nix
     ./networking.nix
