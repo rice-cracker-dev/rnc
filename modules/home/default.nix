@@ -15,5 +15,6 @@
     ./swww.nix
     ./uwsm.nix
     ./vscode.nix
+    ./yazi.nix
   ];
 }

@@ -4,7 +4,7 @@
     networkmanager.enable = true;
 
     firewall = {
-      allowedTCPPorts = [4983];
+      allowedTCPPorts = [4983 8976];
       checkReversePath = false;
     };
   };

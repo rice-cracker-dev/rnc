@@ -7,6 +7,7 @@
     rix-shell.url = "github:rice-cracker-dev/rix-shell";
     swww.url = "github:LGFae/swww";
     nh.url = "github:nix-community/nh";
+    ngrok.url = "github:ngrok/ngrok-nix";
     glfw3-minecraft-fix.url = "github:Piecuuu/nixpkgs/glfw-minecraft-fix";
 
     catppuccin-btop = {

@@ -444,11 +444,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1750365781,
-        "narHash": "sha256-XE/lFNhz5lsriMm/yjXkvSZz5DfvKJLUjsS6pP8EC50=",
+        "lastModified": 1751011381,
+        "narHash": "sha256-krGXKxvkBhnrSC/kGBmg5MyupUUT5R6IBCLEzx9jhMM=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "08f22084e6085d19bcfb4be30d1ca76ecb96fe54",
+        "rev": "30e2e2857ba47844aa71991daa6ed1fc678bcbb7",
         "type": "github"
       },
       "original": {
@@ -525,11 +525,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1750535835,
-        "narHash": "sha256-XnVSY70rW3DsMdftazi0xr0rMGnyclBlG7sSTLwktI4=",
+        "lastModified": 1751022554,
+        "narHash": "sha256-+REvWf68WLbwacOsjs4CmJauE2vF+sPh++Jcxn3wSeQ=",
         "ref": "refs/heads/master",
-        "rev": "20c3da01f1b2bc038582eee831e4f5055b4f71ff",
-        "revCount": 594,
+        "rev": "1d02292fbf24c41f947cf72dd7de57f6dedf2173",
+        "revCount": 598,
         "type": "git",
         "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
       },
@@ -545,11 +545,11 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1750791524,
-        "narHash": "sha256-qYINI/iVlQGbiZV0HZiwzcnacmxZfNnShpt8s/5Z3qc=",
+        "lastModified": 1751310694,
+        "narHash": "sha256-11HzMEXDv2fSLpmpX/oI+3czd0tZHYbvb+XJw+MjcUs=",
         "owner": "rice-cracker-dev",
         "repo": "rix-shell",
-        "rev": "c216e0cee3fb5618e52fb596369393e7ff5dc72b",
+        "rev": "abcb3c5cd018dadd2bf2c4ca6d61b3355dd6e3b5",
         "type": "github"
       },
       "original": {

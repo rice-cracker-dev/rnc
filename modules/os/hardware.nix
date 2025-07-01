@@ -6,5 +6,9 @@
       intel-vaapi-driver # For older processors. LIBVA_DRIVER_NAME=i965
     ];
   };
-  environment.sessionVariables = {LIBVA_DRIVER_NAME = "iHD";};
+
+  environment = {
+    systemPackages = [pkgs.x265];
+    sessionVariables = {LIBVA_DRIVER_NAME = "iHD";};
+  };
 }
