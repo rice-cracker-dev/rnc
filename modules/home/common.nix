@@ -6,9 +6,7 @@
     transmission_4-qt
     mpv
     krita
-    (discord.override {
-      withVencord = true;
-    })
+    vesktop
     (brave.override {
       commandLineArgs = "--password-store=gnome";
     })

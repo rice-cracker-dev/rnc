@@ -24,6 +24,11 @@
             "https://gist.github.com"
           ]
         );
+
+        user = {
+          name = "rice-cracker-dev";
+          email = "ricecracker2234@proton.me";
+        };
       };
     };
   };
