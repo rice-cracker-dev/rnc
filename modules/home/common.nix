@@ -25,5 +25,6 @@
     # tools
     hurl
     jetbrains.rider
+    uv
   ];
 }

@@ -59,6 +59,6 @@ in {
 
   config.me = mkIf cfg.enable {
     packages = [pkgs.yazi];
-    files.".config/yazi/yazi.toml".source = writeTOML "yazi-config" (baseSettings ++ cfg.settings);
+    files.".config/yazi/yazi.toml".source = writeTOML "yazi-config" (baseSettings // cfg.settings);
   };
 }
