@@ -23,7 +23,7 @@ in {
         "super ctrl, right, movewindow, r"
 
         "super, p, pin, active"
-        "super, v, togglefloating"
+        "super, j, togglefloating"
         "super, f, fullscreen"
       ]
       ++ workspaceBinds;

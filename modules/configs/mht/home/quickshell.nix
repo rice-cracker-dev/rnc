@@ -16,7 +16,7 @@ in {
       exec-once = [(riceLib.generators.toUWSM shellBin)];
       bind = [
         "super, d, global, rix-shortcuts:toggle_launcher"
-        "super, j, global, rix-shortcuts:toggle_clipboard"
+        "super, v, global, rix-shortcuts:toggle_clipboard"
       ];
     };
   };
