@@ -10,14 +10,17 @@
 
   cfg = config.home.gaming;
 in {
-  options.home.gaming.enable = mkEnableOption "enable gaming features";
+  options.home.gaming = {
+    enable = mkEnableOption "gaming features";
+    enableWineGE = mkEnableOption "wine-ge";
+  };
 
   config = {
     home.gaming.enable = mkDefault true;
 
-    me = {
+    me = mkIf cfg.enable {
       packages = [pkgs.lutris];
-      files.".local/share/lutris/runners/wine/wine-ge".source = mkIf cfg.enable wine-ge;
+      files.".local/share/lutris/runners/wine/wine-ge".source = mkIf cfg.enableWineGE wine-ge;
     };
   };
 }

@@ -6,8 +6,8 @@
     ./flatpak.nix
     ./gaming.nix
     ./gvfs.nix
-    ./hardware.nix
     ./i18n.nix
+    ./kernel.nix
     ./mullvad.nix
     ./networking.nix
     ./nh.nix

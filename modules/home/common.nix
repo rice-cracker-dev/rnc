@@ -20,13 +20,8 @@
     noto-fonts-cjk-sans
     jetbrains-mono
 
-    # games
-    prismlauncher
-    lunar-client
-
     # tools
     hurl
-    jetbrains.rider
     uv
   ];
 }

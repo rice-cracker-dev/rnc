@@ -7,7 +7,6 @@
     rix-shell.url = "github:rice-cracker-dev/rix-shell";
     swww.url = "github:LGFae/swww";
     nh.url = "github:nix-community/nh";
-    ngrok.url = "github:ngrok/ngrok-nix";
     glfw3-minecraft-fix.url = "github:Piecuuu/nixpkgs/glfw-minecraft-fix";
     nix-gaming.url = "github:fufexan/nix-gaming";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
@@ -44,6 +43,13 @@
         specialArgs = {inherit inputs username riceLib;};
         modules = [
           ./hosts/z00vd/configuration.nix
+        ];
+      };
+
+      rc555 = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs username riceLib;};
+        modules = [
+          ./hosts/rc555/configuration.nix
         ];
       };
     };
