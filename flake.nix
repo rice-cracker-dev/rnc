@@ -9,6 +9,8 @@
     nh.url = "github:nix-community/nh";
     ngrok.url = "github:ngrok/ngrok-nix";
     glfw3-minecraft-fix.url = "github:Piecuuu/nixpkgs/glfw-minecraft-fix";
+    nix-gaming.url = "github:fufexan/nix-gaming";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     catppuccin-btop = {
       url = "github:catppuccin/btop";

@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   config.me.packages = with pkgs; [
     # others
     wl-clipboard
@@ -6,10 +10,8 @@
     transmission_4-qt
     mpv
     krita
-    vesktop
-    (brave.override {
-      commandLineArgs = "--password-store=gnome";
-    })
+    legcord
+    inputs.zen-browser.packages.${pkgs.system}.beta
 
     # fonts
     noto-fonts

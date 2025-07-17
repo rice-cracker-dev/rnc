@@ -8,6 +8,7 @@
     ./fastfetch.nix
     ./flameshot.nix
     ./font.nix
+    ./gaming.nix
     ./git.nix
     ./home.nix
     ./kitty.nix

@@ -4,6 +4,7 @@
     ./bluetooth.nix
     ./console.nix
     ./flatpak.nix
+    ./gaming.nix
     ./gvfs.nix
     ./hardware.nix
     ./i18n.nix
