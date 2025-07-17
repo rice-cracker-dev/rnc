@@ -16,7 +16,10 @@ in {
   };
 
   config = {
-    home.gaming.enable = mkDefault true;
+    home.gaming = {
+      enable = mkDefault true;
+      enableWineGE = mkDefault true;
+    };
 
     me = mkIf cfg.enable {
       packages = [pkgs.lutris];

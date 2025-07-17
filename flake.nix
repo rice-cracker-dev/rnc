@@ -11,6 +11,11 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
+    aagl = {
+      url = "github:ezKEa/aagl-gtk-on-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     catppuccin-btop = {
       url = "github:catppuccin/btop";
       flake = false;
