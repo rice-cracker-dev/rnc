@@ -13,6 +13,12 @@
   programs.sleepy-launcher.enable = true;
 
   environment.systemPackages = with pkgs; [
-    prismlauncher
+    (prismlauncher.override {
+      jdks = [
+        zulu8
+        zulu17
+        zulu21
+      ];
+    })
   ];
 }

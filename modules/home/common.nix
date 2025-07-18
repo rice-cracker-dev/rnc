@@ -23,5 +23,6 @@
     # tools
     hurl
     uv
+    python313Packages.ds4drv
   ];
 }

@@ -24,7 +24,7 @@ in {
   config.me = mkIf cfg.enable {
     packages = [pkgs.swww];
 
-    rum.programs.hyprland.settings.exec-once = mkIf (cfg.wallpaperPath != null) [
+    rum.desktops.hyprland.settings.exec-once = mkIf (cfg.wallpaperPath != null) [
       (toUWSM "swww-daemon --no-cache & sleep 1 && swww img ${cfg.wallpaperPath}")
     ];
   };

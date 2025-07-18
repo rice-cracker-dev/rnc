@@ -1,7 +1,7 @@
 {
   config.me.rum.desktops.hyprland.settings.device = [
     {
-      name = "elan1300:00-04f3:3057-touchpad";
+      name = "elan0412:01-04f3:3240-touchpad";
       enabled = false;
     }
   ];

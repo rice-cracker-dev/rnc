@@ -6,7 +6,7 @@
       })
     ];
 
-    rum.programs.hyprland.settings = {
+    rum.desktops.hyprland.settings = {
       windowrulev2 = [
         "noanim, class:(flameshot)"
         "move 0 0, class:(flameshot)"

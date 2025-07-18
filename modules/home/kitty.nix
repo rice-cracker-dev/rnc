@@ -35,7 +35,7 @@ in {
     me = {
       packages = [pkgs.kitty];
 
-      rum.programs.hyprland.settings.bind = [
+      rum.desktops.hyprland.settings.bind = [
         "super, return, exec, kitty"
       ];
 

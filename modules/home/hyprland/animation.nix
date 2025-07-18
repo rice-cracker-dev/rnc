@@ -1,5 +1,5 @@
 {
-  config.me.rum.programs.hyprland.settings = {
+  config.me.rum.desktops.hyprland.settings = {
     bezier = [
       "woosh, 0.3, 1, 0.75, 1"
     ];

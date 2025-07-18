@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  config.me.rum.programs.hyprland.settings.general = lib.mkIf (config.configs == "mht") {
+  config.me.rum.desktops.hyprland.settings.general = lib.mkIf (config.configs == "mht") {
     border_size = 1;
 
     "col.inactive_border" = "rgb(363a4f)";

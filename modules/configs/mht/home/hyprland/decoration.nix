@@ -3,7 +3,7 @@
   config,
   ...
 }: {
-  config.me.rum.programs.hyprland.settings.decoration = lib.mkIf (config.configs == "mht") {
+  config.me.rum.desktops.hyprland.settings.decoration = lib.mkIf (config.configs == "mht") {
     rounding = 0;
 
     dim_inactive = false;

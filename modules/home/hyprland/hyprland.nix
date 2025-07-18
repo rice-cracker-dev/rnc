@@ -1,3 +1,3 @@
 {
-  config.me.rum.programs.hyprland.enable = true;
+  config.me.rum.desktops.hyprland.enable = true;
 }
