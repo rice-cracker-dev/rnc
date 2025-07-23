@@ -4,6 +4,6 @@
     ./graphics
     ./home
     ./networking
-    ./tlp
+    ./upower
   ];
 }
