@@ -7,11 +7,12 @@
     # others
     wl-clipboard
     brightnessctl
-    transmission_4-qt
+    qbittorrent
     mpv
     krita
     legcord
     inputs.zen-browser.packages.${pkgs.system}.beta
+    blender_4_5
 
     # fonts
     noto-fonts
@@ -23,6 +24,5 @@
     # tools
     hurl
     uv
-    python313Packages.ds4drv
   ];
 }

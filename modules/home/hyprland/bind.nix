@@ -6,7 +6,7 @@
     "super shift, ${ws}, movetoworkspace, ${ws}"
   ]) (lib.range 1 9);
 in {
-  config.me.rum.programs.hyprland.settings = {
+  config.me.rum.desktops.hyprland.settings = {
     bind =
       [
         "super, m, exec, uwsm stop"

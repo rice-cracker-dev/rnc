@@ -4,5 +4,6 @@
     ./graphics
     ./home
     ./networking
+    ./tlp
   ];
 }

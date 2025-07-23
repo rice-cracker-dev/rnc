@@ -3,8 +3,9 @@
     ./hyprland
     ./btop.nix
     ./font.nix
+    ./fuzzel.nix
     ./kitty.nix
-    ./quickshell.nix
+    #./quickshell.nix
     ./theme.nix
     ./yazi.nix
   ];
