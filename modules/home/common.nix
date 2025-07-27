@@ -9,7 +9,6 @@
     brightnessctl
     qbittorrent
     mpv
-    krita
     inputs.zen-browser.packages.${pkgs.system}.beta
     blender_4_5
     vesktop
