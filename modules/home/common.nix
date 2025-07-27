@@ -10,9 +10,9 @@
     qbittorrent
     mpv
     krita
-    legcord
     inputs.zen-browser.packages.${pkgs.system}.beta
     blender_4_5
+    vesktop
 
     # fonts
     noto-fonts
