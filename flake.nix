@@ -8,7 +8,6 @@
     nh.url = "github:nix-community/nh";
     glfw3-minecraft-fix.url = "github:Piecuuu/nixpkgs/glfw-minecraft-fix";
     nix-gaming.url = "github:fufexan/nix-gaming";
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
     blender-bin.url = "github:edolstra/nix-warez?dir=blender";
 
     aagl = {

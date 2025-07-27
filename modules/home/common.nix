@@ -1,15 +1,11 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   config.me.packages = with pkgs; [
     # others
     wl-clipboard
     brightnessctl
     qbittorrent
     mpv
-    inputs.zen-browser.packages.${pkgs.system}.beta
+    brave
     blender_4_5
     vesktop
 
