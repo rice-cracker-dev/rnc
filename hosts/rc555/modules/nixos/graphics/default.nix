@@ -42,6 +42,16 @@ in {
       gsp.enable = true;
       powerManagement.enable = true;
 
+      prime = {
+        intelBusId = "PCI:0:2:0";
+        nvidiaBusId = "PCI:1:0:0";
+
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
+        };
+      };
+
       package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
         version = "575.64.05";
         sha256_64bit = "sha256-hfK1D5EiYcGRegss9+H5dDr/0Aj9wPIJ9NVWP3dNUC0=";
