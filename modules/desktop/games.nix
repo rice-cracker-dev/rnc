@@ -33,7 +33,9 @@
     };
 
     gamemode.enable = true;
+
     sleepy-launcher.enable = true;
+    honkers-railway-launcher.enable = true;
   };
 
   me.files = {
@@ -59,7 +61,7 @@
 
   environment.systemPackages = with pkgs; [
     mangohud
-    lunar-client
+
     (prismlauncher.override {
       jdks = [
         zulu8
@@ -67,6 +69,7 @@
         zulu21
       ];
     })
+
     (heroic.override {
       extraPkgs = pkgs: [
         pkgs.gamescope
