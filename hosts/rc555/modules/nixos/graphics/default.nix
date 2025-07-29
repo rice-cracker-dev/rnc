@@ -14,10 +14,7 @@ in {
   services.xserver.videoDrivers = ["modesetting" "nvidia"];
 
   environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "nvidia";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    NVD_BACKEND = "direct";
-    MOZ_DISABLE_RDD_SANDBOX = "1";
+    LIBVA_DRIVER_NAME = "iHD";
   };
 
   hardware = {
@@ -34,13 +31,15 @@ in {
 
     nvidia = {
       open = true;
+      package = config.boot.kernelPackages.nvidiaPackages.latest;
 
-      nvidiaSettings = false;
-      nvidiaPersistenced = false;
-      videoAcceleration = true;
+      modesetting.enable = true;
+      dynamicBoost.enable = true;
 
-      gsp.enable = true;
-      powerManagement.enable = true;
+      powerManagement = {
+        enable = true;
+        finegrained = true;
+      };
 
       prime = {
         intelBusId = "PCI:0:2:0";
@@ -50,14 +49,6 @@ in {
           enable = true;
           enableOffloadCmd = true;
         };
-      };
-
-      package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-        version = "575.64.05";
-        sha256_64bit = "sha256-hfK1D5EiYcGRegss9+H5dDr/0Aj9wPIJ9NVWP3dNUC0=";
-        openSha256 = "sha256-mcbMVEyRxNyRrohgwWNylu45vIqF+flKHnmt47R//KU=";
-        usePersistenced = false;
-        useSettings = false;
       };
     };
   };
