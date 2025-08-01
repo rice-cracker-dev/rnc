@@ -17,9 +17,7 @@
     jetbrains-mono
 
     # tools
-    godot
     hurl
     uv
-    btdu
   ];
 }

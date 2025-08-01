@@ -560,11 +560,11 @@
         "ts-error-translator": "ts-error-translator"
       },
       "locked": {
-        "lastModified": 1753953195,
-        "narHash": "sha256-W7nAr0hXSwlBdJwUrD6ZyZA707q5otxvBO+uu9ci+r4=",
+        "lastModified": 1753558008,
+        "narHash": "sha256-aGD+ZBauPP0zs2b0kV8PHNWvQKRNGGCOu4JfsHSfUGs=",
         "owner": "rice-cracker-dev",
         "repo": "nvf-config",
-        "rev": "260d4da3749485c183ea187bbd15c91b5b575935",
+        "rev": "9005d8b935bed7c9256175afcd4b193d5331bd0d",
         "type": "github"
       },
       "original": {
