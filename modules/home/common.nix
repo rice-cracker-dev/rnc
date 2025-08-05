@@ -8,6 +8,7 @@
     brave
     blender_4_5
     vesktop
+    kdePackages.kdenlive
 
     # fonts
     noto-fonts

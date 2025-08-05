@@ -9,6 +9,7 @@
     glfw3-minecraft-fix.url = "github:Piecuuu/nixpkgs/glfw-minecraft-fix";
     nix-gaming.url = "github:fufexan/nix-gaming";
     blender-bin.url = "github:edolstra/nix-warez?dir=blender";
+    ngrok.url = "github:ngrok/ngrok-nix";
 
     aagl = {
       url = "github:ezKEa/aagl-gtk-on-nix";

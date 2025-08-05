@@ -34,7 +34,7 @@ in {
       package = config.boot.kernelPackages.nvidiaPackages.latest;
 
       modesetting.enable = true;
-      dynamicBoost.enable = true;
+      # dynamicBoost.enable = true;
 
       powerManagement = {
         enable = true;
