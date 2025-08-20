@@ -7,8 +7,11 @@
     mpv
     brave
     blender_4_5
-    vesktop
     kdePackages.kdenlive
+    (discord.override {
+      withVencord = true;
+    })
+    aseprite
 
     # fonts
     noto-fonts

@@ -21,7 +21,6 @@ in {
     graphics = {
       enable = true;
       extraPackages = with pkgs; [
-        nvidia-vaapi-driver
         intel-media-driver # For Broadwell (2014) or newer processors. LIBVA_DRIVER_NAME=iHD
         intel-vaapi-driver # For older processors. LIBVA_DRIVER_NAME=i965
         vpl-gpu-rt
@@ -31,10 +30,6 @@ in {
 
     nvidia = {
       open = true;
-      package = config.boot.kernelPackages.nvidiaPackages.latest;
-
-      modesetting.enable = true;
-      # dynamicBoost.enable = true;
 
       powerManagement = {
         enable = true;
@@ -61,9 +56,6 @@ in {
         "nvidia.NVreg_RegistryDwords=RMIntrLockingMode=1" # enable low-latency mode
         "nvidia_modeset.disable_vrr_memclk_switch=1" # stop really high memclk when vrr is in use.
       ]
-      (mkIf config.hardware.nvidia.powerManagement.enable [
-        "nvidia.NVreg_TemporaryFilePath=/var/tmp" # store on disk, not /tmp which is on RAM
-      ])
     ];
   };
 }
