@@ -8,7 +8,7 @@
     enable = true;
 
     packages = with pkgs; [
-      jetbrains-mono
+      nerd-fonts.jetbrains-mono
       noto-fonts
       noto-fonts-color-emoji
       noto-fonts-cjk-serif
@@ -16,7 +16,7 @@
     ];
 
     emoji = "Noto Color Emoji";
-    monospace = "JetBrains Mono";
+    monospace = "JetBrainsMono Nerd Font";
     sansSerif = "Noto Sans";
     serif = "Noto Serif";
   };

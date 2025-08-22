@@ -15,7 +15,7 @@ in {
       background = "#000000";
       background_opacity = 0.75;
 
-      font_family = "JetBrains Mono";
+      font_family = "JetBrainsMono Nerd Font";
       cursor_trail = 3;
       cursor_trail_decay = "0.1 0.4";
     };

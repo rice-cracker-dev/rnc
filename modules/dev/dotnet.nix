@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   environment = {
-    systemPackages = [pkgs.dotnet-sdk];
+    systemPackages = with pkgs; [dotnet-sdk jetbrains.rider];
     sessionVariables.DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet/";
   };
 }
