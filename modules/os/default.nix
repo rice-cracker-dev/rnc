@@ -3,6 +3,8 @@
     ./archive.nix
     ./bluetooth.nix
     ./console.nix
+    ./coolercontrol.nix
+    ./droidcam.nix
     ./flatpak.nix
     ./gaming.nix
     ./gvfs.nix

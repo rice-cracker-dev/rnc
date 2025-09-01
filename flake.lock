@@ -622,11 +622,11 @@
         "ts-error-translator": "ts-error-translator"
       },
       "locked": {
-        "lastModified": 1755785757,
-        "narHash": "sha256-vW98s9fRt07cpPuTNxzV08vS8EQKM7Fop6OhYfml0h4=",
+        "lastModified": 1755881069,
+        "narHash": "sha256-6eXJt4apeZTp3iNX8DK1FSTkLi98NWf2KqhIKfPRxus=",
         "owner": "rice-cracker-dev",
         "repo": "nvf-config",
-        "rev": "6ab5a04991d1d03f6907e5050393b2fefa3bda7b",
+        "rev": "b168994cec273501ba2dee47db88bff06a0202d7",
         "type": "github"
       },
       "original": {
