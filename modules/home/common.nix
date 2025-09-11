@@ -12,6 +12,7 @@
       withVencord = true;
     })
     aseprite
+    zed-editor
 
     # fonts
     noto-fonts

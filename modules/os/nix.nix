@@ -1,6 +1,5 @@
-{pkgs, ...}: {
+{
   nix = {
-    package = pkgs.lixPackageSets.latest.lix;
     channel.enable = false;
 
     settings = {

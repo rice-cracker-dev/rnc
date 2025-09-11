@@ -14,7 +14,6 @@
     ./networking.nix
     ./nh.nix
     ./nix.nix
-    ./nix-ld.nix
     ./pipewire.nix
     ./ssh.nix
     ./timezone.nix
