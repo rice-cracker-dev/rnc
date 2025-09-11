@@ -2,6 +2,7 @@
   imports = [
     ./games.nix
     ./hyprland.nix
+    ./kdeconnect.nix
     ./keyring.nix
     ./localsend.nix
     ./obs-studio.nix
