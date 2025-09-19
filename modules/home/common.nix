@@ -8,9 +8,7 @@
     brave
     blender_4_5
     kdePackages.kdenlive
-    (discord.override {
-      withVencord = true;
-    })
+    vesktop
     aseprite
     zed-editor
 
@@ -24,5 +22,9 @@
     # tools
     hurl
     uv
+    ngrok
+    wireguard-tools
+    easyeffects
+    postman
   ];
 }
