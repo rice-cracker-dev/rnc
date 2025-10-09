@@ -13,7 +13,6 @@
       enabled = true;
       size = 16;
       passes = 4;
-      noise = 0.05;
       popups = true;
     };
   };

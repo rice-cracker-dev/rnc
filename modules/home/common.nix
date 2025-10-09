@@ -11,6 +11,7 @@
     vesktop
     aseprite
     zed-editor
+    cemu
 
     # fonts
     noto-fonts
