@@ -10,7 +10,7 @@
       jq
     ];
 
-    programs = {
+    rum.programs = {
       fzf.enable = true;
 
       nushell = {
