@@ -5,16 +5,17 @@
 # thanks, fazzi!
 {
   pkgs,
-  config,
   lib,
   ...
 }: let
-  inherit (lib) mkIf mkMerge;
+  inherit (lib) mkMerge;
 in {
   services.xserver.videoDrivers = ["modesetting" "nvidia"];
 
   environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "iHD";
+    LIBVA_DRIVER_NAME = "nvidia";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    NVD_BACKEND = "direct";
   };
 
   hardware = {
@@ -49,13 +50,11 @@ in {
   };
 
   boot = {
-    kernelParams = mkMerge [
-      [
-        "nvidia.NVreg_UsePageAttributeTable=1" # why this isn't default is beyond me.
-        "nvidia.NVreg_EnableResizableBar=1" # enable reBAR
-        "nvidia.NVreg_RegistryDwords=RMIntrLockingMode=1" # enable low-latency mode
-        "nvidia_modeset.disable_vrr_memclk_switch=1" # stop really high memclk when vrr is in use.
-      ]
+    kernelParams = [
+      "nvidia.NVreg_UsePageAttributeTable=1" # why this isn't default is beyond me.
+      "nvidia.NVreg_EnableResizableBar=1" # enable reBAR
+      "nvidia.NVreg_RegistryDwords=RMIntrLockingMode=1" # enable low-latency mode
+      "nvidia_modeset.disable_vrr_memclk_switch=1" # stop really high memclk when vrr is in use.
     ];
   };
 }
