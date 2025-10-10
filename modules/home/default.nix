@@ -14,6 +14,7 @@
     ./home.nix
     ./kitty.nix
     ./neovim.nix
+    ./shell.nix
     ./swww.nix
     ./uwsm.nix
     ./vscode.nix
