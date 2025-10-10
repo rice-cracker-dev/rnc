@@ -35,18 +35,18 @@ in {
     me = {
       packages = [pkgs.kitty];
 
-      rum.desktops.hyprland.settings.bind = [
-        "super, return, exec, kitty"
-      ];
-
       files.".config/kitty/kitty.conf".text = mkIf (cfg.settings != {} || cfg.themeFile != null) ''
         ${themeFile}
         ${toKittyConf cfg.settings}
       '';
     };
 
-    home.uwsm.env = {
-      TERMINAL = "kitty";
+    home = {
+      uwsm.env = {
+        TERMINAL = "kitty";
+      };
+
+      hyprland.binds.programs.terminal.exec = "kitty";
     };
   };
 }

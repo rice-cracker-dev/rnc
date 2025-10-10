@@ -1,5 +1,6 @@
 {
   imports = [
+    ./ghostty
     ./hyprland
     ./kde
     ./theme

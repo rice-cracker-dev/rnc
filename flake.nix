@@ -10,6 +10,11 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     blender-bin.url = "github:edolstra/nix-warez?dir=blender";
 
+    ghostty-shaders = {
+      url = "github:hackr-sh/ghostty-shaders";
+      flake = false;
+    };
+
     aagl = {
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";

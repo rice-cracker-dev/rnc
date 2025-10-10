@@ -1,11 +1,50 @@
-{lib, ...}: let
+{
+  lib,
+  riceLib,
+  config,
+  ...
+}: let
+  inherit (lib) range mkOption;
+  inherit (lib.lists) map filter;
+  inherit (lib.attrsets) attrsToList;
+  inherit (lib.types) submodule nullOr str;
+  inherit (riceLib.generators) toUWSM;
+
+  cfg = config.home.hyprland.binds;
+
+  hyprlandKey = submodule {
+    options = {
+      modifiers = mkOption {type = str;};
+      key = mkOption {type = str;};
+    };
+  };
+
+  mkHyprlandBindOption = modifiers: key: {
+    bind = mkOption {
+      type = hyprlandKey;
+      default = {inherit modifiers key;};
+    };
+    exec = mkOption {type = nullOr str;};
+  };
+
+  programBinds =
+    map
+    (bind: "${bind.value.bind.modifiers}, ${bind.value.bind.key}, exec, ${toUWSM bind.value.exec}")
+    (filter (bind: bind.value.exec != null) (attrsToList cfg.programs));
+
   workspaceBinds = builtins.concatMap (w: let
     ws = toString w;
   in [
     "super, ${ws}, workspace, ${ws}"
     "super shift, ${ws}, movetoworkspace, ${ws}"
-  ]) (lib.range 1 9);
+  ]) (range 1 9);
 in {
+  options.home.hyprland.binds = {
+    programs = {
+      terminal = mkHyprlandBindOption "super" "return";
+    };
+  };
+
   config.me.rum.desktops.hyprland.settings = {
     bind =
       [
@@ -26,7 +65,8 @@ in {
         "super, j, togglefloating"
         "super, f, fullscreen"
       ]
-      ++ workspaceBinds;
+      ++ workspaceBinds
+      ++ programBinds;
 
     bindm = [
       "super, mouse:272, movewindow"

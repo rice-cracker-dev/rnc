@@ -7,7 +7,7 @@
   themeFile = "${inputs.catppuccin-kitty}/themes/macchiato.conf";
 in {
   config.home.kitty = lib.mkIf (config.configs == "mht") {
-    enable = true;
+    enable = false;
 
     inherit themeFile;
 

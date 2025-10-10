@@ -246,6 +246,22 @@
         "type": "github"
       }
     },
+    "ghostty-shaders": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1758504978,
+        "narHash": "sha256-eQUW3MyO91AYJSZEmJOh4jktkkZLKiyJf++Yqv3gOFc=",
+        "owner": "hackr-sh",
+        "repo": "ghostty-shaders",
+        "rev": "f3ef246748b394ed70a3146b0af5dde2e60ec1c6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hackr-sh",
+        "repo": "ghostty-shaders",
+        "type": "github"
+      }
+    },
     "glfw3-minecraft-fix": {
       "locked": {
         "lastModified": 1756727112,
@@ -663,6 +679,7 @@
         "blender-bin": "blender-bin",
         "catppuccin-btop": "catppuccin-btop",
         "catppuccin-kitty": "catppuccin-kitty",
+        "ghostty-shaders": "ghostty-shaders",
         "glfw3-minecraft-fix": "glfw3-minecraft-fix",
         "hjem": "hjem",
         "hjem-rum": "hjem-rum",
