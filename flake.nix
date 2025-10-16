@@ -36,7 +36,7 @@
     };
 
     hjem-rum = {
-      url = "github:snugnug/hjem-rum";
+      url = "github:rice-cracker-dev/hjem-rum/programs-yazi";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

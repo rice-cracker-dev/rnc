@@ -8,6 +8,7 @@
     ./obs-studio.nix
     ./polkit.nix
     ./qt.nix
+    ./sddm.nix
     ./uwsm.nix
     ./x11.nix
   ];

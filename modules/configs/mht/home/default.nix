@@ -7,6 +7,5 @@
     ./kitty.nix
     #./quickshell.nix
     ./theme.nix
-    ./yazi.nix
   ];
 }

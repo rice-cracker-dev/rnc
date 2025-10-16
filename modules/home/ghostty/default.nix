@@ -14,6 +14,8 @@ in {
         background = "#000000";
         background-opacity = 0.8;
         shell-integration-features = true;
+        working-directory = "home";
+        window-inherit-working-directory = false;
       };
     };
 

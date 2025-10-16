@@ -9,9 +9,8 @@
     blender_4_5
     kdePackages.kdenlive
     vesktop
-    aseprite
     zed-editor
-    cemu
+    libreoffice
 
     # fonts
     noto-fonts
@@ -27,5 +26,10 @@
     wireguard-tools
     easyeffects
     postman
+    dbeaver-bin
+
+    # ides
+    jetbrains.rider
+    jetbrains.webstorm
   ];
 }
