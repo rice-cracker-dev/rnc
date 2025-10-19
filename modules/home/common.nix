@@ -27,6 +27,7 @@
     easyeffects
     postman
     dbeaver-bin
+    webcamoid
 
     # ides
     jetbrains.rider

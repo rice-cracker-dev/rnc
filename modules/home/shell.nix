@@ -1,10 +1,8 @@
 {pkgs, ...}: {
   config.me = {
     packages = with pkgs; [
-      bat
       fd
       ripgrep
-      eza
       diskus
       libqalculate
       jq
@@ -15,11 +13,6 @@
 
       nushell = {
         enable = true;
-
-        aliases = {
-          cat = "${pkgs.bat}/bin/bat";
-          ls = "${pkgs.eza}/bin/eza";
-        };
 
         settings = {
           show_banner = false;
