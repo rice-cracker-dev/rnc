@@ -28,6 +28,7 @@
     postman
     dbeaver-bin
     webcamoid
+    ani-cli
 
     # ides
     jetbrains.rider
