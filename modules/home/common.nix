@@ -29,6 +29,7 @@
     dbeaver-bin
     webcamoid
     ani-cli
+    parted
 
     # ides
     jetbrains.rider
