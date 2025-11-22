@@ -20,6 +20,7 @@
       "docker"
       "libvirtd"
       "adbusers"
+      "video"
     ];
   };
 

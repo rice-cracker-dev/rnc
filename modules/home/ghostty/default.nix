@@ -7,12 +7,10 @@
 in {
   config = {
     me.rum.programs.ghostty = {
-      enable = true;
+      enable = false;
       settings = {
-        theme = "Catppuccin Macchiato";
+        theme = "Rose Pine";
         font-family = "JetBrainsMono Nerd Font";
-        background = "#000000";
-        background-opacity = 0.8;
         shell-integration-features = true;
         working-directory = "home";
         window-inherit-working-directory = false;

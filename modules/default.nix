@@ -11,5 +11,6 @@
   nixpkgs.overlays = [
     (import "${inputs.self}/overlays" {inherit inputs;})
     inputs.blender-bin.overlays.default
+    inputs.nvidia-patch.overlays.default
   ];
 }

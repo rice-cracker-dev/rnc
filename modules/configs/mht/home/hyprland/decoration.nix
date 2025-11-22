@@ -12,7 +12,7 @@
     blur = {
       enabled = true;
       size = 16;
-      passes = 4;
+      passes = 3;
       popups = true;
     };
   };

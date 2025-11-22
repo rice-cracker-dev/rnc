@@ -7,17 +7,21 @@
   themeFile = "${inputs.catppuccin-kitty}/themes/macchiato.conf";
 in {
   config.home.kitty = lib.mkIf (config.configs == "mht") {
-    enable = false;
+    enable = true;
 
     inherit themeFile;
 
     settings = {
-      background = "#000000";
-      background_opacity = 0.75;
+      background_opacity = 0.8;
 
       font_family = "JetBrainsMono Nerd Font";
       cursor_trail = 3;
       cursor_trail_decay = "0.1 0.4";
+
+      map = [
+        "ctrl+tab"
+        "ctrl+shift+tab"
+      ];
     };
   };
 }

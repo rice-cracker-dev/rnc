@@ -8,7 +8,7 @@
     brave
     blender_4_5
     kdePackages.kdenlive
-    vesktop
+    discord
     zed-editor
     libreoffice
 
@@ -24,12 +24,12 @@
     uv
     ngrok
     wireguard-tools
-    easyeffects
     postman
     dbeaver-bin
     webcamoid
     ani-cli
     parted
+    gpu-screen-recorder
 
     # ides
     jetbrains.rider

@@ -1,45 +1,34 @@
-# setting this up is a headache
+# isetting this up is a headache
 # sources:
 # https://wiki.nixos.org/wiki/Nvidiagrap
 # https://gitlab.com/fazzi/nixohess/-/blob/main/modules/hardware/gpu/nvidia/default.nix
 # thanks, fazzi!
 {
+  config,
   pkgs,
-  lib,
   ...
-}: {
-  services.xserver.videoDrivers = ["modesetting" "nvidia"];
-
-  environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "iHD";
-  };
+}: let
+  package = config.boot.kernelPackages.nvidiaPackages.stable;
+in {
+  services.xserver.videoDrivers = ["nvidia"];
 
   hardware = {
     graphics = {
       enable = true;
-      extraPackages = with pkgs; [
-        intel-media-driver # For Broadwell (2014) or newer processors. LIBVA_DRIVER_NAME=iHD
-        intel-vaapi-driver # For older processors. LIBVA_DRIVER_NAME=i965
-        vpl-gpu-rt
-      ];
-      extraPackages32 = with pkgs.pkgsi686Linux; [intel-vaapi-driver];
+      extraPackages = with pkgs; [nvidia-vaapi-driver];
     };
 
     nvidia = {
+      package = pkgs.nvidia-patch.patch-nvenc (pkgs.nvidia-patch.patch-fbc package);
       open = true;
-
-      powerManagement = {
-        enable = true;
-        finegrained = true;
-      };
+      powerManagement.enable = true;
 
       prime = {
         intelBusId = "PCI:0:2:0";
         nvidiaBusId = "PCI:1:0:0";
 
-        offload = {
+        sync = {
           enable = true;
-          enableOffloadCmd = true;
         };
       };
     };
@@ -52,5 +41,12 @@
       "nvidia.NVreg_RegistryDwords=RMIntrLockingMode=1" # enable low-latency mode
       "nvidia_modeset.disable_vrr_memclk_switch=1" # stop really high memclk when vrr is in use.
     ];
+  };
+
+  home.uwsm.env = {
+    LIBVA_DRIVER_NAME = "nvidia";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    NVD_BACKEND = "direct";
+    AQ_DRM_DEVICES = "/dev/dri/card0:/dev/dri/card1";
   };
 }

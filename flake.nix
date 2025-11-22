@@ -10,6 +10,11 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     blender-bin.url = "github:edolstra/nix-warez?dir=blender";
 
+    nvidia-patch = {
+      url = "github:icewind1991/nvidia-patch-nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ghostty-shaders = {
       url = "github:hackr-sh/ghostty-shaders";
       flake = false;
@@ -31,12 +36,12 @@
     };
 
     hjem = {
-      url = "github:feel-co/hjem";
+      url = "github:feel-co/hjem/31f969f69f02b62e417bcc39571a605977cb89fa";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hjem-rum = {
-      url = "github:rice-cracker-dev/hjem-rum/programs-yazi";
+      url = "github:rice-cracker-dev/hjem-rum/dirty-patch";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

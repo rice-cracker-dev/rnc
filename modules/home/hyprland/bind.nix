@@ -62,7 +62,7 @@ in {
         "super ctrl, right, movewindow, r"
 
         "super, p, pin, active"
-        "super, j, togglefloating"
+        "super, v, togglefloating"
         "super, f, fullscreen"
       ]
       ++ workspaceBinds
@@ -74,8 +74,8 @@ in {
     ];
 
     binde = [
-      ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
-      ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-"
+      ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+      ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     ];
   };
