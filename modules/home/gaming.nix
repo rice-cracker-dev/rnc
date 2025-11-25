@@ -6,7 +6,7 @@
   ...
 }: let
   inherit (lib) mkIf mkDefault mkEnableOption;
-  inherit (inputs.nix-gaming.packages.${pkgs.system}) wine-ge;
+  inherit (inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}) wine-ge;
 
   cfg = config.home.gaming;
 in {

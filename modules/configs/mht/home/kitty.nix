@@ -21,6 +21,8 @@ in {
       map = [
         "ctrl+tab"
         "ctrl+shift+tab"
+        "ctrl+shift+h previous_tab"
+        "ctrl+shift+l next_tab"
       ];
     };
   };

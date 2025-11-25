@@ -7,7 +7,7 @@
     mpv
     brave
     blender_4_5
-    kdePackages.kdenlive
+    #kdePackages.kdenlive
     discord
     zed-editor
     libreoffice

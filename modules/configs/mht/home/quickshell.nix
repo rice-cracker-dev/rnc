@@ -6,7 +6,7 @@
   config,
   ...
 }: let
-  shellPkg = inputs.rix-shell.packages.${pkgs.system}.default;
+  shellPkg = inputs.rix-shell.packages.${pkgs.stdenv.hostPlatform.system}.default;
   shellBin = "${shellPkg}/bin/quickshell";
 in {
   config.me = lib.mkIf (config.configs == "mht") {
