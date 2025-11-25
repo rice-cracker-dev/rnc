@@ -13,7 +13,7 @@
 
     plugins = with pkgs.obs-studio-plugins; [
       wlrobs
-      #obs-backgroundremoval
+      obs-backgroundremoval
       obs-pipewire-audio-capture
       #obs-gstreamer
       obs-vkcapture
