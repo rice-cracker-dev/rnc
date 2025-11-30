@@ -56,12 +56,12 @@
       ];
     })
 
-    (heroic.override {
-      extraPkgs = pkgs: [
-        pkgs.gamescope
-        pkgs.gamemode
-        pkgs.mangohud
-      ];
-    })
+    # (heroic.override {
+    #   extraPkgs = pkgs: [
+    #     pkgs.gamescope
+    #     pkgs.gamemode
+    #     pkgs.mangohud
+    #   ];
+    # })
   ];
 }

@@ -17,7 +17,7 @@ in {
 
   config = {
     home.gaming = {
-      enable = mkDefault true;
+      enable = mkDefault false;
       enableWineGE = mkDefault true;
     };
 
