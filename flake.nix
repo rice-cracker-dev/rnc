@@ -20,11 +20,6 @@
       flake = false;
     };
 
-    aagl = {
-      url = "github:ezKEa/aagl-gtk-on-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     catppuccin-btop = {
       url = "github:catppuccin/btop";
       flake = false;

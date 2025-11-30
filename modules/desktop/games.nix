@@ -1,18 +1,7 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
-  imports = [inputs.aagl.nixosModules.default];
-
-  nix.settings = {
-    substituters = ["https://ezkea.cachix.org"];
-    trusted-public-keys = ["ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="];
-  };
-
+{pkgs, ...}: {
   programs = {
     steam = {
-      enable = true;
+      enable = false;
       remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
       dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
       gamescopeSession.enable = true;
@@ -33,9 +22,6 @@
     };
 
     gamemode.enable = true;
-
-    sleepy-launcher.enable = true;
-    honkers-railway-launcher.enable = true;
   };
 
   me.files = {

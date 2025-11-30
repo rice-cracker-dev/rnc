@@ -8,7 +8,7 @@
     brave
     blender_4_5
     kdePackages.kdenlive
-    discord
+    (discord.override {withVencord = true;})
     zed-editor
     libreoffice
 
