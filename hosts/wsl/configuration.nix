@@ -26,5 +26,7 @@
     defaultUser = username;
   };
 
+  enableDesktopModules = false;
+
   system.stateVersion = "24.11";
 }
