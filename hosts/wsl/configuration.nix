@@ -1,6 +1,7 @@
 {
   inputs,
   username,
+  lib,
   ...
 }: {
   imports = [
@@ -8,6 +9,8 @@
     ./modules/nixos
     inputs.nixos-wsl.nixosModules.default
   ];
+
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   users.users.${username} = {
     isNormalUser = true;
