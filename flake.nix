@@ -70,8 +70,8 @@
       wsl = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs username riceLib;};
         modules = [
-          {wsl.enable = true;}
-        ];
+	  ./hosts/wsl/configuration.nix
+	];
       };
     };
   };
