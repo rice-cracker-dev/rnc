@@ -1,8 +1,9 @@
 {
-  description = "A very basic flake";
+  description = "rnc";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     swww.url = "github:LGFae/swww";
     nh.url = "github:nix-community/nh/47374db9bc89fabec665daf0c0903d400c10ef84"; # the last commit was faulty oops
     glfw3-minecraft-fix.url = "github:Piecuuu/nixpkgs/glfw-minecraft-fix";
@@ -63,6 +64,13 @@
         specialArgs = {inherit inputs username riceLib;};
         modules = [
           ./hosts/rc555/configuration.nix
+        ];
+      };
+
+      wsl = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs username riceLib;};
+        modules = [
+          {wsl.enable = true;}
         ];
       };
     };
