@@ -1,3 +1,3 @@
-{
-  programs.kdeconnect.enable = true;
+{config, ...}: {
+  programs.kdeconnect.enable = config.enableDesktopModules;
 }

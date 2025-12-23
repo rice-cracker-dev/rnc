@@ -21,7 +21,7 @@ in {
     };
   };
 
-  config.me = mkIf cfg.enable {
+  config.me = mkIf (config.enableDesktopModules && cfg.enable) {
     packages = [pkgs.swww];
 
     rum.desktops.hyprland.settings.exec-once = mkIf (cfg.wallpaperPath != null) [

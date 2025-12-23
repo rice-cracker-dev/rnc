@@ -3,12 +3,16 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nvf-config.url = "github:rice-cracker-dev/nvf-config";
     swww.url = "github:LGFae/swww";
     nh.url = "github:nix-community/nh/47374db9bc89fabec665daf0c0903d400c10ef84"; # the last commit was faulty oops
     glfw3-minecraft-fix.url = "github:Piecuuu/nixpkgs/glfw-minecraft-fix";
     nix-gaming.url = "github:fufexan/nix-gaming";
     blender-bin.url = "github:edolstra/nix-warez?dir=blender";
+
+    ricevim = {
+      url = "github:rice-cracker-dev/ricevim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nvidia-patch = {
       url = "github:icewind1991/nvidia-patch-nixos";

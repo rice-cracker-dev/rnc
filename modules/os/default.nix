@@ -18,6 +18,5 @@
     ./ssh.nix
     ./timezone.nix
     ./wacom.nix
-    ./x11.nix
   ];
 }

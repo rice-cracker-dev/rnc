@@ -1,21 +1,28 @@
-{pkgs, ...}: {
-  environment.systemPackages = [pkgs.libsecret];
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
+  config = lib.mkIf config.enableDesktopModules {
+    environment.systemPackages = [pkgs.libsecret];
 
-  services.gnome.gnome-keyring.enable = true;
-  programs.seahorse.enable = true;
+    services.gnome.gnome-keyring.enable = true;
+    programs.seahorse.enable = true;
 
-  systemd.user.services.gnome-keyring = {
-    description = "gnome-keyring";
-    wantedBy = ["graphical-session.target"];
-    wants = ["graphical-session.target"];
-    after = ["graphical-session.target"];
+    systemd.user.services.gnome-keyring = {
+      description = "gnome-keyring";
+      wantedBy = ["graphical-session.target"];
+      wants = ["graphical-session.target"];
+      after = ["graphical-session.target"];
 
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon -f";
-      Restart = "on-failure";
-      RestartSec = 1;
-      TimeoutStopSec = 10;
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon -f";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
     };
   };
 }

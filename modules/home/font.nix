@@ -63,7 +63,7 @@ in {
     emoji = mkFontOption "set font for emoji";
   };
 
-  config.me = mkIf cfg.enable {
+  config.me = mkIf (config.enableDesktopModules && cfg.enable) {
     files.".config/fontconfig/fonts.conf".text = ''
       <?xml version="1.0"?>
       <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">

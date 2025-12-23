@@ -1,3 +1,9 @@
 {
-   hardware.opentabletdriver.enable = true;
+  lib,
+  config,
+  ...
+}: {
+  config = lib.mkIf config.enableDesktopModules {
+    hardware.opentabletdriver.enable = true;
+  };
 }

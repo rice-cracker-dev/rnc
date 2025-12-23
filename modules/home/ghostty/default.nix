@@ -5,7 +5,7 @@
 }: let
   inherit (lib) mkIf;
 in {
-  config = {
+  config = mkIf config.enableDesktopModules {
     me.rum.programs.ghostty = {
       enable = false;
       settings = {

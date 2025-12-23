@@ -31,7 +31,7 @@ in {
     };
   };
 
-  config = mkIf cfg.enable {
+  config = mkIf (config.enableDesktopModules && cfg.enable) {
     me = {
       packages = [pkgs.kitty];
 

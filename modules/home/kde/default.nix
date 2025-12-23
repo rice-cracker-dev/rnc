@@ -1,5 +1,10 @@
-{pkgs, ...}: {
-  config.me = {
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}: {
+  config.me = lib.mkIf config.enableDesktopModules {
     packages = with pkgs.kdePackages; [
       # kde apps
       dolphin

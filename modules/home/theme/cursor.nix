@@ -32,7 +32,7 @@ in {
     default = null;
   };
 
-  config = mkIf (cfg.enable && cfg.cursor != null) {
+  config = mkIf (config.enableDesktopModules && cfg.enable && cfg.cursor != null) {
     me.rum.misc.gtk = {
       packages = [cfg.cursor.package];
 

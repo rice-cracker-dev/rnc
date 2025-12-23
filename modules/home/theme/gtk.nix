@@ -39,7 +39,7 @@ in {
     };
   };
 
-  config.me.rum.misc.gtk = mkIf (cfg.enable && cfg.gtk.enable) {
+  config.me.rum.misc.gtk = mkIf (config.enableDesktopModules && cfg.enable && cfg.gtk.enable) {
     enable = true;
 
     packages = mkIf (cfg.gtk.theme != null) [cfg.gtk.theme.package];

@@ -1,3 +1,3 @@
-{
-  config.me.rum.programs.vscode.enable = true;
+{config, ...}: {
+  config.me.rum.programs.vscode.enable = config.enableDesktopModules;
 }

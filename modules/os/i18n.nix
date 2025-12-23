@@ -1,7 +1,12 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}: {
   i18n = {
     defaultLocale = "en_US.UTF-8";
-    inputMethod = {
+    inputMethod = lib.mkIf config.enableDesktopModules {
       type = "fcitx5";
       enable = true;
       fcitx5.addons = with pkgs.qt6Packages; [

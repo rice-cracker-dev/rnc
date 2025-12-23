@@ -1,3 +1,9 @@
 {
-  programs.coolercontrol.enable = true;
+  config,
+  lib,
+  ...
+}: {
+  config = lib.mkIf config.enableDesktopModules {
+    programs.coolercontrol.enable = true;
+  };
 }

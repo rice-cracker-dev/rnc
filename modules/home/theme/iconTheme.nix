@@ -27,7 +27,7 @@ in {
     default = null;
   };
 
-  config.me = mkIf (cfg.enable && cfg.iconTheme != null) {
+  config.me = mkIf (config.enableDesktopModules && cfg.enable && cfg.iconTheme != null) {
     packages = [cfg.iconTheme.package];
 
     rum.misc.gtk = {

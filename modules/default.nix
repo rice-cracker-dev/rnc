@@ -1,5 +1,6 @@
 {inputs, ...}: {
   imports = [
+    ./options.nix
     ./configs
     ./desktop
     ./dev

@@ -53,7 +53,7 @@ in {
     };
   };
 
-  config = mkIf (cfg.enable && cfg.kvantum.enable) {
+  config = mkIf (config.enableDesktopModules && cfg.enable && cfg.kvantum.enable) {
     home.theme.qtct = {
       enable = true;
       qt5.style = "kvantum";

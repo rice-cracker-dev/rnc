@@ -17,6 +17,18 @@
         settings = {
           show_banner = false;
         };
+
+        extraConfig = ''
+          const profile_file = $"($nu.home-path)/.profile.nu"
+
+          const file_to_source = if ($profile_file | path exists) {
+              $profile_file
+          } else {
+              null
+          }
+
+          source $file_to_source
+        '';
       };
 
       zoxide = {

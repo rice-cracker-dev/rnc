@@ -1,5 +1,10 @@
-{pkgs, ...}: {
-  config.me = {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
+  config.me = lib.mkIf config.enableDesktopModules {
     packages = [
       (pkgs.flameshot.override {
         enableWlrSupport = true;

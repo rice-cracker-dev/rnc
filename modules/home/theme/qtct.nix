@@ -61,7 +61,7 @@ in {
     };
   };
 
-  config = mkIf cfg.enable {
+  config = mkIf (config.enableDesktopModules && cfg.enable) {
     me.files = {
       ".config/qt6ct/qt6ct.conf".text = qtctConf cfg.qt6;
       ".config/qt5ct/qt5ct.conf".text = qtctConf cfg.qt5;

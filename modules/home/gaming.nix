@@ -15,7 +15,7 @@ in {
     enableWineGE = mkEnableOption "wine-ge";
   };
 
-  config = {
+  config = mkIf config.enableDesktopModules {
     home.gaming = {
       enable = mkDefault false;
       enableWineGE = mkDefault true;

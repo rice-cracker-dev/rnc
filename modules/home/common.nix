@@ -1,6 +1,10 @@
-{pkgs, ...}: {
-  config.me.packages = with pkgs; [
-    # others
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}: let
+  desktopPackages = with pkgs; [
     wl-clipboard
     brightnessctl
     qbittorrent
@@ -8,7 +12,7 @@
     brave
     blender_4_5
     kdePackages.kdenlive
-    (discord.override {withVencord = true;})
+    (discord.override {withEquicord = true;})
     zed-editor
     libreoffice
 
@@ -20,19 +24,26 @@
     jetbrains-mono
 
     # tools
-    hurl
-    uv
-    ngrok
-    wireguard-tools
     postman
     dbeaver-bin
     webcamoid
     ani-cli
-    parted
     gpu-screen-recorder
 
     # ides
     jetbrains.rider
     jetbrains.webstorm
   ];
+in {
+  config.me.packages = with pkgs;
+    [
+      # tools
+      hurl
+      uv
+      ngrok
+      wireguard-tools
+      parted
+      gemini-cli
+    ]
+    ++ (lib.optionals config.enableDesktopModules desktopPackages);
 }
