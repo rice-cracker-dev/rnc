@@ -437,6 +437,22 @@
         "type": "indirect"
       }
     },
+    "nixpkgs-25-05": {
+      "locked": {
+        "lastModified": 1766399428,
+        "narHash": "sha256-vS6LSOMDOB3s+L6tqw9IGujxnmUAZQnEG+Vi640LayI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "a6c3a6141ec1b367c58ead3f7f846c772a25f4e5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-25.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1754788789,
@@ -606,14 +622,15 @@
         "nixpkgs": [
           "nixpkgs"
         ],
+        "nixpkgs-25-05": "nixpkgs-25-05",
         "ts-error-translator": "ts-error-translator"
       },
       "locked": {
-        "lastModified": 1766825765,
-        "narHash": "sha256-3SCHh80jVxotVk55tpR9TkmqJEwID+Qcb4dB03/YB0M=",
+        "lastModified": 1767348546,
+        "narHash": "sha256-/tWakIY70AXaNZATwDVa+zmbSg8O798Yt/GpV0jpaEU=",
         "owner": "rice-cracker-dev",
         "repo": "ricevim",
-        "rev": "37897a945006ceab03bcdba6cfe87ed9271f5b93",
+        "rev": "57286af9c7604a997c5f07590e19e84afbc253f9",
         "type": "github"
       },
       "original": {
