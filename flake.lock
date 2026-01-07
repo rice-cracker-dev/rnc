@@ -626,11 +626,11 @@
         "ts-error-translator": "ts-error-translator"
       },
       "locked": {
-        "lastModified": 1767348546,
-        "narHash": "sha256-/tWakIY70AXaNZATwDVa+zmbSg8O798Yt/GpV0jpaEU=",
+        "lastModified": 1767807689,
+        "narHash": "sha256-jLgnQ4PgdF2Ingjl1+fV7zBrBQ68oxxtnAdLzA5Y29Y=",
         "owner": "rice-cracker-dev",
         "repo": "ricevim",
-        "rev": "57286af9c7604a997c5f07590e19e84afbc253f9",
+        "rev": "ae4e2293f6215231e8a75038ad092e40d9d036ca",
         "type": "github"
       },
       "original": {
