@@ -1,3 +1,3 @@
 {
-  imports = [./networking.nix ./vscode.nix];
+  imports = [./vscode.nix];
 }
