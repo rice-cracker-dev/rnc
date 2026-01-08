@@ -2,6 +2,7 @@
   pkgs,
   config,
   lib,
+  inputs,
   ...
 }: let
   desktopPackages = with pkgs; [
@@ -9,7 +10,7 @@
     brightnessctl
     qbittorrent
     mpv
-    brave
+    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.helium
     blender_4_5
     kdePackages.kdenlive
     (discord.override {withEquicord = true;})

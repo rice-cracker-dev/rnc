@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     swww.url = "github:LGFae/swww";
     nh.url = "github:nix-community/nh/47374db9bc89fabec665daf0c0903d400c10ef84"; # the last commit was faulty oops
@@ -46,33 +47,51 @@
     };
   };
 
-  outputs = {nixpkgs, ...} @ inputs: let
-    username = "khoa";
-    riceLib = import ./lib nixpkgs.lib;
-  in {
-    lib = nixpkgs.lib // riceLib;
+  outputs = {
+    flake-parts,
+    nixpkgs,
+    ...
+  } @ inputs:
+    flake-parts.lib.mkFlake {inherit inputs;} (let
+      inherit (nixpkgs) lib;
 
-    nixosConfigurations = {
-      z00vd = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs username riceLib;};
-        modules = [
-          ./hosts/z00vd/configuration.nix
-        ];
+      username = "khoa";
+      riceLib = import ./lib lib;
+    in {
+      systems = ["x86_64-linux"];
+
+      flake = {
+        lib = lib // riceLib;
+
+        nixosConfigurations = {
+          z00vd = nixpkgs.lib.nixosSystem {
+            specialArgs = {inherit inputs username riceLib;};
+            modules = [
+              ./hosts/z00vd/configuration.nix
+            ];
+          };
+
+          rc555 = nixpkgs.lib.nixosSystem {
+            specialArgs = {inherit inputs username riceLib;};
+            modules = [
+              ./hosts/rc555/configuration.nix
+            ];
+          };
+
+          wsl = nixpkgs.lib.nixosSystem {
+            specialArgs = {inherit inputs username riceLib;};
+            modules = [
+              ./hosts/wsl/configuration.nix
+            ];
+          };
+        };
       };
 
-      rc555 = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs username riceLib;};
-        modules = [
-          ./hosts/rc555/configuration.nix
-        ];
-      };
-
-      wsl = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs username riceLib;};
-        modules = [
-	  ./hosts/wsl/configuration.nix
-	];
-      };
-    };
-  };
+      perSystem = {pkgs, ...}: let
+        packages = lib.filesystem.packagesFromDirectoryRecursive {
+          inherit (pkgs) callPackage;
+          directory = ./pkgs;
+        };
+      in {inherit packages;};
+    });
 }
