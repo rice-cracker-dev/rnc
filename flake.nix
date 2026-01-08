@@ -10,11 +10,7 @@
     glfw3-minecraft-fix.url = "github:Piecuuu/nixpkgs/glfw-minecraft-fix";
     nix-gaming.url = "github:fufexan/nix-gaming";
     blender-bin.url = "github:edolstra/nix-warez?dir=blender";
-
-    ricevim = {
-      url = "github:rice-cracker-dev/ricevim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    ricevim.url = "github:rice-cracker-dev/ricevim";
 
     nvidia-patch = {
       url = "github:icewind1991/nvidia-patch-nixos";

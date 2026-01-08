@@ -30,10 +30,6 @@
     webcamoid
     ani-cli
     gpu-screen-recorder
-
-    # ides
-    jetbrains.rider
-    jetbrains.webstorm
   ];
 in {
   config.me.packages = with pkgs;
