@@ -21,6 +21,8 @@
       "libvirtd"
       "adbusers"
       "video"
+      "audio"
+      "pipewire"
     ];
   };
 

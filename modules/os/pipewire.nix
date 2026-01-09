@@ -13,21 +13,39 @@
       alsa.support32Bit = true;
       pulse.enable = true;
 
-      # https://gitlab.com/fazzi/nixohess/-/blob/main/modules/core/pipewire/default.nix
-      extraConfig.pipewire-pulse."92-rtkit" = {
-        context.modules = [
-          {
-            name = "libpipewire-module-rtkit";
-            args = {
-              # make audio extremely high priority to avoid crackling
-              "nice.level" = -20;
-              "rt.prio" = 99;
-            };
-          }
-        ];
+      # low-latency setup
+      extraConfig = {
+        pipewire."92-low-latency" = {
+          "context.properties" = {
+            "default.clock.rate" = 48000;
+            "default.clock.quantum" = 32;
+            "default.clock.min-quantum" = 32;
+            "default.clock.max-quantum" = 32;
+          };
+        };
+
+        pipewire-pulse."92-low-latency" = {
+          "context.properties" = [
+            {
+              name = "libpipewire-module-protocol-pulse";
+              args = {};
+            }
+          ];
+          "pulse.properties" = {
+            "pulse.min.req" = "32/48000";
+            "pulse.default.req" = "32/48000";
+            "pulse.max.req" = "32/48000";
+            "pulse.min.quantum" = "32/48000";
+            "pulse.max.quantum" = "32/48000";
+          };
+          "stream.properties" = {
+            "node.latency" = "32/48000";
+            "resample.quality" = 1;
+          };
+        };
       };
     };
 
-    environment.systemPackages = with pkgs; [pulseaudio pavucontrol]; # pactl
+    environment.systemPackages = with pkgs; [qpwgraph pwvucontrol];
   };
 }

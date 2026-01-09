@@ -7,10 +7,7 @@
     "${inputs.self}/modules"
     ./modules/nixos
     ./hardware-configuration.nix
-    ./custom-module.nix
   ];
-
-  custom-module.enable = true;
 
   users.users.${username} = {
     isNormalUser = true;
