@@ -1,14 +1,9 @@
 {
   config.me.rum.desktops.hyprland.settings = {
-    windowrulev2 = [
-      "fullscreen, class:^(Waydroid)$"
-      "nodim, class:^(Waydroid)$"
-    ];
-
     layerrule = [
-      "blur, quickshell"
-      "blurpopups, quickshell"
-      "ignorealpha 0.5, quickshell"
+      "blur on, match:namespace quickshell"
+      "blur_popups on, match:namespace quickshell"
+      "ignore_alpha 0.5, match:namespace quickshell"
     ];
   };
 }

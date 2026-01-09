@@ -11,13 +11,19 @@
       })
     ];
 
+    xdg.config.files."flameshot/flameshot.ini".text = ''
+      [General]
+      saveAfterCopy=true
+      useGrimAdapter=true
+    '';
+
     rum.desktops.hyprland.settings = {
-      windowrulev2 = [
-        "noanim, class:(flameshot)"
-        "move 0 0, class:(flameshot)"
-        "pin, class:(flameshot)"
-        "fullscreenstate, class:(flameshot)"
-        "float, class:(flameshot)"
+      windowrule = [
+        "no_anim on, match:title flameshot"
+        "move 0 0, match:title flameshot"
+        "pin on, match:title flameshot"
+        "fullscreen_state 2, match:title flameshot"
+        "float on, match:title flameshot"
       ];
 
       bind = [
