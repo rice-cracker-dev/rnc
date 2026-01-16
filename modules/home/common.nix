@@ -26,6 +26,7 @@
 
     # tools
     postman
+    bruno
     dbeaver-bin
     webcamoid
     ani-cli
