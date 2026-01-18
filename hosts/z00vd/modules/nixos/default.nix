@@ -1,7 +1,0 @@
-{
-  imports = [
-    ./boot
-    ./home
-    ./networking
-  ];
-}

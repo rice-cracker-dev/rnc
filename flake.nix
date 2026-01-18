@@ -1,92 +1,34 @@
 {
-  description = "rnc";
+  description = "Description for the project";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
-    swww.url = "github:LGFae/swww";
-    nh.url = "github:nix-community/nh/47374db9bc89fabec665daf0c0903d400c10ef84"; # the last commit was faulty oops
-    glfw3-minecraft-fix.url = "github:Piecuuu/nixpkgs/glfw-minecraft-fix";
-    nix-gaming.url = "github:fufexan/nix-gaming";
-    blender-bin.url = "github:edolstra/nix-warez?dir=blender";
-    ricevim.url = "github:rice-cracker-dev/ricevim";
-    nvidia-patch = {
-      url = "github:icewind1991/nvidia-patch-nixos";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    ghostty-shaders = {
-      url = "github:hackr-sh/ghostty-shaders";
-      flake = false;
-    };
-
-    catppuccin-btop = {
-      url = "github:catppuccin/btop";
-      flake = false;
-    };
-
-    catppuccin-kitty = {
-      url = "github:catppuccin/kitty";
-      flake = false;
-    };
-
-    hjem = {
-      url = "github:feel-co/hjem/31f969f69f02b62e417bcc39571a605977cb89fa";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hjem-rum = {
-      url = "github:rice-cracker-dev/hjem-rum/dirty-patch";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = {
-    flake-parts,
-    nixpkgs,
-    ...
-  } @ inputs:
-    flake-parts.lib.mkFlake {inherit inputs;} (let
-      inherit (nixpkgs) lib;
+  outputs = inputs @ {flake-parts, ...}:
+    flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin"];
 
-      username = "khoa";
-      riceLib = import ./lib lib;
-    in {
-      systems = ["x86_64-linux"];
+      perSystem = {
+        config,
+        self',
+        inputs',
+        pkgs,
+        system,
+        ...
+      }: {
+        # Per-system attributes can be defined here. The self' and inputs'
+        # module parameters provide easy access to attributes of the same
+        # system.
 
-      flake = {
-        lib = lib // riceLib;
-
-        nixosConfigurations = {
-          z00vd = nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs username riceLib;};
-            modules = [
-              ./hosts/z00vd/configuration.nix
-            ];
-          };
-
-          rc555 = nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs username riceLib;};
-            modules = [
-              ./hosts/rc555/configuration.nix
-            ];
-          };
-
-          wsl = nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs username riceLib;};
-            modules = [
-              ./hosts/wsl/configuration.nix
-            ];
-          };
-        };
+        # Equivalent to  inputs'.nixpkgs.legacyPackages.hello;
+        packages.default = pkgs.hello;
       };
-
-      perSystem = {pkgs, ...}: let
-        packages = lib.filesystem.packagesFromDirectoryRecursive {
-          inherit (pkgs) callPackage;
-          directory = ./pkgs;
-        };
-      in {inherit packages;};
-    });
+      flake = {
+        # The usual flake attributes can be defined here, including system-
+        # agnostic ones like nixosModule and system-enumerating ones, although
+        # those are more easily expressed in perSystem.
+      };
+    };
 }
