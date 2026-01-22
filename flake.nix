@@ -9,6 +9,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL";
     ricevim.url = "github:rice-cracker-dev/ricevim";
     nh.url = "github:nix-community/nh";
 
