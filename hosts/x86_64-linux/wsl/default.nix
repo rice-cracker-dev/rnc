@@ -9,6 +9,7 @@ in {
 
   desktop.enable = false;
   core.boot.enable = false;
+  networking.networkmanager.enable = false;
 
   wsl = {
     enable = true;
