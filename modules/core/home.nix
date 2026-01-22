@@ -30,6 +30,7 @@ in {
         libqalculate
         btdu
         android-tools
+        wget
       ];
     };
   };
