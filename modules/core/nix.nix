@@ -1,4 +1,6 @@
-{
+{lib, ...}: let
+  inherit (lib) mkDefault;
+in {
   nix = {
     channel.enable = false;
 
@@ -25,6 +27,7 @@
   nixpkgs.config = {
     allowUnfree = true;
     android_sdk.accept_license = true;
+    cudaSupport = mkDefault true;
   };
 
   programs.nix-ld.enable = true;

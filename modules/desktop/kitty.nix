@@ -4,14 +4,16 @@
   pins,
   ...
 }: let
-  inherit (lib) mkIf;
+  inherit (lib) mkIf genAttrs' nameValuePair;
   inherit (config) desktop;
 in {
   config = mkIf desktop.enable {
     home.rum.programs.kitty = {
       enable = true;
 
-      theme.no-preference = "${pins.catppuccin-kitty}/themes/macchiato.conf";
+      theme =
+        genAttrs' ["no-preference" "dark" "light"]
+        (s: nameValuePair s "${pins.catppuccin-kitty}/themes/macchiato.conf");
 
       settings = {
         background_opacity = 0.8;

@@ -11,12 +11,14 @@ in {
     enable = mkEnableOption "system bootloader" // {default = true;};
   };
 
-  config = mkIf cfg.enable {
+  config = {
     boot = {
-      loader = {
+      loader = mkIf cfg.enable {
         systemd-boot.enable = true;
         efi.canTouchEfiVariables = true;
       };
+
+      # kernelPackages = pkgs.linuxPackages_6_18;
     };
   };
 }
