@@ -1,0 +1,57 @@
+{
+  "pins": {
+    "catppuccin-btop": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "catppuccin",
+        "repo": "btop"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "f437574b600f1c6d932627050b15ff5153b58fa3",
+      "url": "https://github.com/catppuccin/btop/archive/f437574b600f1c6d932627050b15ff5153b58fa3.tar.gz",
+      "hash": "sha256-mEGZwScVPWGu+Vbtddc/sJ+mNdD2kKienGZVUcTSl+c="
+    },
+    "catppuccin-fuzzel": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "catppuccin",
+        "repo": "fuzzel"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "0af0e26901b60ada4b20522df739f032797b07c3",
+      "url": "https://github.com/catppuccin/fuzzel/archive/0af0e26901b60ada4b20522df739f032797b07c3.tar.gz",
+      "hash": "sha256-XpItMGsYq4XvLT+7OJ9YRILfd/9RG1GMuO6J4hSGepg="
+    },
+    "catppuccin-kitty": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "catppuccin",
+        "repo": "kitty"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "43098316202b84d6a71f71aaf8360f102f4d3f1a",
+      "url": "https://github.com/catppuccin/kitty/archive/43098316202b84d6a71f71aaf8360f102f4d3f1a.tar.gz",
+      "hash": "sha256-akRkdq8l2opGIg3HZd+Y4eky6WaHgKFQ5+iJMC1bhnQ="
+    },
+    "niqspkgs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "diniamo",
+        "repo": "niqspkgs"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "74831b270ce1dd76b242586670f114534ce74896",
+      "url": "https://github.com/diniamo/niqspkgs/archive/74831b270ce1dd76b242586670f114534ce74896.tar.gz",
+      "hash": "sha256-KFurej/3hkdxa4cH2PXGVDxWnV5Ag9coiU4QireEW/U="
+    }
+  },
+  "version": 7
+}
