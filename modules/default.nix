@@ -1,17 +1,13 @@
-{inputs, ...}: {
-  imports = [
-    ./options.nix
-    ./configs
-    ./desktop
-    ./dev
-    ./home
-    ./os
-    ./virtualisation
-  ];
-
-  nixpkgs.overlays = [
-    (import "${inputs.self}/overlays" {inherit inputs;})
-    inputs.blender-bin.overlays.default
-    inputs.nvidia-patch.overlays.default
-  ];
+{
+  self,
+  lib,
+  ...
+}: let
+  inherit (lib) filter;
+  inherit (self.lib.filesystem) listNixFilesRecursively;
+in {
+  flake.nixosModules.default = {
+    # prevent this file from getting imported
+    imports = filter (path: path != ./default.nix) (listNixFilesRecursively ./.);
+  };
 }

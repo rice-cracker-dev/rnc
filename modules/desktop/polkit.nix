@@ -1,10 +1,13 @@
 {
-  pkgs,
   config,
   lib,
+  pkgs,
   ...
-}: {
-  config = lib.mkIf config.enableDesktopModules {
+}: let
+  inherit (lib) mkIf;
+  inherit (config) desktop;
+in {
+  config = mkIf desktop.enable {
     security.polkit.enable = true;
 
     systemd.user.services.polkit-gnome-authentication-agent-1 = {

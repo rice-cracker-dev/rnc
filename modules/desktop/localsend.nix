@@ -2,8 +2,11 @@
   config,
   lib,
   ...
-}: {
-  config.programs.localsend = lib.mkIf config.enableDesktopModules {
+}: let
+  inherit (lib) mkIf;
+  inherit (config) desktop;
+in {
+  config.programs.localsend = mkIf desktop.enable {
     enable = true;
     openFirewall = true;
   };
