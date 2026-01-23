@@ -22,7 +22,10 @@ in {
       };
     };
 
-    desktop.uwsm.defaultEnv.GTK_THEME = "adw-gtk3-dark:dark";
+    desktop.uwsm.defaultEnv = {
+      GTK_THEME = "adw-gtk3-dark:dark";
+      GTK_CSD = 0;
+    };
 
     programs.dconf.profiles.user.databases = [
       {
