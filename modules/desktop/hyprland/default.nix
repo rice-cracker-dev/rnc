@@ -35,10 +35,29 @@ in {
             accel_profile = "flat";
           };
 
+          general = {
+            gaps_in = 4;
+            gaps_out = 4;
+            resize_on_border = true;
+
+            "col.inactive_border" = "0xff363a4f";
+            "col.active_border" = "0xffc6a0f6";
+          };
+
+          decoration = {
+            rounding = 4;
+
+            blur = {
+              passes = 3;
+              size = 8;
+            };
+          };
+
           layerrule = [
             "blur on, match:namespace quickshell"
             "blur_popups on, match:namespace quickshell"
             "ignore_alpha 0.5, match:namespace quickshell"
+            "blur on, match:namespace launcher"
           ];
 
           windowrule = [

@@ -10,6 +10,7 @@ in {
   desktop.enable = false;
   core.boot.enable = false;
   networking.networkmanager.enable = false;
+  nixpkgs.config.cudaSupport = false;
 
   wsl = {
     enable = true;
