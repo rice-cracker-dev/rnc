@@ -5,6 +5,7 @@
 
   imports = [
     ./lib
+    ./quickshell
     ./devshells.nix
     ./packages.nix
   ];

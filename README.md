@@ -11,6 +11,8 @@ written by a weeb
 - parts # flake modules
   - lib # my libraries
 - modules # shared modules
+- configs # raw config for some programs
+  - quickshell # my quickshell config
 ```
 
 taken some inspirations from:

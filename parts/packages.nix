@@ -1,9 +1,16 @@
-{lib, ...}: let
-  inherit (lib.filesystem) packagesFromDirectoryRecursive;
-in {
-  perSystem = {pkgs, ...}: {
+{
+  lib,
+  self,
+  ...
+}: {
+  perSystem = {pkgs, ...}: let
+    inherit (lib.filesystem) packagesFromDirectoryRecursive;
+    inherit (lib) callPackageWith;
+
+    callPackage = callPackageWith (pkgs // {inherit self;});
+  in {
     packages = packagesFromDirectoryRecursive {
-      inherit (pkgs) callPackage;
+      inherit callPackage;
       directory = ./pkgs;
     };
   };
