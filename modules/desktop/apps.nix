@@ -23,6 +23,7 @@ in {
       ani-cli
       gpu-screen-recorder
       scrcpy
+      (bottles.override {removeWarningPopup = true;})
     ];
   };
 }
