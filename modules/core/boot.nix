@@ -14,8 +14,12 @@ in {
   config = {
     boot = {
       loader = mkIf cfg.enable {
-        systemd-boot.enable = true;
         efi.canTouchEfiVariables = true;
+
+        systemd-boot = {
+          enable = true;
+          configurationLimit = 10;
+        };
       };
 
       # kernelPackages = pkgs.linuxPackages_6_18;
