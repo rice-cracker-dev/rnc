@@ -5,6 +5,8 @@ import qs.widgets as Widgets
 import qs.widgets.components as Components
 
 PanelWindow {
+  id: window
+
   anchors {
     bottom: true
     left: true
@@ -28,7 +30,42 @@ PanelWindow {
         verticalCenter: main.verticalCenter
       }
 
-      Components.HyprlandWorkspaces {}
+      Components.HyprlandWorkspaces {
+        id: workspaces
+      }
     }
+
+    Row {
+      anchors {
+        right: main.right
+        verticalCenter: main.verticalCenter
+        rightMargin: 8
+      }
+
+      Widgets.Label {
+        id: testLabel
+        text: "Test"
+      }
+    }
+  }
+
+  PopupWindow {
+    id: popup
+
+    anchor {
+      window: window
+
+      onAnchoring: {
+        const pos = main.mapFromItem(workspaces, 0, 0);
+        anchor.rect.x = pos.x;
+        anchor.rect.width = workspaces.width;
+        anchor.rect.height = workspaces.height;
+      }
+    }
+
+    implicitWidth: 200
+    implicitHeight: 200
+    color: Qt.rgba(255, 0, 0, 0.1)
+    visible: true
   }
 }

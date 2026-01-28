@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import qs.singletons
+import qs.animations
 
 Button {
   id: button
@@ -23,8 +24,6 @@ Button {
   property color foregroundColor: Colors.primaryForeground
   property double cornerRadius: 4
 
-  readonly property color hoveredBackgroundColor: Colors.opacity(button.backgroundColor, 0.9)
-
   hoverEnabled: true
   leftPadding: 8
   rightPadding: 8
@@ -37,11 +36,27 @@ Button {
     radius: button.cornerRadius
   }
 
+  Behavior on width {
+    BezierNumberAnimation {}
+  }
+
+  transitions: Transition {
+    BezierColorAnimation {
+      duration: 150
+    }
+  }
+
   states: [
+    State {
+      when: button.hovered && button.variant === VariantButton.ButtonVariant.Neutral
+      PropertyChanges {
+        rect.color: Colors.opacity(Colors.neutral, 0.8)
+      }
+    },
     State {
       when: button.hovered
       PropertyChanges {
-        rect.color: button.hoveredBackgroundColor
+        rect.color: Colors.opacity(button.backgroundColor, 0.8)
       }
     },
     State {
