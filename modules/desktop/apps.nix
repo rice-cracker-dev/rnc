@@ -15,7 +15,6 @@ in {
       qbittorrent
       mpv
       self'.packages.helium
-      (discord.override {withEquicord = true;})
       zed-editor-fhs
       libreoffice
       postman
@@ -23,6 +22,8 @@ in {
       ani-cli
       gpu-screen-recorder
       scrcpy
+      legcord
+      (discord.override {withEquicord = true;})
       (bottles.override {removeWarningPopup = true;})
     ];
   };
