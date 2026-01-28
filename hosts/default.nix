@@ -4,6 +4,7 @@
   withSystem,
   lib,
   pins,
+  overlays,
   ...
 }: let
   inherit (lib) listToAttrs concatLists map;
@@ -25,6 +26,7 @@
         modules = [
           self.nixosModules.default
           ./${system}/${hostName}
+          {nixpkgs.overlays = overlays;}
         ];
       });
 
