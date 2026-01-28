@@ -352,11 +352,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1768916434,
-        "narHash": "sha256-VIpQSOxG3lFfNCtD0/68gnE3xKyczTayrY5hCDCVUbY=",
+        "lastModified": 1769597214,
+        "narHash": "sha256-zfoNuLa4O1Z3uXorURETnlmZMto8G/jhPQ4C0P47C/c=",
         "owner": "rice-cracker-dev",
         "repo": "ricevim",
-        "rev": "b541955d32647641b6e977caf36a8c7d93d68784",
+        "rev": "78a3c773da249cfc416ee81832f14733686e2638",
         "type": "github"
       },
       "original": {
