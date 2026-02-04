@@ -31,6 +31,7 @@ in {
         btdu
         android-tools
         wget
+        opencode
       ];
     };
   };
