@@ -35,15 +35,15 @@ in {
         "super, m, exec, uwsm stop"
         "super, w, killactive"
 
-        "super, left, movefocus, l"
-        "super, right, movefocus, r"
-        "super, up, movefocus, u"
-        "super, down, movefocus, d"
+        "super, h, movefocus, l"
+        "super, l, movefocus, r"
+        "super, k, movefocus, u"
+        "super, j, movefocus, d"
 
-        "super ctrl, up, movewindow, u"
-        "super ctrl, down, movewindow, d"
-        "super ctrl, left, movewindow, l"
-        "super ctrl, right, movewindow, r"
+        "super ctrl, h, movewindow, l"
+        "super ctrl, l, movewindow, r"
+        "super ctrl, k, movewindow, u"
+        "super ctrl, j, movewindow, d"
 
         "super, p, pin, active"
         "super, v, togglefloating"
