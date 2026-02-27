@@ -40,6 +40,8 @@ in {
           };
 
           general = {
+            layout = "scrolling";
+
             gaps_in = 4;
             gaps_out = 4;
             resize_on_border = true;
