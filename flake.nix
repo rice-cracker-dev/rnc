@@ -13,6 +13,7 @@
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
     ricevim.url = "github:rice-cracker-dev/ricevim";
     nh.url = "github:nix-community/nh";
+    hyprland.url = "github:hyprwm/Hyprland";
 
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
