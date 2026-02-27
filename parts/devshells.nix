@@ -1,10 +1,10 @@
 {
   perSystem = {pkgs, ...}: let
-    inherit (pkgs) mkShell npins;
+    inherit (pkgs) mkShell npins jq;
   in {
     devShells = {
       default = mkShell {
-        buildInputs = [npins];
+        buildInputs = [npins jq];
       };
     };
   };
