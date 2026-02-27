@@ -3,13 +3,15 @@
   config,
   ...
 }: let
-  inherit (lib) mkOption;
+  inherit (lib) mkIf mkOption mkEnableOption;
   inherit (lib.types) int;
 
-  cfg = config.desktop.pipewire;
-  pulseValue = "${toString cfg.low-latency.quantum}/${toString cfg.low-latency.rate}";
+  cfg = config.desktop.pipewire.low-latency;
+  pulseValue = "${toString cfg.quantum}/${toString cfg.rate}";
 in {
   options.desktop.pipewire.low-latency = {
+    enable = mkEnableOption "pipewire low latency configurations";
+
     rate = mkOption {
       type = int;
       default = 48000;
@@ -21,13 +23,13 @@ in {
     };
   };
 
-  config.services.pipewire.extraConfig = {
+  config.services.pipewire.extraConfig = mkIf cfg.enable {
     pipewire."92-low-latency" = {
       "context.properties" = {
-        "default.clock.rate" = cfg.low-latency.rate;
-        "default.clock.quantum" = cfg.low-latency.quantum;
-        "default.clock.min-quantum" = cfg.low-latency.quantum;
-        "default.clock.max-quantum" = cfg.low-latency.quantum;
+        "default.clock.rate" = cfg.rate;
+        "default.clock.quantum" = cfg.quantum;
+        "default.clock.min-quantum" = cfg.quantum;
+        "default.clock.max-quantum" = cfg.quantum;
       };
     };
 
