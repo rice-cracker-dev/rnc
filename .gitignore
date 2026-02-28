@@ -1,4 +1,5 @@
 /result
+/repl-result-out
 .direnv
 
 # ignore test VMs
