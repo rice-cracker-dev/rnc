@@ -23,7 +23,7 @@ in
       cp -r ${contents}/usr/share/* $out/share
       cp -r ${contents}/opt/helium/locales $out/share/lib/helium
       substitute ${contents}/helium.desktop $out/share/applications/helium.desktop \
-        --replace-fail 'Exec=AppRun' "Exec=$out/bin/helium"
+        --replace-fail 'Exec=helium' "Exec=$out/bin/helium"
     '';
 
     meta = {
