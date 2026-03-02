@@ -17,12 +17,18 @@ in {
       type = attrsOf anything;
       default = {
         display = {
-          color = {keys = "magenta";};
-          key = {width = 10;};
+          color = {
+            keys = "magenta";
+          };
+          key = {
+            width = 10;
+          };
           separator = "";
         };
         logo = {
+          height = 15;
           padding = {
+            left = 4;
             right = 4;
             top = 1;
           };
@@ -30,7 +36,9 @@ in {
           type = "auto";
         };
         modules = [
-          {type = "break";}
+          {
+            type = "break";
+          }
           {
             key = "system";
             type = "os";
@@ -68,11 +76,20 @@ in {
             type = "disk";
           }
           {
+            key = "battery";
+            type = "battery";
+          }
+          {
             key = "colors";
             symbol = "circle";
             type = "colors";
           }
-          {type = "break";}
+          {
+            type = "break";
+          }
+          {
+            type = "break";
+          }
           {
             key = "uheeeeeeeee~";
             type = "custom";
