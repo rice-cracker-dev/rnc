@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: let
   inherit (lib) mkIf;
@@ -8,5 +9,8 @@
 in {
   config = mkIf desktop.enable {
     programs.wireshark.enable = true;
+    home.packages = with pkgs; [wireshark];
+
+    core.user.extraGroups = ["wireshark"];
   };
 }

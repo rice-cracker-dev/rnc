@@ -21,7 +21,6 @@ in {
         "input"
         "storage"
         "power"
-        "docker"
         "adbusers"
       ];
     };
