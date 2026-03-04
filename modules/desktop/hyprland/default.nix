@@ -72,6 +72,7 @@ in {
             "pin on, match:title flameshot"
             "fullscreen_state 2, match:title flameshot"
             "float on, match:title flameshot"
+            "suppress_event fullscreen, match:class ^libreoffice.*$"
           ];
 
           bezier = ["easeOutQuint, 0.22, 1, 0.36, 1"];
