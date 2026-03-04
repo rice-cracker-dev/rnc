@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: let
   inherit (lib) mkIf;
@@ -10,5 +11,7 @@ in {
     hardware.bluetooth.enable = true;
     hardware.bluetooth.powerOnBoot = true;
     services.blueman.enable = true;
+
+    home.packages = with pkgs; [bluetui];
   };
 }
