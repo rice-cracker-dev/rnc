@@ -5,7 +5,7 @@
   ...
 }: let
   inherit (lib) mkAliasOptionModule;
-  inherit (config.core.user) username;
+  inherit (config.core.user) username packages;
 in {
   imports = [
     inputs.hjem.nixosModules.default
@@ -20,6 +20,7 @@ in {
     clobberByDefault = true;
 
     users.${username} = {
+      inherit packages;
       directory = "/home/${username}";
     };
   };
