@@ -2,7 +2,6 @@
   inputs,
   lib,
   config,
-  pkgs,
   ...
 }: let
   inherit (lib) mkAliasOptionModule;
@@ -22,17 +21,6 @@ in {
 
     users.${username} = {
       directory = "/home/${username}";
-      packages = with pkgs; [
-        parted
-        fd
-        ripgrep
-        diskus
-        libqalculate
-        btdu
-        android-tools
-        wget
-        opencode
-      ];
     };
   };
 }

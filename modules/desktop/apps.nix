@@ -25,6 +25,9 @@ in {
       legcord
       (discord.override {withEquicord = true;})
       (bottles.override {removeWarningPopup = true;})
+
+      # cli
+      android-tools
     ];
   };
 }

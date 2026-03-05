@@ -1,10 +1,11 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: let
   inherit (lib) mkOption;
-  inherit (lib.types) str listOf;
+  inherit (lib.types) str package listOf;
 
   cfg = config.core.user;
 in {
@@ -28,6 +29,21 @@ in {
     extraGroups = mkOption {
       type = listOf str;
       default = [];
+    };
+
+    packages = mkOption {
+      type = listOf package;
+      default = with pkgs; [
+        parted
+        fd
+        ripgrep
+        diskus
+        libqalculate
+        btdu
+        android-tools
+        wget
+        opencode
+      ];
     };
   };
 
