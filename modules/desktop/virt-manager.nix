@@ -9,10 +9,10 @@
 in {
   config = mkIf desktop.enable {
     virtualisation = {
-      spiceUSBRedirection.enable = true;
+      spiceUSBRedirection.enable = false;
 
       libvirtd = {
-        enable = true;
+        enable = false;
         qemu = {
           package = pkgs.qemu_kvm;
           runAsRoot = true;
@@ -21,6 +21,6 @@ in {
       };
     };
 
-    programs.virt-manager.enable = true;
+    programs.virt-manager.enable = false;
   };
 }
