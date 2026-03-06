@@ -3,7 +3,6 @@
   lib,
   pkgs,
   inputs,
-  inputs',
   ...
 }: let
   inherit (lib) mkIf;
@@ -19,8 +18,8 @@ in {
   config = mkIf desktop.enable {
     environment.systemPackages = with pkgs; [
       papirus-icon-theme
-      inputs'.nixpkgs-stable.legacyPackages.darkly
-      inputs'.nixpkgs-stable.legacyPackages.darkly-qt5
+      darkly
+      darkly-qt5
     ];
 
     programs.qtengine = {
