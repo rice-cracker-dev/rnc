@@ -43,6 +43,7 @@ in {
         android-tools
         wget
         opencode
+        codex
       ];
     };
   };
