@@ -23,7 +23,6 @@ in {
       legcord
       (discord.override {withEquicord = true;})
       (bottles.override {removeWarningPopup = true;})
-      antigravity-fhs # slop
       brave
       element-desktop
 
