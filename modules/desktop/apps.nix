@@ -25,6 +25,7 @@ in {
       (bottles.override {removeWarningPopup = true;})
       antigravity-fhs # slop
       brave
+      element-desktop
 
       # cli
       android-tools
