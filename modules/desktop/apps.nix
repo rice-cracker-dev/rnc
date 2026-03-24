@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  self',
   ...
 }: let
   inherit (lib) mkIf;
@@ -14,7 +13,6 @@ in {
       brightnessctl
       qbittorrent
       mpv
-      self'.packages.helium
       zed-editor-fhs
       libreoffice
       postman
@@ -26,6 +24,7 @@ in {
       (discord.override {withEquicord = true;})
       (bottles.override {removeWarningPopup = true;})
       antigravity-fhs # slop
+      brave
 
       # cli
       android-tools
