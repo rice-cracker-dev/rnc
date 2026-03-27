@@ -13,6 +13,7 @@
     ricevim.url = "github:rice-cracker-dev/ricevim";
     nh.url = "github:nix-community/nh";
     hyprland.url = "github:hyprwm/Hyprland";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     flake-parts = {
       url = "github:hercules-ci/flake-parts";

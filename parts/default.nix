@@ -1,7 +1,7 @@
-{
+self: {
   _module.args = {
     pins = import ../npins;
-    overlays = import ./overlays;
+    overlays = import ./overlays self;
   };
 
   imports = [

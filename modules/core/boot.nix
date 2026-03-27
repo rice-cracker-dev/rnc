@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: let
   inherit (lib) mkIf mkEnableOption;
@@ -22,7 +23,7 @@ in {
         };
       };
 
-      # kernelPackages = pkgs.linuxPackages_6_18;
+      kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
     };
   };
 }
