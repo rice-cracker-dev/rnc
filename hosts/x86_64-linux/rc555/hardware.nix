@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}: let
+{lib, ...}: let
   inherit (lib) mkForce;
 in {
   config = {
@@ -11,7 +7,7 @@ in {
 
       intel = {
         enable = true;
-        videoAcceleration = true;
+        videoAcceleration.enable = true;
       };
 
       nvidia = {

@@ -7,8 +7,6 @@
   inherit (lib) mkEnableOption mkIf;
 
   cfg = config.core.hardware.intel;
-
-  videoAccelerationPackage = mkIf cfg.videoAcceleration.enable [pkgs.intel-media-driver];
 in {
   options.core.hardware.intel = {
     enable = mkEnableOption "intel";
@@ -21,8 +19,8 @@ in {
     };
 
     hardware.graphics = {
-      extraPackages = videoAccelerationPackage;
-      extraPackages32 = videoAccelerationPackage;
+      extraPackages = mkIf cfg.videoAcceleration.enable [pkgs.intel-media-driver];
+      extraPackages32 = mkIf cfg.videoAcceleration.enable [pkgs.pkgsi686Linux.intel-media-driver];
     };
   };
 }
