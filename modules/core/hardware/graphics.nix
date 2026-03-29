@@ -17,9 +17,13 @@ in {
     enable32Bit = true;
     extraPackages = with pkgs; [
       egl-wayland
+      libva-vdpau-driver
+      libvdpau-va-gl
     ];
     extraPackages32 = with pkgs; [
       egl-wayland
+      libva-vdpau-driver
+      libvdpau-va-gl
     ];
   };
 }

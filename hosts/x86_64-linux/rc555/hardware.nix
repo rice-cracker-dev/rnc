@@ -1,9 +1,18 @@
-{lib, ...}: let
+{
+  lib,
+  pkgs,
+  ...
+}: let
   inherit (lib) mkForce;
 in {
   config = {
     core.hardware = {
       graphics.enable = true;
+
+      intel = {
+        enable = true;
+        videoAcceleration = true;
+      };
 
       nvidia = {
         enable = true;

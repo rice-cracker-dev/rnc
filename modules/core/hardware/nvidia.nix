@@ -3,6 +3,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: let
   inherit (lib) mkIf mkEnableOption mkOption;
@@ -39,27 +40,23 @@ in {
   config = mkIf cfg.enable {
     services.xserver.videoDrivers = ["nvidia"];
 
-    hardware.nvidia = {
-      open = false;
-      videoAcceleration = true;
-      nvidiaSettings = false;
-      powerManagement.enable = true;
-      modesetting.enable = cfg.offload != null;
+    hardware = {
+      nvidia = {
+        open = false;
+        # videoAcceleration = true;
+        nvidiaSettings = false;
+        powerManagement.enable = true;
+        modesetting.enable = cfg.offload != null;
 
-      prime = mkIf (cfg.offload != null) {
-        inherit (cfg.offload) intelBusId nvidiaBusId amdgpuBusId;
+        prime = mkIf (cfg.offload != null) {
+          inherit (cfg.offload) intelBusId nvidiaBusId amdgpuBusId;
 
-        offload = {
-          enable = true;
-          enableOffloadCmd = true;
+          offload = {
+            enable = true;
+            enableOffloadCmd = true;
+          };
         };
       };
-    };
-
-    desktop.uwsm.defaultEnv = {
-      LIBVA_DRIVER_NAME = "nvidia";
-      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-      NVD_BACKEND = "direct";
     };
   };
 }
