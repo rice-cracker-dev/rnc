@@ -3,6 +3,7 @@ lib: let
 
   toUWSM = attrs: concatStringsSep "\n" (mapAttrsToList (k: v: "export ${k}=${toString v}") attrs);
   withUWSM = exec: "uwsm app -- ${exec}";
+  withUWSMArgs = args: ["uwsm" "app" "--"] ++ args;
 in {
-  inherit toUWSM withUWSM;
+  inherit toUWSM withUWSM withUWSMArgs;
 }
