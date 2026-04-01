@@ -3,7 +3,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }: let
   inherit (lib) mkIf mkEnableOption mkOption;
@@ -27,6 +26,9 @@
   };
 
   cfg = config.core.hardware.nvidia;
+  graphicsCfg = config.core.hardware.graphics;
+
+  videoAccelerationEnabled = graphicsCfg.videoAcceleration == "nvidia";
 in {
   options.core.hardware.nvidia = {
     enable = mkEnableOption "novideo";
@@ -40,10 +42,14 @@ in {
   config = mkIf cfg.enable {
     services.xserver.videoDrivers = ["nvidia"];
 
+    environment.sessionVariables = mkIf videoAccelerationEnabled {
+      LIBVA_DRIVER_NAME = "nvidia";
+    };
+
     hardware = {
       nvidia = {
         open = false;
-        # videoAcceleration = true;
+        videoAcceleration = videoAccelerationEnabled;
         nvidiaSettings = false;
         powerManagement.enable = true;
         modesetting.enable = cfg.offload != null;

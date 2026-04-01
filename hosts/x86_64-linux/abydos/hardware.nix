@@ -3,11 +3,13 @@
 in {
   config = {
     core.hardware = {
-      graphics.enable = true;
+      graphics = {
+        enable = true;
+        videoAcceleration = "nvidia";
+      };
 
       intel = {
         enable = true;
-        videoAcceleration.enable = true;
       };
 
       nvidia = {
