@@ -7,12 +7,12 @@
 }: let
   inherit (lib) mkIf mkEnableOption;
   inherit (self.lib.generators) withUWSMArgs;
-  inherit (config) desktop;
+  # inherit (config) desktop;
 
   cfg = config.desktop.niri;
 in {
   options.desktop.niri = {
-    enable = mkEnableOption "niri" // {default = desktop.enable;};
+    enable = mkEnableOption "niri" // {default = false;};
   };
 
   config = mkIf cfg.enable {
