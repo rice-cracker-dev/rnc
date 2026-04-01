@@ -13,7 +13,7 @@ written by a weeb
 - modules # shared modules
 ```
 
-## My hosts
+## my hosts
 
 | name    | system type  | description                                 |
 | ------- | ------------ | ------------------------------------------- |
