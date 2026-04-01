@@ -11,10 +11,17 @@ written by a weeb
 - parts # flake modules
   - lib # my libraries
 - modules # shared modules
-- configs # raw config for some programs
-  - quickshell # my quickshell config
 ```
 
-taken some inspirations from:
+## My hosts
+
+| name    | system type  | description                                 |
+| ------- | ------------ | ------------------------------------------- |
+| abydos  | x86_64-linux | my main laptop with an i7-13620H a RTX 4050 |
+| gehenna | x86_64-linux | wsl (blasphemy, i know)                     |
+
+## attributions
+
+this nix config took some inspirations from these repos:
 
 - [fazzi/nixohess](https://gitlab.com/fazzi/nixohess)
