@@ -18,7 +18,7 @@
     "super shift, ${ws}, movetoworkspace, ${ws}"
   ]) (range 1 9);
 
-  flameshotExec = mode: "flameshot ${mode} -c -p ~/Pictures/";
+  flameshotExec = mode: "flameshot ${mode} -r -p ~/Pictures/ | wl-copy";
 
   flameshotActiveWindowScript = writeShellApplication {
     name = "flameshot-active-window";

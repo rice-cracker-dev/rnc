@@ -42,8 +42,10 @@ in {
   config = mkIf cfg.enable {
     services.xserver.videoDrivers = ["nvidia"];
 
-    environment.sessionVariables = mkIf videoAccelerationEnabled {
-      LIBVA_DRIVER_NAME = "nvidia";
+    environment.sessionVariables = {
+      LIBVA_DRIVER_NAME = mkIf videoAccelerationEnabled "nvidia";
+      NVD_BACKEND = mkIf videoAccelerationEnabled "direct";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     };
 
     hardware = {
