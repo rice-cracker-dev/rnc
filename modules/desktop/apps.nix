@@ -20,11 +20,15 @@ in {
       ani-cli
       gpu-screen-recorder
       scrcpy
-      legcord
-      (discord.override {withEquicord = true;})
-      (bottles.override {removeWarningPopup = true;})
       brave
       element-desktop
+      (bottles.override {removeWarningPopup = true;})
+      equibop
+      # too buggy for usage
+      # (discord.override {
+      #   withEquicord = true;
+      #   withOpenASAR = true;
+      # })
 
       # cli
       android-tools
