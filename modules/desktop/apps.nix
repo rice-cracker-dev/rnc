@@ -14,7 +14,7 @@ in {
       qbittorrent
       mpv
       zed-editor-fhs
-      libreoffice
+      onlyoffice-desktopeditors
       postman
       bruno
       ani-cli
