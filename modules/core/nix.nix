@@ -1,6 +1,12 @@
-{lib, ...}: let
+{
+  lib,
+  inputs,
+  ...
+}: let
   inherit (lib) mkDefault;
 in {
+  imports = [inputs.lix-module.nixosModules.default];
+
   nix = {
     channel.enable = false;
 
