@@ -19,8 +19,8 @@ in {
         background_opacity = 0.8;
 
         font_family = "JetBrainsMono Nerd Font";
-        cursor_trail = 3;
-        cursor_trail_decay = "0.1 0.4";
+        #cursor_trail = 3;
+        #cursor_trail_decay = "0.1 0.4";
 
         map = [
           "ctrl+tab"
