@@ -987,11 +987,11 @@
         "opencode-nvim": "opencode-nvim"
       },
       "locked": {
-        "lastModified": 1775677869,
-        "narHash": "sha256-8/mC9eQOcIg8w3xMSlLQtnFCYAyuSvzw8uhPZXJFFEY=",
+        "lastModified": 1775707298,
+        "narHash": "sha256-Qqxnixfzxc+Qe45Xb8PYJiTfsbo8h8z/so5bugUsRys=",
         "owner": "rice-cracker-dev",
         "repo": "ricevim",
-        "rev": "0abebbf6a62a8e4319e14655ec4e931d589dafe6",
+        "rev": "9dbf517c9b5e368c782bf1178685ff16123b7acf",
         "type": "github"
       },
       "original": {
