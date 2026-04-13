@@ -7,7 +7,7 @@
   overlays,
   ...
 }: let
-  inherit (lib) listToAttrs concatLists map;
+  inherit (lib) listToAttrs concatLists map nixosSystem;
   inherit (self.lib.filesystem) getDirectoryNames;
 
   mkSystem = hostName: system:
@@ -16,7 +16,7 @@
       self',
       ...
     }:
-      lib.nixosSystem {
+      nixosSystem {
         inherit system;
 
         specialArgs = {
@@ -24,6 +24,7 @@
         };
 
         modules = [
+          inputs.ragenix.nixosModules.default
           self.nixosModules.default
           ./${system}/${hostName}
           {nixpkgs.overlays = overlays;}

@@ -1,10 +1,18 @@
 {
-  perSystem = {pkgs, ...}: let
-    inherit (pkgs) mkShell npins jq;
+  perSystem = {
+    pkgs,
+    inputs',
+    ...
+  }: let
+    inherit (pkgs) mkShell npins;
   in {
     devShells = {
       default = mkShell {
-        buildInputs = [npins jq];
+        buildInputs = [npins];
+      };
+
+      server = mkShell {
+        buildInputs = [npins inputs'.ragenix.packages.default];
       };
     };
   };
