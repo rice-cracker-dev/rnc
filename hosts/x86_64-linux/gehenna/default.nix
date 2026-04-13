@@ -15,7 +15,6 @@ in {
   wsl = {
     enable = true;
     defaultUser = username;
-    interop.includePath = false;
   };
 
   system.stateVersion = "24.11";
