@@ -5,7 +5,6 @@
       dev.enable = true;
       man = {
         enable = true;
-        dev.enable = true;
         man-db.enable = true;
         mandoc.enable = false;
       };
