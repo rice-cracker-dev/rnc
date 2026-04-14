@@ -11,5 +11,6 @@
     ./hardware-configuration.nix
   ];
 
+  server.enable = true;
   system.stateVersion = "25.11";
 }
