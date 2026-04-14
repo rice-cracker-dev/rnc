@@ -10,6 +10,8 @@
   cfg = config.server;
 in {
   config = mkIf cfg.enable {
+    age.secrets.aronaldo.file = ../../secrets/aronaldo.age;
+
     systemd.services.aronaldo = {
       enable = true;
 
