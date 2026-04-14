@@ -11,6 +11,7 @@
   keys = import ../../secrets/keys.nix;
 in {
   config = mkIf cfg.enable {
+    users.users.root.openssh.authorizedKeys.keys = keys.users;
     users.users.${userCfg.username}.openssh.authorizedKeys.keys = keys.users;
   };
 }
