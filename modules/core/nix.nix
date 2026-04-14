@@ -1,13 +1,12 @@
 {
   lib,
-  inputs,
+  pkgs,
   ...
 }: let
   inherit (lib) mkDefault;
 in {
-  imports = [inputs.lix-module.nixosModules.default];
-
   nix = {
+    package = pkgs.lixPackageSets.stable.lix;
     channel.enable = false;
 
     settings = {
@@ -34,10 +33,24 @@ in {
     };
   };
 
-  nixpkgs.config = {
-    allowUnfree = true;
-    android_sdk.accept_license = true;
-    cudaSupport = mkDefault true;
+  nixpkgs = {
+    overlays = [
+      (final: prev: {
+        inherit
+          (prev.lixPackageSets.stable)
+          nixpkgs-review
+          nix-eval-jobs
+          nix-fast-build
+          colmena
+          ;
+      })
+    ];
+
+    config = {
+      allowUnfree = true;
+      android_sdk.accept_license = true;
+      cudaSupport = mkDefault true;
+    };
   };
 
   programs.nix-ld.enable = true;
