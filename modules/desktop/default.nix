@@ -15,5 +15,11 @@ in {
     # force wayland on chromium and electron apps
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
     programs.dconf.enable = true;
+
+    core.user.extraGroups = [
+      "input"
+      "storage"
+      "power"
+    ];
   };
 }

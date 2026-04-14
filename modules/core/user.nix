@@ -19,10 +19,6 @@ in {
       type = listOf str;
       default = [
         "wheel"
-        "input"
-        "storage"
-        "power"
-        "adbusers"
       ];
     };
 
@@ -38,12 +34,8 @@ in {
         fd
         ripgrep
         diskus
-        libqalculate
         btdu
-        android-tools
         wget
-        opencode
-        codex
       ];
     };
   };

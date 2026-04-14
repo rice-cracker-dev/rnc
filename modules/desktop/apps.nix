@@ -29,9 +29,6 @@ in {
       #   withEquicord = true;
       #   withOpenASAR = true;
       # })
-
-      # cli
-      android-tools
     ];
   };
 }

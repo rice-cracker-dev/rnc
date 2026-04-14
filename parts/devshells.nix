@@ -8,11 +8,10 @@
   in {
     devShells = {
       default = mkShell {
-        buildInputs = [npins];
-      };
-
-      server = mkShell {
-        buildInputs = [npins inputs'.ragenix.packages.default];
+        packages = [
+          npins
+          inputs'.ragenix.packages.default
+        ];
       };
     };
   };

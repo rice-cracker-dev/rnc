@@ -1,5 +1,18 @@
 {
   "pins": {
+    "aronaldo": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "ruanyouxing",
+        "repo": "aronaldo"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "b12898bf78ef18e1f2bc5c94ea97296956403c38",
+      "url": "https://github.com/ruanyouxing/aronaldo/archive/b12898bf78ef18e1f2bc5c94ea97296956403c38.tar.gz",
+      "hash": "sha256-/8zh1wPEKl1AVo+M9Po2yz8bpV3HAJ33MNw1OdqrMac="
+    },
     "catppuccin-btop": {
       "type": "Git",
       "repository": {

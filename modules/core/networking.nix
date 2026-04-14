@@ -1,21 +1,24 @@
 {
+  config,
   lib,
   hostName,
   ...
 }: let
-  inherit (lib) mkDefault;
+  inherit (lib) mkDefault optionalAttrs;
+
+  serverCfg = config.server;
 in {
-  networking = {
-    inherit hostName;
+  config.networking =
+    {inherit hostName;}
+    // (optionalAttrs (!serverCfg.enable) {
+      networkmanager = {
+        enable = mkDefault true;
+      };
 
-    networkmanager = {
-      enable = mkDefault true;
-    };
-
-    firewall = {
-      allowedTCPPorts = [
-        4983 # drizzle studio
-      ];
-    };
-  };
+      firewall = {
+        allowedTCPPorts = [
+          4983 # drizzle studio
+        ];
+      };
+    });
 }

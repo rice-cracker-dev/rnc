@@ -19,6 +19,7 @@ written by a weeb
 | ------- | ------------ | ------------------------------------------- |
 | abydos  | x86_64-linux | my main laptop with an i7-13620H a RTX 4050 |
 | gehenna | x86_64-linux | wsl (blasphemy, i know)                     |
+| trinity | x86_64-linux | netcup vps (4 vCores + 8gb ram)             |
 
 ## attributions
 

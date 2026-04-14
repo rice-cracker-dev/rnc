@@ -1,7 +1,8 @@
 let
-  publicKeys = [
-    # khoa@gehenna
-    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC2QrHAaIi/knh2wLPF8vGT4ChPJPuigjWw1H6hyC2ysOXGO+o2g1gNlyEXs+sz6zo37MYL5qspK2KlZGmQgyVaYVOw3cQhvgORikoPDqKQL4Dxsijx6+QqRPaqilD7qosAnurmJeeXE1rnN6xM+EXXmAhhKI7D0Kd6oTpxq4hOm/OMRvnzJ6PGPEmH30Q/Hl0HRLnPvFNq14OlL76OQ3H5vPzMWsLlyBu+3hVVn82Txc0RwKGsnmelPOEkGY00AqOluiaeyHp0NO/OBxt+q6KyhkDyeTHVRCSKqmbo0yoYa2k4irRPEoElyE8rMre3oEbG48XXOhEzWV/JmAIMXHFjN/Gr3UN6KTxfPtXuFmjMCcyaeEZpqrTY1f2JUWCgR+3d5U+BRxhM5aw1KMmMepmmurF0iQgh6eJwrvb9Lb/4xufGlUrkp5s28wrVyf/2i/26MJSz8GsR5qvUBRS9xEqP5NvSiSNao7nA1lsS1lOmReKI1zuSiui9Iku/kvPgnrtcfGSBLlYAZe4KRlb+dM1jG/4y31LwJFEotaOgacz2Rm2JlR+X3HqEd4McqKZSi84ZiaRYtA+az5DMUfjwYGZ8yZjNgy5vpcTYTgiMDkR06GhQIoPQ76gMJ/PZDTSfylm3bX4KHj0JUrn0h90mmW17D/JK6yaswRfQnzRm3pqBXw== khoa@gehenna"
-  ];
+  keys = import ./keys.nix;
+
+  allKeys = keys.systems ++ keys.users;
 in {
+  "aronaldo.age".publicKeys = allKeys;
+  "cloudflare.age".publicKeys = allKeys;
 }
