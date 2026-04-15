@@ -13,8 +13,8 @@ in {
       enable = true;
 
       package = pkgs.caddy.withPlugins {
-        plugins = ["github.com/caddy-dns/cloudflare@v0.2.1"];
-        hash = "sha256-o0zYCp3h7E0L1cgmJwNtGNgzhmZk5BAVoWQA+eL+zqc=";
+        plugins = ["github.com/caddy-dns/cloudflare@v0.2.4"];
+        hash = "sha256-Olz4W84Kiyldy+JtbIicVCL7dAYl4zq+2rxEOUTObxA=";
       };
 
       globalConfig = ''
