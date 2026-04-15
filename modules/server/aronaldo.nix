@@ -16,10 +16,11 @@ in {
       enable = true;
 
       restartTriggers = [aronaldo];
-
+      wantedBy = ["multi-user.target"];
       serviceConfig = {
         ExecStart = "${aronaldo}/bin/aronaldo";
         EnvironmentFile = config.age.secrets.aronaldo.path;
+        Restart = "always";
       };
     };
   };
