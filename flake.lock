@@ -228,6 +228,24 @@
         "type": "github"
       }
     },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems_3"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "gitignore": {
       "inputs": {
         "nixpkgs": [
@@ -909,6 +927,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_9": {
+      "locked": {
+        "lastModified": 1776329215,
+        "narHash": "sha256-a8BYi3mzoJ/AcJP8UldOx8emoPRLeWqALZWu4ZvjPXw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b86751bc4085f48661017fa226dee99fab6c651b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "opencode-nvim": {
       "flake": false,
       "locked": {
@@ -945,6 +979,25 @@
       "original": {
         "owner": "cachix",
         "repo": "git-hooks.nix",
+        "type": "github"
+      }
+    },
+    "qml-language-server": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs_9"
+      },
+      "locked": {
+        "lastModified": 1776486890,
+        "narHash": "sha256-AdwXSBdOvHcsOYI1kW6Z5khUADWa1gsYItNMgatTStk=",
+        "owner": "cushycush",
+        "repo": "qml-language-server",
+        "rev": "f4e4139b27f34ce05bd235aac8526e029a9d8666",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cushycush",
+        "repo": "qml-language-server",
         "type": "github"
       }
     },
@@ -1015,14 +1068,15 @@
         "flake-parts": "flake-parts_3",
         "mnw": "mnw",
         "nixpkgs": "nixpkgs_8",
-        "opencode-nvim": "opencode-nvim"
+        "opencode-nvim": "opencode-nvim",
+        "qml-language-server": "qml-language-server"
       },
       "locked": {
-        "lastModified": 1775707298,
-        "narHash": "sha256-Qqxnixfzxc+Qe45Xb8PYJiTfsbo8h8z/so5bugUsRys=",
+        "lastModified": 1776703205,
+        "narHash": "sha256-7p5IJ1ZZV8EKHkS7wYLmVnB9Jw+QPZvPFKcWCDeN6EM=",
         "owner": "rice-cracker-dev",
         "repo": "ricevim",
-        "rev": "9dbf517c9b5e368c782bf1178685ff16123b7acf",
+        "rev": "2a5c273883a4cc89bacdee0efa432ec799afbd5a",
         "type": "github"
       },
       "original": {
@@ -1064,6 +1118,21 @@
       }
     },
     "systems_2": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_3": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
