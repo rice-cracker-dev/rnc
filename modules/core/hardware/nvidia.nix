@@ -3,6 +3,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: let
   inherit (lib) mkIf mkEnableOption mkOption;
@@ -66,5 +67,7 @@ in {
         };
       };
     };
+
+    environment.systemPackages = [pkgs.nvtopPackages.nvidia];
   };
 }
