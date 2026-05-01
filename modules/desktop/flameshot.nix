@@ -18,7 +18,6 @@ in {
           showDesktopNotification = false;
           showStartupLaunchMessage = false;
           saveAfterCopy = true;
-          useGrimAdapter = true;
         };
       };
     };

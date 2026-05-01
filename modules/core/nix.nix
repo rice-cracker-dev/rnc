@@ -44,6 +44,14 @@ in {
           colmena
           ;
       })
+
+      # monkey patch
+      # TODO: remove this when https://github.com/NixOS/nixpkgs/issues/514113 is fixed
+      (_: prev: {
+        openldap = prev.openldap.overrideAttrs {
+          doCheck = !prev.stdenv.hostPlatform.isi686;
+        };
+      })
     ];
 
     config = {
