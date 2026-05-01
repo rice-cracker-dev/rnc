@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
     ./hardware.nix
     ./hyprland.nix
+    ./lanzaboote.nix
   ];
 
   boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;

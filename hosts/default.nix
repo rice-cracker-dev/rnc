@@ -25,6 +25,7 @@
 
         modules = [
           inputs.ragenix.nixosModules.default
+          inputs.lanzaboote.nixosModules.lanzaboote
           self.nixosModules.default
           ./${system}/${hostName}
           {nixpkgs.overlays = overlays;}

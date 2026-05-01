@@ -21,6 +21,12 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
+    # for secure boot
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     disko = {
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
