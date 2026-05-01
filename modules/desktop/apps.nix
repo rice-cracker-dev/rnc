@@ -24,6 +24,7 @@ in {
       element-desktop
       (bottles.override {removeWarningPopup = true;})
       equibop
+      tailscale
       # too buggy for usage
       # (discord.override {
       #   withEquicord = true;
