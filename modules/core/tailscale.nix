@@ -31,6 +31,8 @@ in {
     systemd.network.wait-online.enable = false;
     boot.initrd.systemd.network.wait-online.enable = false;
 
-    age.secrets.tailscale-key.file = mkIf cfg.enableAuthKey ../../secrets/tailscale-key.age;
+    age.secrets.tailscale-key = mkIf cfg.enableAuthKey {
+      file = ../../secrets/tailscale-key.age;
+    };
   };
 }
