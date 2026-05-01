@@ -1,0 +1,3 @@
+{
+  server.tailscale.enableAuthKey = true;
+}

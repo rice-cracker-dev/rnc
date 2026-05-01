@@ -9,6 +9,7 @@
     inputs.disko.nixosModules.disko
     ./disko-configuration.nix
     ./hardware-configuration.nix
+    ./tailscale.nix
   ];
 
   server.enable = true;
