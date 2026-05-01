@@ -9,7 +9,10 @@
   serverCfg = config.server;
 in {
   config.networking =
-    {inherit hostName;}
+    {
+      inherit hostName;
+      nftables.enable = true;
+    }
     // (optionalAttrs (!serverCfg.enable) {
       networkmanager = {
         enable = mkDefault true;

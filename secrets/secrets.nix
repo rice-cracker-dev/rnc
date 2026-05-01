@@ -4,5 +4,5 @@ let
   allKeys = keys.systems ++ keys.users;
 in {
   "aronaldo.age".publicKeys = allKeys;
-  "cloudflare.age".publicKeys = allKeys;
+  "tailscale-key.age".publicKeys = allKeys;
 }
