@@ -15,6 +15,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     ragenix.url = "github:ryantm/agenix";
+    niri.url = "github:sodiboo/niri-flake";
 
     flake-parts = {
       url = "github:hercules-ci/flake-parts";

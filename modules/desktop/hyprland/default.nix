@@ -6,12 +6,11 @@
   ...
 }: let
   inherit (lib) mkIf mkEnableOption;
-  inherit (config) desktop;
 
   cfg = config.desktop.hyprland;
 in {
   options.desktop.hyprland = {
-    enable = mkEnableOption "hyprland" // {default = desktop.enable;};
+    enable = mkEnableOption "hyprland";
   };
 
   config = mkIf cfg.enable {

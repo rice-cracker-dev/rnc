@@ -1,0 +1,12 @@
+prefer-no-csd
+
+input {
+  focus-follows-mouse
+}
+
+window-rule {
+  open-maximized true
+  background-effect {
+    blur true
+  }
+}
