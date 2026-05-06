@@ -11,7 +11,7 @@ in {
   config.networking =
     {
       inherit hostName;
-      nftables.enable = true;
+      nftables.enable = mkDefault true;
     }
     // (optionalAttrs (!serverCfg.enable) {
       networkmanager = {
