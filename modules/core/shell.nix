@@ -1,14 +1,6 @@
 {pkgs, ...}: {
   config = {
-    users.defaultUserShell = pkgs.bash;
-
-    programs.bash = {
-      enable = true;
-
-      interactiveShellInit = ''
-        exec ${pkgs.nushell}/bin/nu
-      '';
-    };
+    users.defaultUserShell = pkgs.nushell;
 
     home.rum.programs = {
       nushell = {
