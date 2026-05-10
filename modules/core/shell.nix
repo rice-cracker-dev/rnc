@@ -16,6 +16,7 @@
 
         settings = {
           show_banner = false;
+          shell_integration.osc133 = false;
         };
       };
 
