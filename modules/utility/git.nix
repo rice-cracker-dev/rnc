@@ -25,6 +25,8 @@
           ]
         );
 
+        pull.rebase = true;
+
         user = {
           name = "rice-cracker-dev";
           email = "ricecracker2234@proton.me";
