@@ -17,6 +17,7 @@
     ragenix.url = "github:ryantm/agenix";
     niri.url = "github:sodiboo/niri-flake";
     eh.url = "github:NotAShelf/eh";
+    nixos-core.url = "github:feel-co/nixos-core";
 
     flake-parts = {
       url = "github:hercules-ci/flake-parts";

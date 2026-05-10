@@ -28,6 +28,7 @@
           inputs.lanzaboote.nixosModules.lanzaboote
           inputs.niri.nixosModules.niri
           inputs.nix-index-database.nixosModules.default
+          inputs.nixos-core.nixosModules.default
           self.nixosModules.default
           ./${system}/${hostName}
           {nixpkgs.overlays = overlays;}
