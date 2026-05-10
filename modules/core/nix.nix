@@ -36,13 +36,7 @@ in {
   nixpkgs = {
     overlays = [
       (final: prev: {
-        inherit
-          (prev.lixPackageSets.stable)
-          nixpkgs-review
-          nix-eval-jobs
-          nix-fast-build
-          colmena
-          ;
+        inherit (prev.lixPackageSets.stable) nixpkgs-review nix-eval-jobs nix-fast-build colmena;
       })
 
       # monkey patch
