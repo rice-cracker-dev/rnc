@@ -23,6 +23,11 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # for secure boot
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v1.0.0";
