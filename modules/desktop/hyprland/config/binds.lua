@@ -27,7 +27,7 @@ hl.bind("ALT + PRINT", function()
 		return
 	end
 
-	local region = string.format('"%dx%d+%d+%d"', window.size[1], window.size[2], window.at[1], window.at[2])
+	local region = string.format('"%dx%d+%d+%d"', window.size.x, window.size.y, window.at.x, window.at.y)
 	hl.dispatch(hl.dsp.exec_cmd(flameshotExec("gui --region " .. region)))
 end)
 
