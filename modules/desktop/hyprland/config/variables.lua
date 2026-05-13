@@ -7,7 +7,6 @@ hl.config({
 
 		gaps_in = 4,
 		gaps_out = 4,
-		resize_on_border = true,
 
 		["col.inactive_border"] = "0xff363a4f",
 		["col.active_border"] = "0xffc6a0f6",
