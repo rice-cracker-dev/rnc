@@ -1,0 +1,5 @@
+require("config.monitors")
+require("config.variables")
+require("config.animation")
+require("config.window-rule")
+require("config.binds")

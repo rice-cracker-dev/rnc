@@ -2,7 +2,6 @@
   imports = [
     ./hardware-configuration.nix
     ./hardware.nix
-    ./hyprland.nix
     ./lanzaboote.nix
   ];
 
