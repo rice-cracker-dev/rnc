@@ -26,7 +26,6 @@ in {
       tailscale
       (discord.override {
         withEquicord = true;
-        withOpenASAR = true;
       })
     ];
   };
