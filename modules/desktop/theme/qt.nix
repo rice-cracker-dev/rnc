@@ -19,7 +19,6 @@ in {
     environment.systemPackages = with pkgs; [
       papirus-icon-theme
       darkly
-      darkly-qt5
     ];
 
     programs.qtengine = {

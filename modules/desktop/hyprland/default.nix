@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  inputs',
   ...
 }: let
   inherit (lib) mkIf mkEnableOption;
@@ -17,9 +16,6 @@ in {
     programs.hyprland = {
       enable = true;
       withUWSM = true;
-
-      package = inputs'.hyprland.packages.hyprland;
-      portalPackage = inputs'.hyprland.packages.xdg-desktop-portal-hyprland;
     };
 
     home = {

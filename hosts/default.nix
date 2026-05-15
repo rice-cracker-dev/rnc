@@ -29,6 +29,7 @@
           inputs.niri.nixosModules.niri
           inputs.nix-index-database.nixosModules.default
           inputs.nixos-core.nixosModules.default
+          inputs.hyprland.nixosModules.default
           self.nixosModules.default
           ./${system}/${hostName}
           {nixpkgs.overlays = overlays;}
