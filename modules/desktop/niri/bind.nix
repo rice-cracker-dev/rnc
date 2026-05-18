@@ -2,11 +2,9 @@
   config,
   lib,
   self,
-  pkgs,
   ...
 }: let
-  inherit (pkgs) writeShellApplication;
-  inherit (lib) mkIf range concatMap listToAttrs concatStringsSep;
+  inherit (lib) mkIf range concatMap listToAttrs;
   inherit (self.lib.generators) withUWSMArgs;
 
   workspaceBinds = listToAttrs (concatMap (w: let
