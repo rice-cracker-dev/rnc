@@ -1461,11 +1461,11 @@
         "qml-language-server": "qml-language-server"
       },
       "locked": {
-        "lastModified": 1778879584,
-        "narHash": "sha256-cHq/i7CwawWLhN9kI6UlcK4IQVXVtIm/x6cQDbiPU/c=",
+        "lastModified": 1779232648,
+        "narHash": "sha256-KOUSSd7O1ivDsKoS1t5YBR6SqX+P64PgBCfSE4v1eCY=",
         "owner": "rice-cracker-dev",
         "repo": "ricevim",
-        "rev": "ee8b999160ff45695395d8ff6c167f96bef00e7b",
+        "rev": "da84a6f4d4e4e8b2cdea770385a8f61893e06459",
         "type": "github"
       },
       "original": {
