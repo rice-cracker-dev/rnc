@@ -1,6 +1,8 @@
 {inputs', ...}: {
   config = {
-    home.packages = [inputs'.ricevim.packages.default];
-    desktop.uwsm.defaultEnv.EDITOR = "nvim";
+    environment = {
+      systemPackages = [inputs'.ricevim.packages.default];
+      sessionVariables.EDITOR = "nvim";
+    };
   };
 }
