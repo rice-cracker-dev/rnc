@@ -1,10 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}: let
-  inherit (lib) mkDefault;
-in {
+{pkgs, ...}: {
   nix = {
     package = pkgs.lixPackageSets.stable.lix;
     channel.enable = false;
@@ -15,21 +9,6 @@ in {
       warn-dirty = false;
       allow-import-from-derivation = false;
       use-xdg-base-directories = true;
-
-      extra-substituters = [
-        "https://nix-community.cachix.org"
-        "https://cache.nixos-cuda.org"
-        "https://nix-gaming.cachix.org"
-        "https://hyprland.cachix.org"
-        "https://attic.xuyh0120.win/lantian"
-      ];
-      extra-trusted-public-keys = [
-        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
-        "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
-        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-        "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
-      ];
     };
   };
 

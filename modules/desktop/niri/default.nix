@@ -28,6 +28,8 @@ in {
       };
     };
 
+    niri-flake.cache.enable = false;
+
     home.rum.desktops.niri = {
       enable = true;
       config = builtins.readFile ./config.kdl;

@@ -13,11 +13,13 @@
     ricevim.url = "github:rice-cracker-dev/ricevim";
     nh.url = "github:nix-community/nh";
     hyprland.url = "github:hyprwm/Hyprland";
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     ragenix.url = "github:ryantm/agenix";
     niri.url = "github:sodiboo/niri-flake";
     eh.url = "github:NotAShelf/eh";
     nixos-core.url = "github:feel-co/nixos-core";
+
+    # TODO: move to main branch https://github.com/feel-co/ncro/pull/3 is merged
+    ncro.url = "github:Squawkykaka/ncro/update-module";
 
     flake-parts = {
       url = "github:hercules-ci/flake-parts";

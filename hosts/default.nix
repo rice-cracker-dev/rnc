@@ -30,6 +30,7 @@
           inputs.nix-index-database.nixosModules.default
           inputs.nixos-core.nixosModules.default
           inputs.hyprland.nixosModules.default
+          inputs.ncro.nixosModules.default
           self.nixosModules.default
           ./${system}/${hostName}
           {nixpkgs.overlays = overlays;}
