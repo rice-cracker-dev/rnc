@@ -785,16 +785,15 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1779658320,
-        "narHash": "sha256-dvF8wpIVtNskimaoVXDityHyB32eAPrDLCx5cEetaxY=",
-        "owner": "Squawkykaka",
+        "lastModified": 1779813828,
+        "narHash": "sha256-pSchJPII8onD2B9OpE8ij9xl7Tb2AtgDzR+oOrBAHBA=",
+        "owner": "feel-co",
         "repo": "ncro",
-        "rev": "9e0895f8d40fc12269a3665d849c23929031bd3e",
+        "rev": "7db44b309357537418ed141ea11fef49d4113a51",
         "type": "github"
       },
       "original": {
-        "owner": "Squawkykaka",
-        "ref": "update-module",
+        "owner": "feel-co",
         "repo": "ncro",
         "type": "github"
       }
