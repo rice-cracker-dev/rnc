@@ -11,7 +11,7 @@ in {
     core.hardware = {
       graphics = {
         enable = true;
-        videoAcceleration = "nvidia";
+        videoAcceleration = "intel";
       };
 
       intel = {
