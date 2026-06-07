@@ -8,16 +8,16 @@
     };
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
     ricevim.url = "github:rice-cracker-dev/ricevim";
-    nh.url = "github:nix-community/nh";
+    nh.url = "github:nix-community/nh/v4.4.0-beta1";
     hyprland.url = "github:hyprwm/Hyprland";
     ragenix.url = "github:ryantm/agenix";
     niri.url = "github:sodiboo/niri-flake";
     eh.url = "github:NotAShelf/eh";
-    nixos-core.url = "github:feel-co/nixos-core";
-    ncro.url = "github:feel-co/ncro";
+    nixos-core.url = "github:feel-co/nixos-core/v1.0.1";
+    ncro.url = "github:feel-co/ncro/v2.2.2";
 
     flake-parts = {
       url = "github:hercules-ci/flake-parts";

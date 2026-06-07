@@ -17,14 +17,6 @@
       (final: prev: {
         inherit (prev.lixPackageSets.stable) nixpkgs-review nix-eval-jobs nix-fast-build colmena;
       })
-
-      # monkey patch
-      # TODO: remove this when https://github.com/NixOS/nixpkgs/issues/514113 is fixed
-      (_: prev: {
-        openldap = prev.openldap.overrideAttrs {
-          doCheck = !prev.stdenv.hostPlatform.isi686;
-        };
-      })
     ];
 
     config = {

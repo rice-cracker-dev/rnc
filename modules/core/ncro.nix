@@ -3,10 +3,22 @@
   lib,
   ...
 }: let
-  inherit (lib) mkForce;
+  inherit (lib) mkForce mkOverride map;
 
   cfg = config.services.ncro;
 in {
+  specialisation.disable-ncro.configuration = {
+    services.ncro.enable = mkForce false;
+
+    nix.settings = let
+      substituters = mkOverride 10 (map (upstream: upstream.url) config.services.ncro.settings.upstreams);
+      publicKeys = mkOverride 10 (map (upstream: upstream.public_key) config.services.ncro.settings.upstreams);
+    in {
+      inherit substituters;
+      trusted-public-keys = publicKeys;
+    };
+  };
+
   services.ncro = {
     enable = true;
 
