@@ -1261,11 +1261,11 @@
         "opencode-nvim": "opencode-nvim"
       },
       "locked": {
-        "lastModified": 1781243584,
-        "narHash": "sha256-bKam7GqAhnqKXRA4r0995kVbRQae/9b8AETl//6em08=",
+        "lastModified": 1781265948,
+        "narHash": "sha256-85SNvL5pMG9WaI/cC7kq43s0tzrvrcGNO8fOhkOgr98=",
         "owner": "rice-cracker-dev",
         "repo": "ricevim",
-        "rev": "24fdca64d21f9a824775189ff07c4518151fdb5c",
+        "rev": "e20e484c881f13b4c3111a7e6718dbd743fc7093",
         "type": "github"
       },
       "original": {
