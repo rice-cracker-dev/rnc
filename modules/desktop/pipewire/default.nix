@@ -21,6 +21,7 @@ in {
       alsa.support32Bit = true;
     };
 
+    hardware.alsa.enablePersistence = true;
     security.rtkit.enable = true;
 
     home.packages = with pkgs; [pwvucontrol qpwgraph];
