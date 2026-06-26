@@ -1,4 +1,4 @@
-lib: let
+{lib}: let
   inherit (lib) mapAttrsToList filterAttrs filter hasSuffix;
   inherit (lib.filesystem) listFilesRecursive;
 

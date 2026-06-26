@@ -1,4 +1,4 @@
-lib: let
+{lib}: let
   inherit (lib) pipe map concatStringsSep;
 in {
   makeQMLPath = deps:

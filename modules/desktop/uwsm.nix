@@ -1,13 +1,12 @@
 {
   lib,
-  self,
   config,
   ...
 }: let
   inherit (lib) mkIf mkOption mapAttrs' nameValuePair;
   inherit (lib.types) oneOf attrsOf listOf;
-  inherit (self.lib.types) uwsmValue;
-  inherit (self.lib.generators) toUWSM;
+  inherit (lib.rnc.types) uwsmValue;
+  inherit (lib.rnc.generators) toUWSM;
   inherit (config) desktop;
 
   envType = attrsOf (oneOf [uwsmValue (listOf uwsmValue)]);

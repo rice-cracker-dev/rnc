@@ -5,7 +5,7 @@ self: {
   };
 
   imports = [
-    ./lib
+    ./lib.nix
     ./devshells.nix
     ./packages.nix
   ];

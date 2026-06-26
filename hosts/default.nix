@@ -1,14 +1,14 @@
 {
-  self,
   inputs,
+  self,
   withSystem,
-  lib,
   pins,
   overlays,
+  lib,
   ...
 }: let
   inherit (lib) listToAttrs concatLists map nixosSystem;
-  inherit (self.lib.filesystem) getDirectoryNames;
+  inherit (lib.rnc.filesystem) getDirectoryNames;
 
   mkSystem = hostName: system:
     withSystem system ({
@@ -20,7 +20,7 @@
         inherit system;
 
         specialArgs = {
-          inherit inputs inputs' self self' hostName pins;
+          inherit inputs inputs' self self' hostName pins lib;
         };
 
         modules = [

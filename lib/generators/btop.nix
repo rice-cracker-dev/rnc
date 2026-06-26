@@ -1,4 +1,4 @@
-lib: let
+{lib}: let
   inherit (lib) isString isBool concatStringsSep mapAttrsToList;
 
   toBtopValue = value:

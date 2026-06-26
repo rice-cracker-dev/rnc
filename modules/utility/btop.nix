@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  self,
   config,
   pins,
   ...
@@ -10,8 +9,8 @@
   inherit (lib.types) str attrsOf oneOf path;
   inherit (lib.strings) isString;
   inherit (lib.attrsets) mapAttrs' nameValuePair;
-  inherit (self.lib.types) btopThemeValue;
-  inherit (self.lib.generators) toBtopConf;
+  inherit (lib.rnc.types) btopThemeValue;
+  inherit (lib.rnc.generators) toBtopConf;
 
   cfg = config.utility.btop;
 in {

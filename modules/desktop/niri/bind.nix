@@ -1,11 +1,10 @@
 {
   config,
   lib,
-  self,
   ...
 }: let
   inherit (lib) mkIf range concatMap listToAttrs;
-  inherit (self.lib.generators) withUWSMArgs;
+  inherit (lib.rnc.generators) withUWSMArgs;
 
   workspaceBinds = listToAttrs (concatMap (w: let
     ws = toString w;

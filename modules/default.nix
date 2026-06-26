@@ -1,10 +1,6 @@
-{
-  self,
-  lib,
-  ...
-}: let
+{lib, ...}: let
   inherit (lib) filter hasPrefix;
-  inherit (self.lib.filesystem) listNixFilesRecursively;
+  inherit (lib.rnc.filesystem) listNixFilesRecursively;
 in {
   flake.nixosModules.default = {
     imports = filter (path: let

@@ -23,6 +23,5 @@ written by a weeb
 
 ## attributions
 
-this nix config took some inspirations from these repos:
-
-- [fazzi/nixohess](https://gitlab.com/fazzi/nixohess)
+- [fazzi/nixohess](https://gitlab.com/fazzi/nixohess) - for inspiring the design of my config
+- [nix-community/home-manager](https://github.com/nix-community/home-manager) - for the DAG system

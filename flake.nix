@@ -1,8 +1,13 @@
 {
   description = "rice nix config";
 
-  outputs = inputs @ {flake-parts, ...}:
-    flake-parts.lib.mkFlake {inherit inputs;} {
+  outputs = {flake-parts, ...} @ inputs: let
+    lib = import ./lib/stdlib-extended.nix {inherit inputs;};
+  in
+    flake-parts.lib.mkFlake {
+      inherit inputs;
+      specialArgs = {inherit lib;};
+    } {
       systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin"];
       imports = [./parts ./modules ./hosts];
     };
