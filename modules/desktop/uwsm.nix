@@ -6,7 +6,7 @@
   inherit (lib) mkIf mkOption mapAttrs' nameValuePair;
   inherit (lib.types) oneOf attrsOf listOf;
   inherit (lib.rnc.types.uwsm) uwsmValue;
-  inherit (lib.rnc.generators) toUWSM;
+  inherit (lib.rnc.generators.uwsm) toUWSM;
   inherit (config) desktop;
 
   envType = attrsOf (oneOf [uwsmValue (listOf uwsmValue)]);

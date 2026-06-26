@@ -10,7 +10,7 @@
   inherit (lib.strings) isString;
   inherit (lib.attrsets) mapAttrs' nameValuePair;
   inherit (lib.rnc.types.btop) btopThemeValue;
-  inherit (lib.rnc.generators) toBtopConf;
+  inherit (lib.rnc.generators.btop) toBtopConf;
 
   cfg = config.utility.btop;
 in {

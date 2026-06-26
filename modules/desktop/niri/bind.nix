@@ -4,7 +4,7 @@
   ...
 }: let
   inherit (lib) mkIf range concatMap listToAttrs;
-  inherit (lib.rnc.generators) withUWSMArgs;
+  inherit (lib.rnc.generators.uwsm) withUWSMArgs;
 
   workspaceBinds = listToAttrs (concatMap (w: let
     ws = toString w;
