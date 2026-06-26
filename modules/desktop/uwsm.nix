@@ -5,7 +5,7 @@
 }: let
   inherit (lib) mkIf mkOption mapAttrs' nameValuePair;
   inherit (lib.types) oneOf attrsOf listOf;
-  inherit (lib.rnc.types) uwsmValue;
+  inherit (lib.rnc.types.uwsm) uwsmValue;
   inherit (lib.rnc.generators) toUWSM;
   inherit (config) desktop;
 

@@ -9,7 +9,7 @@
   inherit (lib.types) str attrsOf oneOf path;
   inherit (lib.strings) isString;
   inherit (lib.attrsets) mapAttrs' nameValuePair;
-  inherit (lib.rnc.types) btopThemeValue;
+  inherit (lib.rnc.types.btop) btopThemeValue;
   inherit (lib.rnc.generators) toBtopConf;
 
   cfg = config.utility.btop;
