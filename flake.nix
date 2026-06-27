@@ -17,7 +17,12 @@
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
     ricevim.url = "github:rice-cracker-dev/ricevim";
     nh.url = "github:nix-community/nh/v4.4.0-beta1";
+
     hyprland.url = "github:hyprwm/Hyprland";
+    # TODO: remove this after upstream fixes the issue
+    hyprland.inputs.hyprland-guiutils.url = "github:fxzzi/hyprland-guiutils/nix-upd";
+    hyprland.inputs.hyprgraphics.url = "github:hyprwm/hyprgraphics";
+
     ragenix.url = "github:ryantm/agenix";
     niri.url = "github:sodiboo/niri-flake";
     eh.url = "github:NotAShelf/eh";
