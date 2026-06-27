@@ -3,7 +3,7 @@
     ./hardware-configuration.nix
     ./hardware.nix
     ./lanzaboote.nix
-    ./hyprland.nix
+    ./hyprland
   ];
 
   desktop.hyprland.enable = true;

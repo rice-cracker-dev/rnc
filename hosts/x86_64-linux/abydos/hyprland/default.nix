@@ -1,4 +1,6 @@
-{
+{lib, ...}: let
+  inherit (lib.rnc.dag) entryAfter;
+in {
   config.desktop.hyprland = {
     monitor = [
       {
@@ -9,11 +11,6 @@
       }
     ];
 
-    device = [
-      {
-        name = "elan0412:01-04f3:3240-touchpad";
-        enabled = false;
-      }
-    ];
+    luaConfig.touchpad-toggle = entryAfter ["bind"] ./toggle-touchpad.lua;
   };
 }
